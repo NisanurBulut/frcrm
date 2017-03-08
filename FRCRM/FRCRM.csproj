@@ -1,0 +1,661 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24A3ED3F-B9D4-4783-9181-6847CA9A8A95}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FRCRM</RootNamespace>
+    <AssemblyName>FRCRM</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework6.Npgsql, Version=3.1.1.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework6.Npgsql.3.1.1\lib\net45\EntityFramework6.Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=3.1.9.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.3.1.9\lib\net451\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="adresekle.html" />
+    <Content Include="AppService\ProductService.asmx" />
+    <Content Include="cart.html" />
+    <Content Include="csss\animate.css" />
+    <Content Include="csss\app.css" />
+    <Content Include="csss\bootstrap.min.css" />
+    <Content Include="csss\font-awesome.min.css" />
+    <Content Include="csss\lgn.css" />
+    <Content Include="csss\main.css" />
+    <Content Include="csss\prettyPhoto.css" />
+    <Content Include="csss\price-range.css" />
+    <Content Include="csss\responsive.css" />
+    <Content Include="css\anket.css" />
+    <Content Include="css\app.css" />
+    <Content Include="css\app.js" />
+    <Content Include="css\ngdialog\myth\ngDialog-theme-default.css" />
+    <Content Include="css\ngdialog\myth\ngDialog-theme-plain.css" />
+    <Content Include="css\ngdialog\myth\ngDialog.css" />
+    <Content Include="css\ngdialog\ngDialog-custom-width.css" />
+    <Content Include="css\ngdialog\ngDialog-theme-default.css" />
+    <Content Include="css\ngdialog\ngDialog-theme-default.min.css" />
+    <Content Include="css\ngdialog\ngDialog-theme-plain.css" />
+    <Content Include="css\ngdialog\ngDialog-theme-plain.min.css" />
+    <Content Include="css\ngdialog\ngDialog.css" />
+    <Content Include="css\ngdialog\ngDialog.min.css" />
+    <Content Include="css\onsen-css-components 2.css" />
+    <Content Include="css\onsen-css-components-blue-basic-theme 2.css" />
+    <Content Include="css\onsen-css-components-blue-basic-theme.css" />
+    <Content Include="css\onsen-css-components-blue-theme.css" />
+    <Content Include="css\onsen-css-components-dark-theme.css" />
+    <Content Include="css\onsen-css-components-default.css" />
+    <Content Include="css\onsen-css-components-purple-theme.css" />
+    <Content Include="css\onsen-css-components-sunshine-theme.css" />
+    <Content Include="css\onsen-css-components.css" />
+    <Content Include="css\onsen-css-components.min.css" />
+    <Content Include="css\onsenui.css" />
+    <Content Include="css\plugins.css" />
+    <Content Include="css\radio.css" />
+    <Content Include="css\roots.css" />
+    <Content Include="css\tabbar.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="DUZENLEME.html" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="html\accounts.html" />
+    <Content Include="html\cart.html" />
+    <Content Include="html\cart_.html" />
+    <Content Include="html\home.html" />
+    <Content Include="html\login_.html" />
+    <Content Include="html\home2.html" />
+    <Content Include="html\mapsvg.html" />
+    <Content Include="html\payment\payments.html" />
+    <Content Include="icon.png" />
+    <Content Include="imagess\404\404.png" />
+    <Content Include="imagess\blog\blog-one.jpg" />
+    <Content Include="imagess\blog\blog-three.jpg" />
+    <Content Include="imagess\blog\blog-two.jpg" />
+    <Content Include="imagess\blog\man-four.jpg" />
+    <Content Include="imagess\blog\man-one.jpg" />
+    <Content Include="imagess\blog\man-three.jpg" />
+    <Content Include="imagess\blog\man-two.jpg" />
+    <Content Include="imagess\blog\socials.png" />
+    <Content Include="imagess\cart\one.png" />
+    <Content Include="imagess\cart\three.png" />
+    <Content Include="imagess\cart\two.png" />
+    <Content Include="imagess\home\bg_border.png" />
+    <Content Include="imagess\home\gallery1.jpg" />
+    <Content Include="imagess\home\gallery2.jpg" />
+    <Content Include="imagess\home\gallery3.jpg" />
+    <Content Include="imagess\home\gallery4.jpg" />
+    <Content Include="imagess\home\girl1.jpg" />
+    <Content Include="imagess\home\girl2.jpg" />
+    <Content Include="imagess\home\girl3.jpg" />
+    <Content Include="imagess\home\iframe1.png" />
+    <Content Include="imagess\home\iframe2.png" />
+    <Content Include="imagess\home\iframe3.png" />
+    <Content Include="imagess\home\iframe4.png" />
+    <Content Include="imagess\home\logo.png" />
+    <Content Include="imagess\home\logo_.png" />
+    <Content Include="imagess\home\map.png" />
+    <Content Include="imagess\home\new.png" />
+    <Content Include="imagess\home\partner1.png" />
+    <Content Include="imagess\home\partner2.png" />
+    <Content Include="imagess\home\partner3.png" />
+    <Content Include="imagess\home\partner4.png" />
+    <Content Include="imagess\home\pricing.png" />
+    <Content Include="imagess\home\product1.jpg" />
+    <Content Include="imagess\home\product2.jpg" />
+    <Content Include="imagess\home\product3.jpg" />
+    <Content Include="imagess\home\product4.jpg" />
+    <Content Include="imagess\home\product5.jpg" />
+    <Content Include="imagess\home\product6.jpg" />
+    <Content Include="imagess\home\recommend1.jpg" />
+    <Content Include="imagess\home\recommend2.jpg" />
+    <Content Include="imagess\home\recommend3.jpg" />
+    <Content Include="imagess\home\reklamkucuk.png" />
+    <Content Include="imagess\home\reklamm.png" />
+    <Content Include="imagess\home\sale.png" />
+    <Content Include="imagess\home\searchicon.png" />
+    <Content Include="imagess\home\shipping.jpg" />
+    <Content Include="imagess\product-details\1.jpg" />
+    <Content Include="imagess\product-details\new.jpg" />
+    <Content Include="imagess\product-details\rating.png" />
+    <Content Include="imagess\product-details\share.png" />
+    <Content Include="imagess\product-details\similar1.jpg" />
+    <Content Include="imagess\product-details\similar2.jpg" />
+    <Content Include="imagess\product-details\similar3.jpg" />
+    <Content Include="imagess\shop\advertisement.jpg" />
+    <Content Include="imagess\shop\product10.jpg" />
+    <Content Include="imagess\shop\product11.jpg" />
+    <Content Include="imagess\shop\product12.jpg" />
+    <Content Include="imagess\shop\product7.jpg" />
+    <Content Include="imagess\shop\product8.jpg" />
+    <Content Include="imagess\shop\product9.jpg" />
+    <Content Include="index.html" />
+    <Content Include="jsq\bootstrap.min.js" />
+    <Content Include="jsq\contact.js" />
+    <Content Include="jsq\gmaps.js" />
+    <Content Include="jsq\html5shiv.js" />
+    <Content Include="jsq\jquery.js" />
+    <Content Include="jsq\jquery.prettyPhoto.js" />
+    <Content Include="jsq\jquery.scrollUp.min.js" />
+    <Content Include="jsq\main.js" />
+    <Content Include="jsq\price-range.js" />
+    <Content Include="js\app.js" />
+    <Content Include="js\cart.js" />
+    <Content Include="js\directive.js" />
+    <Content Include="js\datepicker.js" />
+    <Content Include="js\account.js" />
+    <Content Include="js\dynamic.js" />
+    <Content Include="js\fastrest\body\kategori.html" />
+    <Content Include="js\fastrest\body\urun.html" />
+    <Content Include="js\fastrest\cart\cart.html" />
+    <Content Include="js\fastrest\footer\bottom.html" />
+    <Content Include="js\fastrest\header\alt.html" />
+    <Content Include="js\fastrest\header\orta.html" />
+    <Content Include="js\fastrest\header\ust.html" />
+    <Content Include="js\fastrest\login\lgn.html" />
+    <Content Include="js\fastrest\ng-fastrest.js" />
+    <Content Include="js\fastrest\slider\slider.html" />
+    <Content Include="js\fastrest\solmenu\solmenu.html" />
+    <Content Include="js\fastrest\sosyal\sosyal.html" />
+    <Content Include="js\fastrest\template\addresscard.html" />
+    <Content Include="js\fastrest\template\adresscheck.html" />
+    <Content Include="js\fastrest\template\carttemplate.html" />
+    <Content Include="js\fastrest\template\dynamicmodal.html" />
+    <Content Include="js\fastrest\template\invoice.html" />
+    <Content Include="js\fastrest\template\paywizard.html" />
+    <Content Include="js\fastrest\template\sepet.html" />
+    <Content Include="js\fastrest\template\trmap.html" />
+    <Content Include="js\gp1.js" />
+    <Content Include="js\gp2.js" />
+    <Content Include="js\home.js" />
+    <Content Include="js\kayit.js" />
+    <Content Include="js\kazikazan.js" />
+    <Content Include="js\login.js" />
+    <Content Include="js\mapsvg.js" />
+    <Content Include="js\ng-scratch-off.js" />
+    <Content Include="js\plugins.js" />
+    <Content Include="js\PushNotification.js" />
+    <Content Include="js\sticky.js" />
+    <Content Include="lib\chart\angular-fusioncharts.js" />
+    <Content Include="lib\chart\deneme.js" />
+    <Content Include="lib\chart\fusioncharts.charts.js" />
+    <Content Include="lib\chart\fusioncharts.gantt.js" />
+    <Content Include="lib\chart\fusioncharts.js" />
+    <Content Include="lib\chart\fusioncharts.maps.js" />
+    <Content Include="lib\chart\fusioncharts.powercharts.js" />
+    <Content Include="lib\chart\fusioncharts.ssgrid.js" />
+    <Content Include="lib\chart\fusioncharts.treemap.js" />
+    <Content Include="lib\chart\fusioncharts.widgets.js" />
+    <Content Include="lib\chart\fusioncharts.zoomscatter.js" />
+    <Content Include="lib\chart\maps\fusioncharts.usa.js" />
+    <Content Include="lib\chart\maps\fusioncharts.world.js" />
+    <Content Include="lib\chart\maps\readme.txt" />
+    <Content Include="lib\chart\themes\fusioncharts.theme.carbon.js" />
+    <Content Include="lib\chart\themes\fusioncharts.theme.fint.js" />
+    <Content Include="lib\chart\themes\fusioncharts.theme.ocean.js" />
+    <Content Include="lib\chart\themes\fusioncharts.theme.zune.js" />
+    <Content Include="lib\gchart\jsapi.js" />
+    <Content Include="lib\gchart\loader.js" />
+    <Content Include="lib\gchart\ng-google-chart.js" />
+    <Content Include="lib\gchart\uds_api_contents.js" />
+    <Content Include="lib\ngdialog\ngDialog.js" />
+    <Content Include="lib\ngdialog\ngDialog.min.js" />
+    <Content Include="lib\onsen\css\font_awesome\css\font-awesome.css" />
+    <Content Include="lib\onsen\css\font_awesome\css\font-awesome.min.css" />
+    <Content Include="lib\onsen\css\font_awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="lib\onsen\css\ionicons\css\ionicons.css" />
+    <Content Include="lib\onsen\css\ionicons\css\ionicons.min.css" />
+    <Content Include="lib\onsen\css\ionicons\fonts\ionicons.svg" />
+    <Content Include="lib\onsen\css\onsen-css-components-blue-basic-theme.css" />
+    <Content Include="lib\onsen\css\onsen-css-components-blue-theme.css" />
+    <Content Include="lib\onsen\css\onsen-css-components-dark-theme.css" />
+    <Content Include="lib\onsen\css\onsen-css-components-default.css" />
+    <Content Include="lib\onsen\css\onsen-css-components-purple-theme.css" />
+    <Content Include="lib\onsen\css\onsen-css-components-sunshine-theme.css" />
+    <Content Include="lib\onsen\css\onsen-css-components.css" />
+    <Content Include="lib\onsen\css\onsen-css-components.min.css" />
+    <Content Include="lib\onsen\css\onsenui.css" />
+    <Content Include="lib\onsen\js\angular\angular-animate.js" />
+    <Content Include="lib\onsen\js\angular\angular-csp.css" />
+    <Content Include="lib\onsen\js\angular\angular-touch.js" />
+    <Content Include="lib\onsen\js\angular\angular.js" />
+    <Content Include="lib\onsen\js\angular\angular.min.js" />
+    <Content Include="lib\onsen\js\onsenui.js" />
+    <Content Include="lib\onsen\js\onsenui.min.js" />
+    <Content Include="lib\onsen\js\onsenui_all.js" />
+    <Content Include="lib\onsen\js\onsenui_all.min.js" />
+    <Content Include="lib\uirouter\angular-ui-router.js" />
+    <Content Include="lib\uirouter\angular-ui-router.min.js" />
+    <Content Include="login.html" />
+    <Content Include="node_modules\angular-animate\angular-animate.js" />
+    <Content Include="node_modules\angular-animate\angular-animate.min.js" />
+    <Content Include="node_modules\angular-animate\index.js" />
+    <Content Include="node_modules\angular-aria\angular-aria.js" />
+    <Content Include="node_modules\angular-aria\angular-aria.min.js" />
+    <Content Include="node_modules\angular-aria\index.js" />
+    <Content Include="node_modules\angular-busy\angular-busy.css" />
+    <Content Include="node_modules\angular-busy\angular-busy.html" />
+    <Content Include="node_modules\angular-busy\angular-busy.js" />
+    <Content Include="node_modules\angular-busy\dist\angular-busy.css" />
+    <Content Include="node_modules\angular-busy\dist\angular-busy.js" />
+    <Content Include="node_modules\angular-busy\dist\angular-busy.min.css" />
+    <Content Include="node_modules\angular-busy\dist\angular-busy.min.js" />
+    <Content Include="node_modules\angular-storage\angular-local-storage.min.js" />
+    <Content Include="node_modules\angular\angular-csp.css" />
+    <Content Include="node_modules\angular\angular.js" />
+    <Content Include="node_modules\angular\angular.min.js" />
+    <Content Include="node_modules\angular\index.js" />
+    <Content Include="node_modules\api-check\dist\api-check.js" />
+    <Content Include="node_modules\api-check\dist\api-check.min.js" />
+    <Content Include="node_modules\api-check\index.html" />
+    <Content Include="node_modules\api-check\src\api-check-util.js" />
+    <Content Include="node_modules\api-check\src\api-check-util.test.js" />
+    <Content Include="node_modules\api-check\src\api-check.js" />
+    <Content Include="node_modules\api-check\src\api-check.test.js" />
+    <Content Include="node_modules\api-check\src\bugs.test.js" />
+    <Content Include="node_modules\api-check\src\checkers.js" />
+    <Content Include="node_modules\api-check\src\checkers.test.js" />
+    <Content Include="node_modules\api-check\src\index.js" />
+    <Content Include="node_modules\api-check\src\index.test.js" />
+    <Content Include="node_modules\api-check\src\prs-plz.test.js" />
+    <Content Include="node_modules\api-check\src\test.utils.js" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="node_modules\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="node_modules\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="node_modules\bootstrap\dist\js\npm.js" />
+    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="node_modules\bootstrap\Gruntfile.js" />
+    <Content Include="node_modules\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="node_modules\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="node_modules\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="node_modules\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="node_modules\bootstrap\grunt\change-version.js" />
+    <Content Include="node_modules\bootstrap\js\affix.js" />
+    <Content Include="node_modules\bootstrap\js\alert.js" />
+    <Content Include="node_modules\bootstrap\js\button.js" />
+    <Content Include="node_modules\bootstrap\js\carousel.js" />
+    <Content Include="node_modules\bootstrap\js\collapse.js" />
+    <Content Include="node_modules\bootstrap\js\dropdown.js" />
+    <Content Include="node_modules\bootstrap\js\modal.js" />
+    <Content Include="node_modules\bootstrap\js\popover.js" />
+    <Content Include="node_modules\bootstrap\js\scrollspy.js" />
+    <Content Include="node_modules\bootstrap\js\tab.js" />
+    <Content Include="node_modules\bootstrap\js\tooltip.js" />
+    <Content Include="node_modules\bootstrap\js\transition.js" />
+    <Content Include="node_modules\imagemagick\imagemagick.js" />
+    <Content Include="node_modules\imagemagick\test-crop.js" />
+    <Content Include="node_modules\imagemagick\test.js" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="css\config.codekit" />
+    <Content Include="css\plugins.less" />
+    <Content Include="css\radio.less" />
+    <Content Include="css\roots.less" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\lobster.ttf" />
+    <Content Include="fonts\lobster.woff" />
+    <Content Include="fonts\lobster.woff2" />
+    <Content Include="fonts\playfair.ttf" />
+    <Content Include="fonts\playfair.woff" />
+    <Content Include="fonts\playfair.woff2" />
+    <Content Include="lib\onsen\css\font_awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="lib\onsen\css\font_awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="lib\onsen\css\font_awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="lib\onsen\css\font_awesome\fonts\FontAwesome.otf" />
+    <Content Include="lib\onsen\css\ionicons\fonts\ionicons.eot" />
+    <Content Include="lib\onsen\css\ionicons\fonts\ionicons.ttf" />
+    <Content Include="lib\onsen\css\ionicons\fonts\ionicons.woff" />
+    <Content Include="lib\onsen\js\angular\angular.min.js.gzip" />
+    <Content Include="lib\onsen\js\angular\angular.min.js.map" />
+    <Content Include="lib\onsen\js\angular\bower.json" />
+    <Content Include="lib\onsen\js\angular\README.md" />
+    <Content Include="lib\onsen\stylus\components\alert-dialog.styl" />
+    <Content Include="lib\onsen\stylus\components\button-bar.styl" />
+    <Content Include="lib\onsen\stylus\components\button.styl" />
+    <Content Include="lib\onsen\stylus\components\checkbox.styl" />
+    <Content Include="lib\onsen\stylus\components\dialog.styl" />
+    <Content Include="lib\onsen\stylus\components\global.styl" />
+    <Content Include="lib\onsen\stylus\components\index.styl" />
+    <Content Include="lib\onsen\stylus\components\list.styl" />
+    <Content Include="lib\onsen\stylus\components\modal.styl" />
+    <Content Include="lib\onsen\stylus\components\navigation-bar.styl" />
+    <Content Include="lib\onsen\stylus\components\notification.styl" />
+    <Content Include="lib\onsen\stylus\components\page.styl" />
+    <Content Include="lib\onsen\stylus\components\popover.styl" />
+    <Content Include="lib\onsen\stylus\components\radio-button.styl" />
+    <Content Include="lib\onsen\stylus\components\range.styl" />
+    <Content Include="lib\onsen\stylus\components\search-input.styl" />
+    <Content Include="lib\onsen\stylus\components\switch.styl" />
+    <Content Include="lib\onsen\stylus\components\tab-bar.styl" />
+    <Content Include="lib\onsen\stylus\components\text-input.styl" />
+    <Content Include="lib\onsen\stylus\components\textarea.styl" />
+    <Content Include="lib\onsen\stylus\components\toolbar-button.styl" />
+    <Content Include="lib\onsen\stylus\components\util.styl" />
+    <Content Include="lib\onsen\stylus\blue-basic-theme.styl" />
+    <Content Include="lib\onsen\stylus\blue-theme.styl" />
+    <Content Include="lib\onsen\stylus\dark-theme.styl" />
+    <Content Include="lib\onsen\stylus\default.styl" />
+    <Content Include="lib\onsen\stylus\purple-theme.styl" />
+    <Content Include="lib\onsen\stylus\sunshine-theme.styl" />
+    <Content Include="node_modules\angular\angular.min.js.gzip" />
+    <Content Include="node_modules\angular\angular.min.js.map" />
+    <Content Include="node_modules\angular\bower.json" />
+    <Content Include="node_modules\angular\LICENSE.md" />
+    <Content Include="node_modules\angular\package.json" />
+    <Content Include="node_modules\angular\README.md" />
+    <Content Include="node_modules\angular-animate\angular-animate.min.js.map" />
+    <Content Include="node_modules\angular-animate\bower.json" />
+    <Content Include="node_modules\angular-animate\LICENSE.md" />
+    <Content Include="node_modules\angular-animate\package.json" />
+    <Content Include="node_modules\angular-animate\README.md" />
+    <Content Include="node_modules\angular-aria\angular-aria.min.js.map" />
+    <Content Include="node_modules\angular-aria\bower.json" />
+    <Content Include="node_modules\angular-aria\LICENSE.md" />
+    <Content Include="node_modules\angular-aria\package.json" />
+    <Content Include="node_modules\angular-aria\README.md" />
+    <Content Include="node_modules\angular-busy\bower.json" />
+    <Content Include="node_modules\angular-busy\LICENSE" />
+    <Content Include="node_modules\api-check\bower.json" />
+    <Content Include="node_modules\api-check\CHANGELOG.md" />
+    <Content Include="node_modules\api-check\LICENSE" />
+    <Content Include="node_modules\api-check\package.json" />
+    <Content Include="node_modules\api-check\README.md" />
+    <Content Include="node_modules\api-check\dist\api-check.min.js.map" />
+    <Content Include="node_modules\bootstrap\CHANGELOG.md" />
+    <Content Include="node_modules\bootstrap\LICENSE" />
+    <Content Include="node_modules\bootstrap\package.json" />
+    <Content Include="node_modules\bootstrap\README.md" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="node_modules\bootstrap\grunt\configBridge.json" />
+    <Content Include="node_modules\bootstrap\grunt\npm-shrinkwrap.json" />
+    <Content Include="node_modules\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="node_modules\bootstrap\less\mixins\alerts.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\buttons.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\center-block.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\forms.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\gradients.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\grid.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\image.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\labels.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\list-group.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\opacity.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\pagination.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\panels.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\resize.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\size.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\table-row.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="node_modules\bootstrap\less\alerts.less" />
+    <Content Include="node_modules\bootstrap\less\badges.less" />
+    <Content Include="node_modules\bootstrap\less\bootstrap.less" />
+    <Content Include="node_modules\bootstrap\less\breadcrumbs.less" />
+    <Content Include="node_modules\bootstrap\less\button-groups.less" />
+    <Content Include="node_modules\bootstrap\less\buttons.less" />
+    <Content Include="node_modules\bootstrap\less\carousel.less" />
+    <Content Include="node_modules\bootstrap\less\close.less" />
+    <Content Include="node_modules\bootstrap\less\code.less" />
+    <Content Include="node_modules\bootstrap\less\component-animations.less" />
+    <Content Include="node_modules\bootstrap\less\dropdowns.less" />
+    <Content Include="node_modules\bootstrap\less\forms.less" />
+    <Content Include="node_modules\bootstrap\less\glyphicons.less" />
+    <Content Include="node_modules\bootstrap\less\grid.less" />
+    <Content Include="node_modules\bootstrap\less\input-groups.less" />
+    <Content Include="node_modules\bootstrap\less\jumbotron.less" />
+    <Content Include="node_modules\bootstrap\less\labels.less" />
+    <Content Include="node_modules\bootstrap\less\list-group.less" />
+    <Content Include="node_modules\bootstrap\less\media.less" />
+    <Content Include="node_modules\bootstrap\less\mixins.less" />
+    <Content Include="node_modules\bootstrap\less\modals.less" />
+    <Content Include="node_modules\bootstrap\less\navbar.less" />
+    <Content Include="node_modules\bootstrap\less\navs.less" />
+    <Content Include="node_modules\bootstrap\less\normalize.less" />
+    <Content Include="node_modules\bootstrap\less\pager.less" />
+    <Content Include="node_modules\bootstrap\less\pagination.less" />
+    <Content Include="node_modules\bootstrap\less\panels.less" />
+    <Content Include="node_modules\bootstrap\less\popovers.less" />
+    <Content Include="node_modules\bootstrap\less\print.less" />
+    <Content Include="node_modules\bootstrap\less\progress-bars.less" />
+    <Content Include="node_modules\bootstrap\less\responsive-embed.less" />
+    <Content Include="node_modules\bootstrap\less\responsive-utilities.less" />
+    <Content Include="node_modules\bootstrap\less\scaffolding.less" />
+    <Content Include="node_modules\bootstrap\less\tables.less" />
+    <Content Include="node_modules\bootstrap\less\theme.less" />
+    <Content Include="node_modules\bootstrap\less\thumbnails.less" />
+    <Content Include="node_modules\bootstrap\less\tooltip.less" />
+    <Content Include="node_modules\bootstrap\less\type.less" />
+    <Content Include="node_modules\bootstrap\less\utilities.less" />
+    <Content Include="node_modules\bootstrap\less\variables.less" />
+    <Content Include="node_modules\bootstrap\less\wells.less" />
+    <Content Include="node_modules\imagemagick\package.json" />
+    <Content Include="node_modules\imagemagick\README.md" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="shopper.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppService\AddAddress.cs" />
+    <Compile Include="AppService\Frdb.cs" />
+    <Compile Include="AppService\Grafikjson.cs" />
+    <Compile Include="AppService\Grafiksql.cs" />
+    <Compile Include="AppService\JsonConverter.cs" />
+    <Compile Include="AppService\Login.cs" />
+    <Compile Include="AppService\ProductService.asmx.cs">
+      <DependentUpon>ProductService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppService\Signup.cs" />
+    <Compile Include="AppService\Transaction.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ShopsController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FrModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FrServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54006</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54006/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
