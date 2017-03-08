@@ -1,0 +1,91 @@
+﻿<style>
+    .invoice-title h2, .invoice-title h3 {
+    display: inline-block;
+}
+
+.table > tbody > tr > .no-line {
+    border-top: none;
+}
+
+.table > thead > tr > .no-line {
+    border-bottom: none;
+}
+
+.table > tbody > tr > .thick-line {
+    border-top: 2px solid;
+}
+</style>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row" ng-repeat="adres in teslimatadres">
+                <div class="col-xs-6 text-left">
+                    <address>
+                        <strong>Teslimat adresi:</strong><br>
+                        {{adres. adi+' '+adres.soyadi}}<br>
+                        {{adres.telefon}}<br>
+                        {{adres.mail}}<br>
+                        {{adres.adres}}<br>
+                        {{adres.ilce +' , '+ adres.sehir}}
+                    </address>
+                </div>
+                <div class="col-xs-3 text-center">
+                    <address>
+                        <strong>Ödeme yöntemi</strong><br>
+                        {{odemetipismi}}
+                    </address>
+                </div>
+                <div class="col-xs-3 text-left">
+                    <address>
+                        <strong>Sipariş zamanı:</strong><br>
+                        {{simdi}}
+                    </address>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-info">
+                <div class="panel-heading" style="background-color:rgba(254, 152, 15, 0.85)">
+                    <h3 class="panel-title"><strong style="color:#fff">Sipariş özeti</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <td><strong>Ürün</strong></td>
+                                    <td class="text-center"><strong>Fiyat</strong></td>
+                                    <td class="text-center"><strong>Adet</strong></td>
+                                    <td class="text-right"><strong>Toplam</strong></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                                <tr ng-repeat="sepet in sepetim"  ng-if="sepet.seviye == 0">
+                                    <td>{{sepet.adi}}<div ng-repeat="scm in sepet.dynasecim" style="color:#808080;font-size:10px;">{{scm.adi}}</br></div></td>
+                                    <td class="text-center">{{sepet.fiyat}}</td>
+                                    <td class="text-center">{{sepet.adet}}</td>
+                                    <td class="text-right">{{sepet.adet * sepet.fiyat}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="no-line"></td>
+                                    <td class="no-line"></td>
+                                    <td class="no-line text-center"><strong>TOPLAM</strong></td>
+                                    <td class="no-line text-right">{{toplamttr}} TL</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button type="button" class="btn btn-success btn-block" ng-click="onayla();">
+                        {{toplamttr}} ONAYLA
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>

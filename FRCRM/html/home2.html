@@ -1,0 +1,160 @@
+﻿<style>
+    table {
+        margin: 10px 0px;
+        border: none !important;
+    }
+
+    thead {
+        font-weight: 700;
+    }
+
+    .table tbody > tr > td, .table tfoot > tr > td {
+        padding: 8px;
+        line-height: 1.428571429;
+        vertical-align: top;
+        border-top: none;
+    }
+
+    .spacing {
+        height: 10px;
+        background: transparent;
+        content: none;
+    }
+
+    @media (max-width: 632px) {
+
+        /*Responsive Table*/
+        thead {
+            display: none;
+        }
+
+        tr:nth-of-type(odd) {
+            background: #eee;
+        }
+
+        td, tr {
+            display: block;
+        }
+
+        /*Column Section Titles*/
+        .stats td:nth-of-type(1):before {
+            content: "Superhero: ";
+        }
+
+        .stats td:nth-of-type(2):before {
+            content: "Alter Ego: ";
+        }
+
+        .stats td:nth-of-type(3):before {
+            content: "Sidekick: ";
+        }
+
+        .stats td:nth-of-type(4):before {
+            content: "Vehicle: ";
+        }
+
+        .spacing td:before {
+            content: " " !important;
+        }
+        /*Add More based on the number of columns you have*/
+    }
+
+
+    th {
+        text-align: center;
+    }
+
+    .trth th {
+        text-align: left;
+    }
+
+    .plan table {
+    }
+
+    /*
+        ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    }
+    */
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <!--<div style="height:100px;background-color:antiquewhite;"></div>-->
+        </div>
+    </div>
+</div>
+
+
+<div class="container" ng-controller="GroupAndProductCtrl2" id="home">
+    <div class="row">
+        <div class="col-sm-3">
+            <!--color:#FE980F-->
+
+            <di>
+                <fr-sepet></fr-sepet>
+            </di>
+          </div>
+
+        <div class="col-sm-6">
+
+            <table class="table stats caps" ng-repeat="group in groups">
+                <thead>
+
+                    <tr style="background:#fff;color:black;font-style:oblique;height:50px;border: 1px solid rgba(13, 11, 11, 0.1);">
+                        <!--sticky offset="70"-->
+                        <td></td>
+                        <td colspan="2" style="text-align:center;">{{group.adi}}</td>
+                        <td></td>
+                    </tr>
+                </thead>
+
+                <tbody style="border: 1px solid rgba(13, 11, 11, 0.1); font-size:10px;">
+                    <tr style="background:#fff;" ng-repeat="urun in group.product" >
+                        <!--Adjust bg and font colors inline-->
+                        <td style="width:7%;"><input type="number" value="{{price}}" style="width:100%;border-radius:10%;" ng-model="price" /></td>
+                        <td ng-if="urun.dmid < 1" 
+                            ng-click="sepeteAt(urun,$index,price)" style="width:7%;padding:1px;border-radius:20%;text-align:center;">
+                            <div style="background-color:#c70e0e;color:#fff; font-size :10px; font-style:oblique;margin:7px;border-radius:20%;text-align:center;cursor:pointer;">+</div>
+                        </td>
+                        <td  ng-if="urun.dmid > 0" ng-click="dynamicModalOpen(urun,$index,price);"
+                            style="width:7%;padding:1px;border-radius:20%;text-align:center;">
+                            <div data-toggle="modal" data-target="#dynamicModal"
+                                 style="background-color:#c70e0e;color:#fff; font-size :10px; font-style:oblique;margin:7px;border-radius:20%;text-align:center;cursor:pointer;">+</div>
+                        </td>
+                        <td style="color:#FE980f; border-radius:6px;font-style:oblique; font-size:10px;">{{urun.pname}}</td>
+                        <td ng-if="urun.dmid < 1" style="width:10%;color:#FE980f; border-radius:6px;font-style:oblique;">{{urun.pfiyat}} TL</td>
+                        <td ng-if="urun.dmid > 0" style="width:10%;color:#FE980f; border-radius:6px;font-style:oblique;">{{urun.dmfiyat}} TL</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div><!--features_items-->
+        <div class="col-sm-3">
+
+        </div>
+    </div>
+    
+</div>
+
+
+
+

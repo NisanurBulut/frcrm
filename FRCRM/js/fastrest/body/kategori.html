@@ -1,0 +1,56 @@
+
+
+
+
+
+
+
+<nav class="col-sm-3">
+    <div class="left-sidebar">
+        <h2>Menü</h2>
+        <div class="panel-group category-products" id="accordian">
+          
+            <div class="panel panel-default" ng-repeat="group in groups">
+                <div class="panel-heading">
+                    <h4 class="panel-title" ng-click="ClikGroup(group.id)">
+                        <a style="cursor: context-menu">{{group.adi}}</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav> 
+
+
+
+<div  style="width:30%;">
+    <h2>Sepet</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>Ürün</td>
+                <td>Adet</td>                
+                <td>Fiyat</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="sepet in sepetim" style="margin-top:2px;">
+                <td>{{sepet.adi}}</td>
+                <td>{{sepet.adet}}</td>            
+                <td>{{sepet.fiyat}}</td>
+                <td ng-click="deleteItem(sepet,$index)" style="font-size:15px;color:red;font-style:oblique;padding-left:2px; cursor:context-menu;">x</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>{{toplam}}</td>
+                <td>TL</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+

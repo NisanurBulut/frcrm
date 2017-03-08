@@ -1,0 +1,80 @@
+<style>
+        .plan-buttonn {
+        background-color:slategray;
+        color: white;
+        text-transform: uppercase;
+        border-radius: 3px;
+        font-size:10px;
+    }
+
+        .plan-buttonn:active {
+            color: #c70e0e;
+            background-color: #c70e0e;
+        }
+
+        .plan-buttonn:hover {
+            color: #ffffff;
+            background-color: #c70e0e;
+        }
+</style>
+<div class="header-middle navbar navbar-default navbar-fixed-top" style="background-color:white;margin-top:1px;height:70px;">
+    <!--header-middle-->
+    <div class="container">
+        <div class="row" ng-hide="headerlogin">
+            <div class="col-sm-2">
+                <div class="logo pull-left">
+                    <a ng-click="logox();"><img src="{{logo}}" alt="" style="height:30px;" /></a>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div>
+                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" ng-model="email" required>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div>
+                    <label class="sr-only" for="exampleInputPassword2">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" ng-model="sifre" required>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div>
+                    <div class="btn plan-buttonn" ng-click="girisyapx();">Giriş</div>
+                    &nbsp;
+                    <div class="btn plan-buttonn" ng-click="kayitx();">Kayıt</div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="shop-menu pull-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{hesabim}}"><i class="fa fa-list"></i> Liste</a></li>
+                        <li><a href="{{favorilerim}}"><i class="fa fa-image"></i> Resim</a></li>
+                        <li><a href="{{sepetim}}"><i style="color:#FE980F;font-weight:bold;">{{spetadet}}</i><i class="fa fa-shopping-cart"></i> {{tutar}} TL</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="row" ng-show="headerlogin">
+            <div class="col-sm-4">
+                <div class="logo pull-left">
+                    <a ng-click="logox();"><img src="{{logo}}" alt="" style="height:30px;" /></a>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="shop-menu pull-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{hesabim}}"><i class="fa fa-list"></i> Liste</a></li>
+                        <li><a href="{{favorilerim}}"><i class="fa fa-picture-o"></i> Resim</a></li>
+                        <li><a href="{{sepetim}}"><i style="color:#FE980F;font-weight:bold;">{{spetadet}}</i><i class="fa fa-shopping-cart"></i> {{tutar}} TL</a></li>
+                        <li><a ng-click="cikis()"><i class="fa fa-sign-out"></i>ÇIKIŞ - {{kmail}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--/header-middle-->

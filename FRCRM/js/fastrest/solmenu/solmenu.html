@@ -1,0 +1,13 @@
+<ons-list-item class="menu-item"style="background-color: black" ng-click="menu.setMainPage('html/home.html', {closeMenu: true})">
+<ons-icon  fixed-width="true"></ons-icon>
+<img src="{{uygulama_logo}}" style="height: 10%;width: 100%;" ng-if="logogoster > 0">
+{{uygulama_adi}}
+</ons-list-item>
+
+<div ng-repeat="menu in menus">
+<ons-list-item class="menu-item" ng-click="click('{{menu.sayfa}}');">
+<ons-icon icon="{{menu.ikon}}" fixed-width="true"></ons-icon>
+{{menu.yazi}}
+</ons-list-item>	
+</div>
+

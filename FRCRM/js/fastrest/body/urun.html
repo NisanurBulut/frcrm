@@ -1,0 +1,43 @@
+<div style="width:60%;margin-left:35%;">
+    <div class="features_items">
+        <!--features_items-->
+        <h2 class="title text-center" >Ürünler</h2>
+        <div class="col-sm-4" ng-repeat="urun in urunler">
+            <div class="product-image-wrapper">
+                <div class="single-products">
+                    <div class="productinfo text-center">
+                        <img src="{{urun.resim}}" alt="" height="50" width="50" />
+                        <h2>{{urun.pfiyat}} TL</h2>
+                        <p>{{urun.pname}}</p>
+                        <a class="btn btn-default add-to-cart" ng-click="sepeteAt(urun,$index)">
+                            <i class="fa fa-shopping-cart"></i>Sepete Ekle
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--features_items-->
+<div class="col-sm-9 padding-right">
+    <div class="features_items">
+        <!--features_items-->
+        <h2 class="title text-center">Ürünler</h2>
+        <div class="col-sm-4" ng-repeat="urun in urunler">
+            <div class="product-image-wrapper">
+                <div class="single-products">
+                    <div class="productinfo text-center">
+                        <img src="{{urun.resim}}" alt="" height="200" />
+                        <h2>{{urun.pfiyat}} TL</h2>
+                        <p>{{urun.pname}}</p>
+                        <a class="btn btn-default add-to-cart" ng-click="sepeteAt(urun,$index)">
+                            <i class="fa fa-shopping-cart"></i>Sepete Ekle
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!--features_items-->
