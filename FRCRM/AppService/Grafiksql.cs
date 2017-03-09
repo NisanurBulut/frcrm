@@ -83,7 +83,12 @@ namespace FRCRM.AppService
 
         public string run_citys_query()
         {
-            citys_query = "select * from citys where active = true";
+            citys_query = "select distinct(c.cityid) as cityid , c.plate as plate , "+
+                        " (select count(*) from accounts where city_id = a.city_id and city_id > 0 and active = true) "+
+                        " as account_count , c.name as name "+
+                        " from(select * from accounts ) as a "+
+                        " left outer join citys c on (a.city_id = c.cityid) "+
+                        " where a.city_id > 0 and a.active = true ";
             return citys_query;
         }
 

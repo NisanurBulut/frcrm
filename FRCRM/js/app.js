@@ -25,6 +25,14 @@ var saatx = 3600;
 function parseLocalNum(num) {
     return +(num.replace(",", "."));
 }
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 var app = angular.module('app', ['ngRoute', 'ngCookies', 'LocalStorageModule', 'angular-images-loaded', 'ngMap', 'angular-carousel',
     'ngSanitize', 'ngDialog', 'googlechart', 'shoppinpal.scratch-off', 'fr.order', 'sticky']);
 
