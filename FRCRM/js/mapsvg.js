@@ -94,14 +94,14 @@ app.controller('mapsvgctrl', function ($scope, $rootScope, $http, localStorageSe
         for (var x = 0; x <= jsn.length; x++) {
 
             for (var i = 0; i <= illerjsonx.length - 1; i++) {
-
-                try {
-                    if(jsn[x].plate != illerjsonx[i].plaka)
+                //if (jsn[x].plate == illerjsonx[i].plaka) { alert(jsn[x].name + '-' + jsn[x].plate +'-'+ illerjsonx[i].plaka) }
+                if (parseInt(jsn[x].plate) == parseInt(illerjsonx[i].plaka)) {
                     var elid = illerjsonx[i].sehirid;
                     var elm = document.getElementById(elid);
-                    elm.style.fill = '#000';//getRandomColor();
-                    //elm.style.display = 'none';
-                } catch (err) { }
+                    elm.style.fill = '#F72848';//getRandomColor();
+                }
+
+                    
 
             }
         }
