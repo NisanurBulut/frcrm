@@ -33,6 +33,10 @@
     -webkit-animation: pulsate 1.2s linear infinite;
     animation: pulsate 1.2s linear infinite;
 }
+.responsive-width {
+    font-size: 1vw;
+    text-align:center;
+}
 .btn-nav.active:before {
 	content: '';
 	position: absolute;
@@ -103,6 +107,7 @@
    */ 
 
 </style>
+
 <section>
     <div ng-controller="GroupAndProductCtrl" id="home">
 
@@ -110,9 +115,9 @@
         <div class="col-sm-12">
             <div class="container">
                 <div class="row" >
-                    <div class="btn-group btn-group-justified" sticky offset="70">
+                    <div class="btn-group btn-group-justified" ><!--sticky offset="70"-->
                         <div class="btn-group" ng-repeat="group in groups">
-                            <button type="button" class="btn btn-nav" ng-click="ClikGroup(group.id)">
+                            <button type="button" class="btn btn-nav responsive-width" ng-click="ClikGroup(group.id)">
                                 <!span class="glyphicon glyphicon-folder-close"><!/span>
                                 <p>{{group.adi}}</p>
                             </button>
