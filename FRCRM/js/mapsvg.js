@@ -116,7 +116,7 @@ app.controller('mapsvgctrl', function ($scope, $rootScope, $http, localStorageSe
             if (jsn[i].plate == plaka) {
                 $location.path('/accounts');
             } else {
-                $scope.alertmessage = il + ' Bölgesinde online siparişe açık mekan bulunmamaktadır';
+                $scope.alertmessage = il + ' Bölgesinde online siparişe açık mekan bulunmamaktadır x';
             }
         }
     }
