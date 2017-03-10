@@ -11,12 +11,12 @@ namespace FRCRM.Controllers
 {
     public class ShopsController : ApiController
     {
-        public DataTable Get()
+        public DataTable Get(string city_id)
         {
             Grafikjson grafikjson = new Grafikjson();
             string sql;
             Grafiksql g = new Grafiksql();
-            sql = g.run_account_query();
+            sql = g.run_account_query(city_id);
             DataTable json = grafikjson.JsonDataAl(sql);
             return json;
         }

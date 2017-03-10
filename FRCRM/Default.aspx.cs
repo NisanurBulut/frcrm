@@ -27,12 +27,12 @@ namespace FRCRM
 
 
         [System.Web.Services.WebMethod]
-        public static string GetAccountJson()
+        public static string GetAccountJson(string city_id)
         {
             Grafikjson grafikjson = new Grafikjson();
             string sql;
             Grafiksql g = new Grafiksql();
-            sql = g.run_account_query();
+            sql = g.run_account_query(city_id);
             string json = grafikjson.JsonAl(sql);
             return json;
             /*GetBarchartData Sonu*/
@@ -181,6 +181,9 @@ namespace FRCRM
 
             return gjsn;
         }
+
+
+
 
 
     }

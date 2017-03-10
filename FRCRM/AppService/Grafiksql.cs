@@ -53,12 +53,12 @@ namespace FRCRM.AppService
 
             product_list_query = "SELECT pg.adi as g_adi, pg.id as g_id,p.product_name as pname , f.fiyat as pfiyat , o.resim as resim , p.id as id , " +
                 " dm.id as dmid , dm.adi as dmadi , dm.fiyat as dmfiyat " +
-                " FROM product p " +
+                " FROM (select * from product where account_id = " + account_id +") as p " +
                 " LEFT OUTER JOIN dyna_menu dm on(p.id = dm.dmproductid) " +
                 " LEFT outer JOIN product_fiyat f ON p.id = f.p_id and(bastar <= current_date) and((bittar is null) or bittar >= current_date) " +
                 " LEFT outer JOIN pr_ozellik o ON p.id = o.urun_id " +
                 " left outer join product_group pg on (pg.id = p.tip or pg.id = dm.grup1) " +
-                " where tip > 0 or grup1 >0 and p.account_id = " + account_id +
+                " where tip > 0 or grup1 >0  "+
                 " and p.paket = true and(p.silindi <> true) " +
                 " and p.isrecete = false and dm.silindi <> true " +
                 " ORDER BY pg.grpsira,pg.adi,p.sirano,p.product_name";
@@ -75,9 +75,9 @@ namespace FRCRM.AppService
             return dyna_query;
         }
         
-        public string run_account_query()
+        public string run_account_query(string city_id)
         {
-             account_query = "select  * from accounts";
+             account_query = "select * from (select * from accounts) as a left outer join citys c on (c.cityid = a.city_id) where c.plate = '"+city_id+"'";
             return account_query;
         }
 

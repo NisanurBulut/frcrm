@@ -114,9 +114,10 @@ app.controller('mapsvgctrl', function ($scope, $rootScope, $http, localStorageSe
         
         for (var i = 0; i <= jsn.length - 1; i++) {
             if (jsn[i].plate == plaka) {
+                localStorageService.set('city_id',plaka);
                 $location.path('/accounts');
             } else {
-                $scope.alertmessage = il + ' Bölgesinde online siparişe açık mekan bulunmamaktadır x';
+                $scope.alertmessage = il + ' Bölgesinde online siparişe açık mekan bulunmamaktadır';
             }
         }
     }
