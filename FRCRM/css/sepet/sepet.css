@@ -1,7 +1,7 @@
 ﻿body {
 }
 .affix {
-    top: 70px;
+    top: 100px;
 }
 
 .plans:before, .plans:after {
@@ -41,8 +41,7 @@
     color: #595f6b;
     border-bottom: 1px dashed #d2d2d2;
 }
-
-    .plan-title:before {
+ .plan-title:before {
         content: '';
         position: absolute;
         bottom: -1px;
