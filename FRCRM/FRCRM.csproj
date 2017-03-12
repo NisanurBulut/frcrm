@@ -142,6 +142,8 @@
     <Content Include="css\anket.css" />
     <Content Include="css\app.css" />
     <Content Include="css\app.js" />
+    <Content Include="css\homes-css\home-picture.css" />
+    <Content Include="css\homes-css\home-liste.css" />
     <Content Include="css\ngdialog\myth\ngDialog-theme-default.css" />
     <Content Include="css\ngdialog\myth\ngDialog-theme-plain.css" />
     <Content Include="css\ngdialog\myth\ngDialog.css" />
@@ -280,7 +282,6 @@
     <Content Include="js\fastrest\template\trmap.html" />
     <Content Include="js\gp1.js" />
     <Content Include="js\gp2.js" />
-    <Content Include="js\home.js" />
     <Content Include="js\kayit.js" />
     <Content Include="js\kazikazan.js" />
     <Content Include="js\login.js" />

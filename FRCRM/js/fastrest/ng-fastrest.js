@@ -224,8 +224,10 @@ frOrder.controller('frHeaderOrtaController', ['$scope', '$attrs', 'localStorageS
 	    $scope.activeclass = $attrs.activeClass;
 	    $scope.kmail = localStorageService.get('kmail');
 	    var giris = localStorageService.get('giris') || 0;
+
 	    if (giris == 0) { $scope.headerlogin = false;  }
 	    if (giris == 1) { $scope.headerlogin = true; }
+
 	    $scope.logox = function () {
 	        $location.path('/');
 	    }
@@ -241,6 +243,7 @@ frOrder.controller('frHeaderOrtaController', ['$scope', '$attrs', 'localStorageS
 	        var email = $scope.email;
 	        var sifre = $scope.sifre;
 	        var jsdt = '{"mail":"' + email + '","sifre":"' + sifre + '"}';
+
 	        $http.post('Default.aspx/Logins', jsdt).success(function (data) {
 	            var durumx = data.d;
 	            durumx = JSON.parse(durumx);

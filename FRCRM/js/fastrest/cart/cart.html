@@ -259,9 +259,7 @@
                                                             <strong>{{sepet.adi}}</strong>
                                                             <div ng-repeat="scm in sepet.dynasecim" style="color:#808080;font-size:10px;">{{scm.adi}}</br></div>
                                                         </h4>
-                                                        <h4>
-                                                            <small>Açıklama ? </small>
-                                                        </h4>
+                                                       
                                                     </div>
                                                     <div class="col-xs-6">
                                                         <div class="col-xs-6 text-right">
@@ -406,7 +404,7 @@
                                             </div>
                                             <div class="panel-body">
 
-                                                <label class="btn btn-success active" ng-repeat="odemetipi in odemetipleri">
+                                                <label class="btn btn-success active" ng-repeat="odemetipi in odemetipleri" style="margin:5px;">
                                                     <input type="radio"name="odemeradio" ng-model="odemeradio.id" value="{{odemetipi.id}}">
                                                     <span class="{{odemetipi.odmicon}}" style="font-size:100px;"></span><br>
                                                     <strong>{{odemetipi.odmname}}</strong>

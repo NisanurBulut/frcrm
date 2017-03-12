@@ -5,6 +5,7 @@
         text-transform: uppercase;
         border-radius: 3px;
         font-size: 10px;
+        
     }
 
         .plan-buttonn:active {
@@ -16,7 +17,9 @@
             color: #ffffff;
             background-color: #c70e0e;
         }
-
+        .li-loginItem-Margin{
+          margin:10px 10px 10px 10px;
+        }
 </style>
 
 <!--<div class="header-middle navbar navbar-default navbar-fixed-top" style="background-color:white;margin-top:1px;height:70px;">
@@ -92,33 +95,36 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a ng-click="logox();"><img src="{{logo}}" alt="Fast Rest Akıllı Restoran" style="height:30px; margin:10px 0 0 10px" /></a>
+            <a ng-click="logox();"><img src="{{logo}}" alt="Fast Rest Akıllı Restoran" style="height:30px;margin:10px 10px 10px 10px" /></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           
             <ul class="nav navbar-nav navbar-right" ng-hide="headerlogin">
-                <li>
-                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" ng-model="email" required>
+                <li class="li-loginItem-Margin">
+                    <input type="email" class="form-control nav-margin"  id="exampleInputEmail2" placeholder="Email address" ng-model="email" required>
                 </li>
-                <li>
-                    <label class="sr-only" for="exampleInputPassword2">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" ng-model="sifre" required>
+                <li class="li-loginItem-Margin">
+                    <input type="password" class="form-control"  id="exampleInputPassword2" placeholder="Password" ng-model="sifre" required>
                 </li>
-                <li>
-                    <div class="btn plan-buttonn" ng-click="girisyapx();">Giriş</div>
-                    
-                    <div class="btn plan-buttonn" ng-click="kayitx();">Kayıt</div>
+                <li class="li-loginItem-Margin">
+
+                    <button class="form-control btn plan-buttonn" type="button" ng-click="girisyapx();">Giriş</button>
+
+                 </li>
+                <li class="li-loginItem-Margin">
+
+                    <button class="form-control btn plan-buttonn" type="button" ng-click="kayitx();">Kayıt</button>
                 </li>
             </ul>
-          
-                <ul class="nav navbar-nav navbar-right text-right" ng-show="headerlogin">
+                <ul class="nav navbar-nav navbar-right text-left" ng-show="headerlogin">
                     <li><a href="{{hesabim}}"><i class="fa fa-list"></i>Liste</a></li>
                     <li><a href="{{favorilerim}}"><i class="fa fa-image"></i>Resim</a></li>
-                    <li><a href="{{sepetim}}"><i style="color:#FE980F;font-weight:bold;">{{spetadet}}</i><i class="fa fa-shopping-cart"></i> {{tutar}} TL</a></li>
+                    <li><a href="{{sepetim}}"><i style="color:#FE980F;font-weight:bold;">{{spetadet}}</i><i class="fa fa-shopping-cart"></i> {{ tutar}} TL</a></li>
                     <li><a ng-click="cikis()"><i class="fa fa-sign-out"></i>ÇIKIŞ - {{kmail}}</a></li>
-      </ul>
+            </ul>
            
         </div>
     </div>
+    
 </nav>
+

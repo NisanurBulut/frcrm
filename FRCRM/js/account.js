@@ -10,6 +10,7 @@
         var jsn = data.d;
         jsn = JSON.parse(jsn);
         $scope.accounts = jsn;
+       
     }).error();
 
 });

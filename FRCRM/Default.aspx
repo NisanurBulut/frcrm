@@ -57,10 +57,10 @@
     <script src="js/directive.js"></script>
 
 </head>
-<body fr-control>
+<body fr-control >
+
     <form id="form1" runat="server">
-     
-    
+ 
 	<div class="container">
         <div class="row">
            <header id="header"><!--header-->
@@ -69,7 +69,8 @@
                     sayfa-hesabim="#home"
                     sayfa-favorilerim="#home2"
                     sayfa-sepetim="#cart"
-                    sayfa-giris="#login"></fr-header-orta>
+                    sayfa-giris="#login">
+	            </fr-header-orta>
             </header>
         </div>
     </div>
@@ -84,6 +85,8 @@
         <div class="clearfix"></div>
     </div>
   </section>
+
+
   <footer id="footer">
 	  <fr-footer-bottom></fr-footer-bottom>
   </footer>	
