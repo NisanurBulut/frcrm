@@ -142,6 +142,7 @@
     <Content Include="css\anket.css" />
     <Content Include="css\app.css" />
     <Content Include="css\app.js" />
+    <Content Include="css\header-css\header-orta.css" />
     <Content Include="css\homes-css\home-picture.css" />
     <Content Include="css\homes-css\home-liste.css" />
     <Content Include="css\ngdialog\myth\ngDialog-theme-default.css" />
@@ -168,6 +169,7 @@
     <Content Include="css\plugins.css" />
     <Content Include="css\radio.css" />
     <Content Include="css\roots.css" />
+    <Content Include="css\sepet\sepet.css" />
     <Content Include="css\tabbar.css" />
     <Content Include="Default.aspx" />
     <Content Include="DUZENLEME.html" />

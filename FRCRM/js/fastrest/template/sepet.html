@@ -1,182 +1,44 @@
-<style>   
- .plans:before, .plans:after {
-        content: '';
-        display: table;
-    }
+<html>
+<head>
+    <title></title>
+    <link href="../../../css/sepet/sepet.css" rel="stylesheet" />
+   
+   
+</head>
 
-    .plans:after {
-        clear: both;
-    }
+<body data-spy="scroll" data-target="#sepetScrollspy">
 
-    .plan {
-
-        float: left;
-        width: 220px;
-        margin: 10px 0;
-        padding: 15px;
-        text-align: center;
-        background: #fafafa;
-        background-clip: padding-box;
-        border: solid #453b5d;
-        border-width: 2px 0 2px 2px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    }
-
-
-    .plan-title {
-        position: relative;
-        margin: -20px -10px 20px;
-        padding: 20px;
-        line-height: 1;
-        font-size: 16px;
-        font-weight: bold;
-        color: #595f6b;
-        border-bottom: 1px dashed #d2d2d2;
-    }
-
-        .plan-title:before {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background-size: 3px 1px;
-            background-image: -webkit-linear-gradient(left, white, white 33%, #d2d2d2 34%, #d2d2d2);
-            background-image: -moz-linear-gradient(left, white, white 33%, #d2d2d2 34%, #d2d2d2);
-            background-image: -o-linear-gradient(left, white, white 33%, #d2d2d2 34%, #d2d2d2);
-            background-image: linear-gradient(to right, white, white 33%, #d2d2d2 34%, #d2d2d2);
-        }
-
-    .plan-price {
-        margin: 0 auto 20px;
-        width: 90px;
-        height: 90px;
-        line-height: 90px;
-        font-size: 19px;
-        font-weight: bold;
-        color: white;
-        background: #595f6b;
-        border-radius: 45px;
-        text-align: center;
-    }
-
-        .plan-price > span {
-            font-size: 12px;
-            font-weight: normal;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-    .plan-features {
-        margin-bottom: 20px;
-        line-height: 2;
-        font-size: 12px;
-        color: #999;
-        text-align: center;
-    }
-
-        .plan-features > li > strong {
-            font-weight: bold;
-            color: #888;
-        }
-
-    .plan-button {
-        display: inline-block;
-        vertical-align: top;
-        padding: 0 15px;
-        line-height: 30px;
-        font-weight: bold;
-        color: white;
-        text-transform: uppercase;
-        text-decoration: none;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
-        background-color: #FE980f;
-        border: 1px solid #222;
-        border-bottom-color: black;
-        border-radius: 3px;
-        -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 2px rgba(255, 255, 255, 0.1), 0 1px rgba(0, 0, 0, 0.1);
-        box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 2px rgba(255, 255, 255, 0.1), 0 1px rgba(0, 0, 0, 0.1);
-    }
-
-        .plan-button:active {
-            color: #c70e0e;
-            background-color: #c70e0e;
-            border-color: black #222 #222;
-            -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
-        }
-
-        .plan-button:hover {
-            color: #ffffff;
-            background-color: #c70e0e;
-            border-color: black #222 #222;
-            -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
-        }
-
-    .plan-tall {
-        margin:10px 0px;
-        background-color: white;
-        border-width: 2px;
-        border-radius: 7px;
-    }
-
-        .plan-tall > .plan-title {
-            font-size: 18px;
-        }
-
-        .plan-tall > .plan-price {
-            width: 100px;
-            height: 100px;
-            line-height: 100px;
-            font-size: 21px;
-            border-radius: 50px;
-        }
-
-        .plan-tall > .plan-features {
-            font-size: 10px;
-        }
-
-        .plan-tall > .plan-button {
-            padding: 0 10px;
-            line-height: 32px;
-        }
-
-        .plan-tall + .plan {
-            border-left: 0;
-        }
-
-        </style>
-
-<div class="plan plan-tall"><!--sticky offset="70"-->
-    <!div sticky offset="70">
-        <h2 class="plan-title">SEPET</h2>
+        <div class="row" id="sepetScrollspy">
+          <div class="nav nav-tabs nav-stacked plan plan-tall" data-spy="affix">
+      
+        <h2 class="plan-title">SEPETİM</h2>
         <p class="plan-price">{{toplam}} TL</p>
-    <!--<p class="plan-price">{{toplam}} TL</p>-->
-    <table ng-if="sepetim.length > 0">
-        <thead>
-            <tr class="trth">
-                <th>Ürün</th>
-                <th>Adet</th>
-                <th>Fiyat</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="sepet in sepetim" style="margin-top:2px;border-bottom: 1px solid black;" ng-if="sepet.seviye == 0">
-                <th style="font-size:11px; text-align:left;font-style:normal;color:#c70e0e;">{{sepet.adi}}<div ng-repeat="scm in sepet.dynasecim" style="color:#808080;font-size:9px;">{{scm.adi}}</br></div></th>
-                <th style="font-size:11px; text-align:left;font-style:normal;">
-                    <input style="width:20px;border-radius:25%;text-align:right;" ng-model="sepet.adet" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
-                </th>
-                <th style="font-size:11px; text-align:left;font-style:normal;">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
-                <th ng-click="deleteItem(sepet,sepet.index)" style="font-size:20px;color:red;font-style:oblique;padding-left:2px; cursor:pointer;">x</th>
-            </tr>
-        </tbody>
-    </table>
-    <hr />
-    <a href="#cart" class="plan-button" ng-if="sepetim.length > 0">{{toplam}} TL - TAMAMLA</a>
-</div>
+
+        <table ng-if="sepetim.length > 0">
+            <thead>
+                <tr class="trth">
+                    <th>Ürün</th>
+                    <th>Adet</th>
+                    <th>Fiyat</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="sepet in sepetim" style="margin-top:2px;border-bottom: 1px solid black;" ng-if="sepet.seviye == 0">
+                    <th style="font-size:11px; text-align:left;font-style:normal;color:#c70e0e;">{{sepet.adi}}<div ng-repeat="scm in sepet.dynasecim" style="color:#808080;font-size:9px;">{{scm.adi}}</br></div></th>
+                    <th style="font-size:11px; text-align:left;font-style:normal;">
+                        <input style="width:20px;border-radius:25%;text-align:right;" ng-model="sepet.adet" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
+                    </th>
+                    <th style="font-size:11px; text-align:left;font-style:normal;">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
+                    <th ng-click="deleteItem(sepet,sepet.index)" style="font-size:20px;color:red;font-style:oblique;padding-left:2px; cursor:pointer;">x</th>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <a href="#cart" class="plan-button" ng-if="sepetim.length > 0">{{toplam}} TL - TAMAMLA</a>
+    </div>
+        </div>
+   
+ 
+</body>
+</html>
