@@ -284,6 +284,12 @@
     <Content Include="js\fastrest\template\trmap.html" />
     <Content Include="js\gp1.js" />
     <Content Include="js\gp2.js" />
+    <Content Include="js\home-js\.gitignore" />
+    <Content Include="js\home-js\scrolling-tabs.css" />
+    <Content Include="js\home-js\scrolling-tabs.js" />
+    <Content Include="js\home-js\scrolling-tabs.min.css" />
+    <Content Include="js\home-js\scrolling-tabs.min.js" />
+    <Content Include="js\home-js\st-screenshot1.png" />
     <Content Include="js\kayit.js" />
     <Content Include="js\kazikazan.js" />
     <Content Include="js\login.js" />
@@ -577,6 +583,11 @@
     <Content Include="node_modules\bootstrap\less\wells.less" />
     <Content Include="node_modules\imagemagick\package.json" />
     <Content Include="node_modules\imagemagick\README.md" />
+    <Content Include="js\home-js\bower.json" />
+    <Content Include="js\home-js\LICENSE" />
+    <Content Include="js\home-js\package.json" />
+    <Content Include="js\home-js\README.md" />
+    <Content Include="js\home-js\scrolling-tabs.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -621,6 +632,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="css\slick\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

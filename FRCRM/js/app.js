@@ -34,7 +34,7 @@ function getRandomColor() {
     return color;
 }
 var app = angular.module('app', ['ngRoute', 'ngCookies', 'LocalStorageModule', 'angular-images-loaded', 'ngMap', 'angular-carousel',
-    'ngSanitize', 'ngDialog', 'googlechart', 'shoppinpal.scratch-off', 'fr.order', 'sticky']);
+    'ngSanitize', 'ngDialog', 'googlechart', 'shoppinpal.scratch-off', 'fr.order', 'sticky', 'ui.bootstrap', 'mj.scrollingTabs']);
 
 (function(){
   'use strict';
@@ -228,9 +228,6 @@ app.config(function($routeProvider) {
         templateUrl : "login.html"
     });
 });
-
-
-
 
 
 })();

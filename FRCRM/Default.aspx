@@ -11,24 +11,26 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <title>FrCart</title>
-    <link href="csss/bootstrap.min.css" rel="stylesheet">
-    <link href="csss/font-awesome.min.css" rel="stylesheet">
-    <link href="csss/prettyPhoto.css" rel="stylesheet">
-    <link href="csss/price-range.css" rel="stylesheet">
-    <link href="csss/animate.css" rel="stylesheet">
-    <link href="csss/main.css" rel="stylesheet">
-    <link href="csss/responsive.css" rel="stylesheet">
-    <link rel="shortcut icon" href="imagess/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="imagess/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="imagess/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="imagess/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="imagess/ico/apple-touch-icon-57-precomposed.png">
+    <link href="csss/bootstrap.min.css" rel="stylesheet"/>
+    <link href="csss/font-awesome.min.css" rel="stylesheet"/>
+    <link href="csss/prettyPhoto.css" rel="stylesheet"/>
+    <link href="csss/price-range.css" rel="stylesheet"/>
+    <link href="csss/animate.css" rel="stylesheet"/>
+    <link href="csss/main.css" rel="stylesheet"/>
+    <link href="csss/responsive.css" rel="stylesheet"/>
+    <link rel="shortcut icon" href="imagess/ico/favicon.ico"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="imagess/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="imagess/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="imagess/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="imagess/ico/apple-touch-icon-57-precomposed.png"/>
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/ngdialog/ngDialog.min.css" />
     <link rel="stylesheet" href="css/ngdialog/ngDialog-theme-default.css"/>
     <link rel="stylesheet" href="css/ngdialog/ngDialog-theme-plain.css"/>
     <link rel="stylesheet" href="css/ngdialog/ngDialog-custom-width.css"/>
-    <link rel="stylesheet" href="csss/lgn.css">
+    <link rel="stylesheet" href="csss/lgn.css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- These are our JS libraries that make all the magic in our App -->
     <script src="http://maps.google.com/maps/api/js"></script>
@@ -49,6 +51,14 @@
     <script src="js/app.js"></script>
     <script src="js/account.js"></script>
     <script src="js/dynamic.js"></script>
+
+    <!--Ürünler sayfasındaki scrolltab component'i için gereken directory dosyaları-->
+    <script src="js/home-js/scrolling-tabs.js"></script>
+    <link rel="stylesheet"  href="js/home-js/scrolling-tabs.min.css"/>
+     <link rel="stylesheet"  href="js/home-js/scrolling-tabs.css"/>
+    <!------------------------------------------------------------------------------->
+
+
     <script src="js/gp1.js"></script>
     <script src="js/gp2.js"></script>
     <script src="js/login.js"></script>
@@ -56,6 +66,8 @@
     <script src="js/mapsvg.js"></script>
     <script src="js/directive.js"></script>
 
+    
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
 </head>
 <body fr-control >
 

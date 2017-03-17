@@ -1,52 +1,48 @@
-<html>
-<head>
-    <title></title>
-    
+
 
     <link href="css/sepet/sepet.css" rel="stylesheet" />
 
    <script>
        $('#nav').affix({
           offset: {
-              top: 0, bottom: 500//footer ortalama 500px butun tarayıcılarda olctum
+              top: 0, bottom: 50//footer ortalama 500px butun tarayıcılarda olctum
           }//yukardan scroll yapınca anlık kayma olmaması ıcın 0 yazdım ki oluyordu
        });//500px degerıne erişince yanı footer'a menude ne kadar eleman olsada duruyor
+    
+      
    </script>
-</head>
 
-<body  data-target="#sepetScrollspy" data-spy="scroll">
+
+<div  data-target="#sepetScrollspy" data-spy="scroll">
 
         <div class="row" id="sepetScrollspy" scrollspy>
-          <div id="nav" class="nav nav-tabs nav-stacked plan plan-tall"   data-spy="affix" >
-      <!--burada footer 500 oldugu ıcın 500 gorunce dur dedım affix kadar yani 70px i geçince sabit şekilde kalıyor ancak bu ıslemı jquery ıle yaptım gerekırse tag ıcıne yıne ekle -->
-        <h2 class="plan-title">SEPETİM</h2>
-        <p class="plan-price">{{toplam}} TL</p>
+                <div id="nav" class="nav nav-tabs nav-stacked plan plan-tall" data-spy="affix">
+                    <!--burada footer 500 oldugu ıcın 500 gorunce dur dedım affix kadar yani 70px i geçince sabit şekilde kalıyor ancak bu ıslemı jquery ıle yaptım gerekırse tag ıcıne yıne ekle -->
+                    <h2 class="plan-title">SEPETİM</h2>
+                    <p class="plan-price">{{toplam}} TL</p>
 
-        <table ng-if="sepetim.length > 0">
-            <thead>
-                <tr class="trth">
-                    <th>Ürün</th>
-                    <th>Adet</th>
-                    <th>Fiyat</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="sepet in sepetim" style="margin-top:2px;border-bottom: 1px solid black;" ng-if="sepet.seviye == 0">
-                    <th style="font-size:11px; text-align:left;font-style:normal;color:#c70e0e;">{{sepet.adi}}<div ng-repeat="scm in sepet.dynasecim" style="color:#808080;font-size:9px;">{{scm.adi}}</br></div></th>
-                    <th style="font-size:11px; text-align:left;font-style:normal;">
-                        <input style="width:20px;border-radius:25%;text-align:right;" ng-model="sepet.adet" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
-                    </th>
-                    <th style="font-size:11px; text-align:left;font-style:normal;">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
-                    <th ng-click="deleteItem(sepet,sepet.index)" style="font-size:20px;color:red;font-style:oblique;padding-left:2px; cursor:pointer;">x</th>
-                </tr>
-            </tbody>
-        </table>
-        <hr />
-        <a href="#cart" class="plan-button" ng-if="sepetim.length > 0">{{toplam}} TL - TAMAMLA</a>
-    </div>
-        </div>
-   
- 
-</body>
-</html>
+                    <table ng-if="sepetim.length > 0">
+                        <thead>
+                            <tr class="trth">
+                                <th>Ürün</th>
+                                <th>Adet</th>
+                                <th>Fiyat</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="sepet in sepetim" style="margin-top:2px;border-bottom: 1px solid black;" ng-if="sepet.seviye == 0">
+                                <th style="font-size:11px; text-align:left;font-style:normal;color:#c70e0e;">{{sepet.adi}}<div ng-repeat="scm in sepet.dynasecim" style="color:#808080;font-size:9px;">{{scm.adi}}</br></div></th>
+                                <th style="font-size:11px; text-align:left;font-style:normal;">
+                                    <input style="width:20px;border-radius:25%;text-align:right;" ng-model="sepet.adet" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
+                                </th>
+                                <th style="font-size:11px; text-align:left;font-style:normal;">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
+                                <th ng-click="deleteItem(sepet,sepet.index)" style="font-size:20px;color:red;font-style:oblique;padding-left:2px; cursor:pointer;">x</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr />
+                    <a href="#cart" class="plan-button" ng-if="sepetim.length > 0">{{toplam}} TL - TAMAMLA</a>
+                </div>
+            </div>
+</div>
