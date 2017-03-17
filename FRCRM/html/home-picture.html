@@ -2,21 +2,19 @@
 
 
 
-
 <!--Resim tıklanınca acılan sayfa-->
 <section>
-
     <div ng-controller="GroupAndProductCtrl" id="home">
-        <!--Bu div içinde resimlerin kategorileri gelir-->
-        <!--Dürümler içeceler...-->
-        <div class="col-sm-12" style="margin-bottom:10px;">
+
+
+        <div class="col-sm-12">
             <div class="container">
                 <div class="row">
                     <div class="scrolling-tabs-container">
                         <div scrolling-tabs-wrapper>
                             <uib-tabset>
                                 <uib-tab ng-repeat="group in groups" heading="{{group.adi}}" ng-click="ClikGroup(group.id)">
-                                  
+
                                 </uib-tab>
                             </uib-tabset>
                         </div>
@@ -26,7 +24,7 @@
             </div>
         </div>
 
-        <!--bu div içinde resimler gelir ve sepete ekle butonu-->
+
 
         <div class="container">
             <div class="row">
@@ -34,7 +32,6 @@
                 <div class="col-sm-3">
                     <div>
                         <fr-sepet></fr-sepet>
-                        <!--sayfanın tamda sepet içerdiği bölüm burası-->
                     </div>
 
                 </div>

@@ -179,9 +179,9 @@
     <Content Include="html\accounts.html" />
     <Content Include="html\cart.html" />
     <Content Include="html\cart_.html" />
-    <Content Include="html\home.html" />
+    <Content Include="html\home-liste.html" />
     <Content Include="html\login_.html" />
-    <Content Include="html\home2.html" />
+    <Content Include="html\home-picture.html" />
     <Content Include="html\mapsvg.html" />
     <Content Include="html\payment\payments.html" />
     <Content Include="icon.png" />
@@ -258,7 +258,6 @@
     <Content Include="jsq\price-range.js" />
     <Content Include="js\app.js" />
     <Content Include="js\cart.js" />
-    <Content Include="js\directive.js" />
     <Content Include="js\datepicker.js" />
     <Content Include="js\account.js" />
     <Content Include="js\dynamic.js" />

@@ -56,6 +56,7 @@
     <script src="js/home-js/scrolling-tabs.js"></script>
     <link rel="stylesheet"  href="js/home-js/scrolling-tabs.min.css"/>
      <link rel="stylesheet"  href="js/home-js/scrolling-tabs.css"/>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
     <!------------------------------------------------------------------------------->
 
 
@@ -67,7 +68,7 @@
     <script src="js/directive.js"></script>
 
     
-    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
+    
 </head>
 <body fr-control >
 
@@ -76,10 +77,11 @@
 	<div class="container">
         <div class="row">
            <header id="header"><!--header-->
-	            <fr-header-orta  style="margin-top:1px" 
+	            <fr-header-orta 
+                    style="margin-top:1px" 
                     bilgi-logo="imagess/home/logo.png"
-                    sayfa-hesabim="#home"
-                    sayfa-favorilerim="#home2"
+                    sayfa-hesabim="#home-liste"
+                    sayfa-favorilerim="#home-picture"
                     sayfa-sepetim="#cart"
                     sayfa-giris="#login">
 	            </fr-header-orta>

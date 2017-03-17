@@ -3,7 +3,7 @@
     $scope.openAccount = function (id) {
         
         localStorageService.set('accountid', id);
-        $location.path('/home')
+        $location.path('/home-liste')
     }
     var city_id = localStorageService.get('city_id')
     $http.post('Default.aspx/GetAccountJson', '{"city_id":"' + city_id + '"}').success(function (data) {

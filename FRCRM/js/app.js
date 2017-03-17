@@ -215,11 +215,11 @@ app.config(function($routeProvider) {
     .when("/accounts", {
         templateUrl : "html/accounts.html"
     })
-    .when("/home", {
-            templateUrl: "html/home2.html"
+    .when("/home-liste", {
+            templateUrl: "html/home-liste.html"
     })
-    .when("/home2", {
-            templateUrl: "html/home.html"
+    .when("/home-picture", {
+            templateUrl: "html/home-picture.html"
     })
     .when("/cart", {
         templateUrl : "cart.html"

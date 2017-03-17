@@ -1,14 +1,5 @@
 ﻿app.controller('GroupAndProductCtrl', function ($scope, $rootScope, $http, localStorageService, $location) {
 
-
-    var ctrl = this;
-
-    ctrl.tabs = MainService.data.tabs;
-
-    ctrl.handleClickOnTab = function (e, idx, group) {
-    };
-
-
     cart = localStorageService.get('restaurant-cart') || [];
     var ac_id = localStorageService.get('accountid');
     if (ac_id == 0) { $location.path('/'); }
@@ -54,7 +45,7 @@
     }
 
     $scope.ClikGroup = function (id) {
-        console.log("selam");
+       
         GetProduct(id);
       
        }
