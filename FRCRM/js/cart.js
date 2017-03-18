@@ -3,7 +3,7 @@
     var ac_id = localStorageService.get('accountid');
     var adres_id = 0;
     var odeme_id = 0;
-    if (cart.length < 1) { $location.path('/home'); }
+    if (cart.length < 1) { $location.path('/home-liste'); }
     $scope.sonok = function () {
         var odemeid = $scope.odemeradio.id;
         odeme_id = odemeid;
@@ -38,7 +38,7 @@
                 if (g == 0) {
                     cart = [];
                     localStorageService.set('restaurant-cart', cart);
-                    $location.path('/home');
+                    $location.path('/home-liste');
                 } else {
                     //alert(JSON.stringify(g))
                     alert('Birşeyler yanlış gitti tekrar deneyin');

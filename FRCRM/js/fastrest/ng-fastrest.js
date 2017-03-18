@@ -259,7 +259,7 @@ frOrder.controller('frHeaderOrtaController', ['$scope', '$attrs', 'localStorageS
 	                $scope.headerlogin = true;
 	                $scope.kmail = localStorageService.get('kmail');
 	                var cartx = localStorageService.get('restaurant-cart');
-	                if (cartx.length > 0) { $location.path('/cart'); } else { $location.path('/home'); }
+	                if (cartx.length > 0) { $location.path('/cart'); } else { $location.path('/home-liste'); }
 
 	                
 	            }

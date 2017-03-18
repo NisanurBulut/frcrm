@@ -1,8 +1,5 @@
 ﻿
 app.controller('loginctrl', function ($scope, $http, localStorageService, $location) {
-
-
-
     $scope.kayitol = function () {
         var kayitadi = $scope.kayitadi;
         var kayitsoyadi = $scope.kayitsoyadi;

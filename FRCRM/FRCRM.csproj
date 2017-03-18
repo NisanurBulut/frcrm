@@ -169,16 +169,13 @@
     <Content Include="css\plugins.css" />
     <Content Include="css\radio.css" />
     <Content Include="css\roots.css" />
-    <Content Include="css\sepet\sepet.css" />
+    <Content Include="css\sepet-css\sepet.css" />
     <Content Include="css\tabbar.css" />
     <Content Include="Default.aspx" />
-    <Content Include="DUZENLEME.html" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="html\accounts.html" />
-    <Content Include="html\cart.html" />
-    <Content Include="html\cart_.html" />
     <Content Include="html\home-liste.html" />
     <Content Include="html\login_.html" />
     <Content Include="html\home-picture.html" />
@@ -283,14 +280,13 @@
     <Content Include="js\fastrest\template\trmap.html" />
     <Content Include="js\gp1.js" />
     <Content Include="js\gp2.js" />
-    <Content Include="js\home-js\.gitignore" />
-    <Content Include="js\home-js\scrolling-tabs.css" />
-    <Content Include="js\home-js\scrolling-tabs.js" />
-    <Content Include="js\home-js\scrolling-tabs.min.css" />
-    <Content Include="js\home-js\scrolling-tabs.min.js" />
-    <Content Include="js\home-js\st-screenshot1.png" />
+    <Content Include="js\scrolltab-js\.gitignore" />
+    <Content Include="js\scrolltab-js\scrolling-tabs.css" />
+    <Content Include="js\scrolltab-js\scrolling-tabs.js" />
+    <Content Include="js\scrolltab-js\scrolling-tabs.min.css" />
+    <Content Include="js\scrolltab-js\scrolling-tabs.min.js" />
+    <Content Include="js\scrolltab-js\st-screenshot1.png" />
     <Content Include="js\kayit.js" />
-    <Content Include="js\kazikazan.js" />
     <Content Include="js\login.js" />
     <Content Include="js\mapsvg.js" />
     <Content Include="js\ng-scratch-off.js" />
@@ -582,11 +578,11 @@
     <Content Include="node_modules\bootstrap\less\wells.less" />
     <Content Include="node_modules\imagemagick\package.json" />
     <Content Include="node_modules\imagemagick\README.md" />
-    <Content Include="js\home-js\bower.json" />
-    <Content Include="js\home-js\LICENSE" />
-    <Content Include="js\home-js\package.json" />
-    <Content Include="js\home-js\README.md" />
-    <Content Include="js\home-js\scrolling-tabs.scss" />
+    <Content Include="js\scrolltab-js\bower.json" />
+    <Content Include="js\scrolltab-js\LICENSE" />
+    <Content Include="js\scrolltab-js\package.json" />
+    <Content Include="js\scrolltab-js\README.md" />
+    <Content Include="js\scrolltab-js\scrolling-tabs.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -596,7 +592,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="shopper.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppService\AddAddress.cs" />
@@ -631,7 +629,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="css\slick\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -240,6 +240,6 @@ C:\Users\nisanurrunasin\Source\Repos\VSFRORDER\FRCRM\bin\Npgsql.xml
 C:\Users\nisanurrunasin\Source\Repos\VSFRORDER\FRCRM\bin\System.Net.Http.Formatting.xml
 C:\Users\nisanurrunasin\Source\Repos\VSFRORDER\FRCRM\bin\System.Web.Http.xml
 C:\Users\nisanurrunasin\Source\Repos\VSFRORDER\FRCRM\bin\System.Web.Http.WebHost.xml
-C:\Users\nisanurrunasin\Source\Repos\VSFRORDER\FRCRM\obj\Debug\FRCRM.csprojResolveAssemblyReference.cache
 C:\Users\nisanurrunasin\Source\Repos\VSFRORDER\FRCRM\obj\Debug\FRCRM.dll
 C:\Users\nisanurrunasin\Source\Repos\VSFRORDER\FRCRM\obj\Debug\FRCRM.pdb
+C:\Users\nisanurrunasin\Source\Repos\VSFRORDER\FRCRM\obj\Debug\FRCRM.csprojResolveAssemblyReference.cache

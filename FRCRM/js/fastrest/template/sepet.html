@@ -1,48 +1,104 @@
+<link href="css/sepet/sepet.css" rel="stylesheet" />
+
+<script>
+    $('#nav').affix({
+        offset: {
+            top: 0, bottom: 50//footer ortalama 500px butun tarayıcılarda olctum
+        }//yukardan scroll yapınca anlık kayma olmaması ıcın 0 yazdım ki oluyordu
+    });//500px degerıne erişince yanı footer'a menude ne kadar eleman olsada duruyor
 
 
-    <link href="css/sepet/sepet.css" rel="stylesheet" />
-
-   <script>
-       $('#nav').affix({
-          offset: {
-              top: 0, bottom: 50//footer ortalama 500px butun tarayıcılarda olctum
-          }//yukardan scroll yapınca anlık kayma olmaması ıcın 0 yazdım ki oluyordu
-       });//500px degerıne erişince yanı footer'a menude ne kadar eleman olsada duruyor
-    
-      
-   </script>
+</script>
+<style>
 
 
-<div  data-target="#sepetScrollspy" data-spy="scroll">
+    @import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
 
-        <div class="row" id="sepetScrollspy" scrollspy>
-                <div id="nav" class="nav nav-tabs nav-stacked plan plan-tall" data-spy="affix">
-                    <!--burada footer 500 oldugu ıcın 500 gorunce dur dedım affix kadar yani 70px i geçince sabit şekilde kalıyor ancak bu ıslemı jquery ıle yaptım gerekırse tag ıcıne yıne ekle -->
-                    <h2 class="plan-title">SEPETİM</h2>
-                    <p class="plan-price">{{toplam}} TL</p>
+.panel-pricing {
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+}
+.panel-pricing:hover {
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+}
+.panel-pricing .panel-heading {
+  padding: 20px 10px;
+}
+.panel-pricing .panel-heading .fa {
+  margin-top: 10px;
+  font-size: 58px;
+}
+.panel-pricing .list-group-item {
+  color: #777777;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.5);
+}
+.panel-pricing .list-group-item:last-child {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.panel-pricing .list-group-item:first-child {
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+.panel-pricing .panel-body {
+  background-color: #f0f0f0;
+  font-size: 40px;
+  color: #777777;
+  padding: 20px;
+  margin: 0px;
+}
 
-                    <table ng-if="sepetim.length > 0">
-                        <thead>
-                            <tr class="trth">
-                                <th>Ürün</th>
-                                <th>Adet</th>
-                                <th>Fiyat</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="sepet in sepetim" style="margin-top:2px;border-bottom: 1px solid black;" ng-if="sepet.seviye == 0">
-                                <th style="font-size:11px; text-align:left;font-style:normal;color:#c70e0e;">{{sepet.adi}}<div ng-repeat="scm in sepet.dynasecim" style="color:#808080;font-size:9px;">{{scm.adi}}</br></div></th>
-                                <th style="font-size:11px; text-align:left;font-style:normal;">
-                                    <input style="width:20px;border-radius:25%;text-align:right;" ng-model="sepet.adet" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
-                                </th>
-                                <th style="font-size:11px; text-align:left;font-style:normal;">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
-                                <th ng-click="deleteItem(sepet,sepet.index)" style="font-size:20px;color:red;font-style:oblique;padding-left:2px; cursor:pointer;">x</th>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <hr />
-                    <a href="#cart" class="plan-button" ng-if="sepetim.length > 0">{{toplam}} TL - TAMAMLA</a>
+</style>
+<!-- Plans -->
+<section id="plans">
+    <div class="container">
+        <div class="row">
+            <!-- item -->
+            <div class="col-sm-4 text-center">
+                <div class="panel panel-danger panel-pricing">
+                    <div class="panel-heading">
+                        <i class="fa fa-shopping-cart"></i>
+                        <h3>SEPETİM</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <p class="plan-price"><strong>{{toplam}} TL</strong></p> 
+                    </div>
+                    <div class="panel-collapse">
+                        <table class="table table-responsive table-hover">
+                           
+                            <thead>
+                                <tr>
+                                    <th class="col-sm-1">Ürün</th>
+                                    <th class="col-sm-1">Adet</th>
+                                    <th class="col-sm-1">Fiyat</th>
+                                    <th class="col-sm-1">x</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="sepet in sepetim" ng-if="sepet.seviye == 0">
+                                    <th class="col-sm-1" style="text-align:left">{{sepet.adi}}<div ng-repeat="scm in sepet.dynasecim">{{scm.adi}}</div></th>
+                                    <th class="col-sm-1" style="background-color:rebeccapurple;">
+                                        <input ng-model="sepet.adet" style="width:20px;border-radius:25%;text-align:center;position:center" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
+                                    </th>
+                                    <th class="col-sm-1" style="text-align:center">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
+                                    <th class="col-sm-1" style="text-align:center" ng-click="deleteItem(sepet,sepet.index)">x</th>
+                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <a href="#cart" class="btn btn-lg btn-block btn-danger" ng-if="sepetim.length > 0" >{{toplam}} TL - TAMAMLA!</a>
+                    </div>
                 </div>
             </div>
-</div>
+        </div>
+    </div>
+
+
+
+
+</section>
+
+
+

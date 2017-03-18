@@ -53,9 +53,9 @@
     <script src="js/dynamic.js"></script>
 
     <!--Ürünler sayfasındaki scrolltab component'i için gereken directory dosyaları-->
-    <script src="js/home-js/scrolling-tabs.js"></script>
-    <link rel="stylesheet"  href="js/home-js/scrolling-tabs.min.css"/>
-     <link rel="stylesheet"  href="js/home-js/scrolling-tabs.css"/>
+    <script src="js/scrolltab-js/scrolling-tabs.js"></script>
+    <link rel="stylesheet"  href="js/scrolltab-js/scrolling-tabs.min.css"/>
+     <link rel="stylesheet"  href="js/scrolltab-js/scrolling-tabs.css"/>
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
     <!------------------------------------------------------------------------------->
 
