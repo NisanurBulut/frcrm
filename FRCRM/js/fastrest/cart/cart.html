@@ -268,10 +268,10 @@
                                                             </h6>
                                                         </div>
                                                         <div class="col-xs-4">
-                                                            <input type="text" class="form-control input-sm" ng-model="sepet.adet" value="{{sepet.adet}}" ng-change="adetdegis($index,sepet.adet);">
+                                                            <input type="text" class="form-control input-sm" ng-model="sepet.adet" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);">
                                                         </div>
                                                         <div class="col-xs-2">
-                                                            <button type="button" class="btn btn-link btn-xs" style="color:#c70e0e" ng-click="deleteItem(sepet,$index)">
+                                                            <button type="button" class="btn btn-link btn-xs" style="color:#c70e0e" ng-click="deleteItem(sepet,sepet.index)">
                                                                 <span class="glyphicon glyphicon-trash"> </span>
                                                             </button>
                                                         </div>
