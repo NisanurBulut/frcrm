@@ -107,14 +107,14 @@
         }
 
         fy = fy.toFixed(2);
-        var urunbilgi = { 'id': urun.dmid, 'adi': urun.pname, 'fiyat': fy, 'adet': 1, 'dynamic': dyn, 'seviye': seviye, 'index': dynamicIndx, 'dynasecim': dinamikSecimHafiza() }
+        var urunbilgi = { 'id': urun.dmid, 'adi': urun.pname, 'fiyat': fy, 'adet': dynamicPrice, 'dynamic': dyn, 'seviye': seviye, 'index': dynamicIndx, 'dynasecim': dinamikSecimHafiza() }
 
         sepeteat2(urunbilgi);
     }
     function sepeteAtDynaUrun(urun, dyn, seviye) {
         //alert(JSON.stringify(urun));
         var fy = 0.00;
-        var urunbilgi = { 'id': urun.sp_id, 'adi': urun.adi, 'fiyat': fy, 'adet': 1, 'dynamic': dyn, 'seviye': seviye, 'index': dynamicIndx}
+        var urunbilgi = { 'id': urun.sp_id, 'adi': urun.adi, 'fiyat': fy, 'adet': dynamicPrice, 'dynamic': dyn, 'seviye': seviye, 'index': dynamicIndx, 'dynasecim': [] }
 
         sepeteat2(urunbilgi);
     }
@@ -132,7 +132,7 @@
         localStorageService.set('restaurant-cart', cart);
         ngDialog.close();
         $rootScope.$emit('cartGncl');
-        tt();
+        //alert(JSON.stringify(cart));
         if (dynaddctrl == 0) { dynaddctrl = 1; dinamikSecim(); }
 
 

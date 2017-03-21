@@ -101,6 +101,7 @@ frOrder.controller('frControlController', ['$scope','$rootScope', '$attrs', 'loc
                 }
 
             }
+            //alert(JSON.stringify(cart));
             localStorageService.set('restaurant-cart', cart);
             $rootScope.$emit('cartGncl');
         }

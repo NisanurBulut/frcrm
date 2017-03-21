@@ -55,7 +55,7 @@
     <div class="container">
         <div class="row">
             <!-- item -->
-            <div class="col-sm-4 text-center">
+            <div class="col-sm-3 text-center">
                 <div class="panel panel-danger panel-pricing">
                     <div class="panel-heading">
                         <i class="fa fa-shopping-cart"></i>
@@ -69,20 +69,22 @@
                            
                             <thead>
                                 <tr>
-                                    <th class="col-sm-1">Ürün</th>
-                                    <th class="col-sm-1">Adet</th>
-                                    <th class="col-sm-1">Fiyat</th>
+                                    <th class="col-sm-7">Ürün</th>
+                                    <th class="col-sm-2">Adet</th>
+                                    <th class="col-sm-2">Fiyat</th>
                                     <th class="col-sm-1">Sil</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="sepet in sepetim" ng-if="sepet.seviye == 0">
-                                    <th class="col-sm-1" style="text-align:left">{{sepet.adi}}<div ng-repeat="scm in sepet.dynasecim">{{scm.adi}}</div></th>
-                                    <th class="col-sm-1" style="background-color:rebeccapurple;">
+                                    <th class="col-sm-7" style="text-align:left;font-size:10px; color:#c70e0e;margin-left:5px;">{{sepet.adi}}
+                                        <div style="text-align:left;font-size:8px; color:#777777;" ng-repeat="scm in sepet.dynasecim">{{scm.adi}}</div>
+                                    </th>
+                                    <th class="col-sm-2" style="background-color:rebeccapurple;">
                                         <input ng-model="sepet.adet" style="width:20px;border-radius:25%;text-align:center;position:center" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
                                     </th>
-                                    <th class="col-sm-1" style="text-align:center">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
-                                    <th class="col-sm-1" style="text-align:center" ng-click="deleteItem(sepet,sepet.index)">x</th>
+                                    <th class="col-sm-2" style="text-align:center">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
+                                    <th class="col-sm-1" style="text-align:center;cursor:pointer;" ng-click="deleteItem(sepet,sepet.index)">x</th>
                                  </tr>
                             </tbody>
                         </table>
