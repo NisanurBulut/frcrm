@@ -179,4 +179,11 @@
         $scope.$emit('cartCount', adet, parseFloat(ttr).toFixed(2));
     }
 
+    $rootScope.$on('cartGncl', function (event) {
+        cart = localStorageService.get('restaurant-cart');
+        //alert(JSON.stringify(cart))
+        $scope.sepetim = localStorageService.get('restaurant-cart');
+        tt();
+    });
+
 });
