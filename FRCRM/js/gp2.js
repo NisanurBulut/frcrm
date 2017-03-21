@@ -1,8 +1,15 @@
 ﻿app.controller('GroupAndProductCtrl2', function ($scope, $rootScope, $http, localStorageService, $location, ngDialog, $timeout, appCartService) {
-
+    // alert(JSON.stringify($location.search()))
+    var urljsn = JSON.stringify($location.search());
+    urljsn = JSON.parse(urljsn);
+    var urlaccount = urljsn.accountid;
+    //alert(urlaccount);
     cart = localStorageService.get('restaurant-cart') || [];
-    localStorageService.set('restaurant-cart', cart);
     var ac_id = localStorageService.get('accountid');
+    if (urlaccount) {
+        localStorageService.set('accountid', urlaccount);
+        ac_id = localStorageService.get('accountid');
+    }
     if (ac_id == 0) { $location.path('/'); }
     $scope.sepetim = cart;
     tt();
