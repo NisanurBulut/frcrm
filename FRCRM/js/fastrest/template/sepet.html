@@ -13,20 +13,17 @@
 
 </style>
 <!-- Plans -->
-<section id="plans">
-    <div class="container">
-        <div class="row">
-            <!-- item -->
-            <div class="col-sm-3 text-center">
+
+            <div class="col-sm-12 text-center">
                 <div class="panel panel-danger panel-pricing">
                     <div class="panel-heading">
                         <i class="fa fa-shopping-cart"></i>
-                        <h3>SEPETİM</h3>
+                        <h6>SEPETİM</h6>
                     </div>
-                    <div class="panel-body text-center">
-                        <p class="plan-price"><strong>{{toplam}} TL</strong></p> 
+                    <div class="panel-heading text-center">
+                        <p class="plan-price"><bold>{{toplam}} TL</bold></p> 
                     </div>
-                    <div class="panel-collapse">
+                    <div class="panel-body">
                         <table class="table table-responsive table-hover">
                            
                             <thead>
@@ -42,27 +39,21 @@
                                     <th class="col-sm-7" style="text-align:left;font-size:10px; color:#c70e0e;margin-left:5px;">{{sepet.adi}}
                                         <div style="text-align:left;font-size:8px; color:#777777;" ng-repeat="scm in sepet.dynasecim">{{scm.adi}}</div>
                                     </th>
-                                    <th class="col-sm-2" style="background-color:rebeccapurple;">
+                                    <th class="col-sm-2">
                                         <input ng-model="sepet.adet" style="width:20px;border-radius:25%;text-align:center;position:center" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
                                     </th>
                                     <th class="col-sm-2" style="text-align:center">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
-                                    <th class="col-sm-1" style="text-align:center;cursor:pointer;" ng-click="deleteItem(sepet,sepet.index)">x</th>
+                                    <th class="col-sm-1" style="text-align:center;cursor:pointer;" ng-click="deleteItem(sepet,sepet.index)"></th>
                                  </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="panel-footer">
-                        <a href="#cart" class="btn btn-lg btn-block btn-danger" ng-if="sepetim.length > 0" >{{toplam}} TL - TAMAMLA!</a>
+                        <a href="#cart" class="btn btn-sm btn-block btn-danger" ng-if="sepetim.length > 0" >{{toplam}} TL - TAMAMLA!</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-
-
-
-</section>
 
 
 
