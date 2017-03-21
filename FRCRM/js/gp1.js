@@ -52,6 +52,7 @@
 
     $rootScope.$on('cartGncl', function (event) {
         $scope.sepetim = localStorageService.get('restaurant-cart');
+
         tt();
     });
 

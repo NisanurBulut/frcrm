@@ -91,7 +91,7 @@ frOrder.controller('frControlController', ['$scope','$rootScope', '$attrs', 'loc
         }
 
         $scope.deleteItem = function (item, index) {
-
+            cart = localStorageService.get('restaurant-cart');
             //alert(JSON.stringify(index))
             var dynactr = 0;
             for (var i = cart.length - 1; i >= 0; i--) {

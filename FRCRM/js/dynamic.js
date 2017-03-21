@@ -114,7 +114,7 @@
     function sepeteAtDynaUrun(urun, dyn, seviye) {
         //alert(JSON.stringify(urun));
         var fy = 0.00;
-        var urunbilgi = { 'id': urun.sp_id, 'adi': urun.adi, 'fiyat': fy, 'adet': 1, 'dynamic': dyn, 'seviye': seviye, 'index': dynamicIndx, 'dynasecim': dinamikSecimHafiza() }
+        var urunbilgi = { 'id': urun.sp_id, 'adi': urun.adi, 'fiyat': fy, 'adet': 1, 'dynamic': dyn, 'seviye': seviye, 'index': dynamicIndx}
 
         sepeteat2(urunbilgi);
     }
@@ -127,14 +127,12 @@
     }
     function saveToCart(urunbilgi, adet) {
 
-
-        cart.push(urunbilgi);
-        var calert = JSON.stringify(cart);
-        //alert(calert);
-        localStorageService.set('restaurant-cart', cart);
         cart = localStorageService.get('restaurant-cart');
-        ngDialog.close()
+        cart.push(urunbilgi);
+        localStorageService.set('restaurant-cart', cart);
+        ngDialog.close();
         $rootScope.$emit('cartGncl');
+        tt();
         if (dynaddctrl == 0) { dynaddctrl = 1; dinamikSecim(); }
 
 
@@ -164,5 +162,7 @@
             //alert(JSON.stringify(secimler[a]));
         }
     }
+
+
 
 });
