@@ -1,7 +1,15 @@
 ﻿app.controller('GroupAndProductCtrl', function ($scope, $rootScope, $http, localStorageService, $location) {
-
+    // alert(JSON.stringify($location.search()))
+    var urljsn = JSON.stringify($location.search());
+    urljsn = JSON.parse(urljsn);
+    var urlaccount = urljsn.accountid;
+    //alert(urlaccount);
     cart = localStorageService.get('restaurant-cart') || [];
     var ac_id = localStorageService.get('accountid');
+    if (urlaccount) {
+        localStorageService.set('accountid', urlaccount);
+        ac_id = localStorageService.get('accountid');
+    }
     if (ac_id == 0) { $location.path('/'); }
     $scope.sepetim = cart;
     tt();

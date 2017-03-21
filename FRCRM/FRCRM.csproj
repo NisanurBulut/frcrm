@@ -262,6 +262,8 @@
     <Content Include="js\fastrest\body\urun.html" />
     <Content Include="js\fastrest\cart\cart.html" />
     <Content Include="js\fastrest\footer\bottom.html" />
+    <Content Include="js\fastrest\frcontrol.js" />
+    <Content Include="js\fastrest\frheader.js" />
     <Content Include="js\fastrest\header\alt.html" />
     <Content Include="js\fastrest\header\orta.html" />
     <Content Include="js\fastrest\header\ust.html" />

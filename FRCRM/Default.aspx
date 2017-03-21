@@ -46,6 +46,8 @@
     <script src="lib/ngdialog/ngDialog.js"></script>
     <script type="text/javascript" src="js/ng-scratch-off.js"></script>
     <script type="text/javascript" src="js/fastrest/ng-fastrest.js"></script>
+    <script type="text/javascript" src="js/fastrest/frcontrol.js"></script>
+    <script type="text/javascript" src="js/fastrest/frheader.js"></script>
     <script src="js/sticky.js"></script>
     <script src="js/app.js"></script>
     <script src="js/account.js"></script>
