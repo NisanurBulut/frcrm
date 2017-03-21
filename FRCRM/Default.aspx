@@ -29,13 +29,12 @@
     <link rel="stylesheet" href="css/ngdialog/ngDialog-theme-plain.css"/>
     <link rel="stylesheet" href="css/ngdialog/ngDialog-custom-width.css"/>
     <link rel="stylesheet" href="csss/lgn.css"/>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- These are our JS libraries that make all the magic in our App -->
-    <script src="http://maps.google.com/maps/api/js"></script>
     <script src="lib/onsen/js/angular/angular.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
     <script src="node_modules/angular-storage/angular-local-storage.min.js"></script>
     <script src="lib/gchart/ng-google-chart.js"></script>
     <script src="lib/onsen/js/angular/angular-touch.js"></script>
@@ -56,7 +55,7 @@
     <script src="js/scrolltab-js/scrolling-tabs.js"></script>
     <link rel="stylesheet"  href="js/scrolltab-js/scrolling-tabs.min.css"/>
      <link rel="stylesheet"  href="js/scrolltab-js/scrolling-tabs.css"/>
-    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
     <!------------------------------------------------------------------------------->
 
 
@@ -65,7 +64,6 @@
     <script src="js/login.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/mapsvg.js"></script>
-    <script src="js/directive.js"></script>
 
     
     
