@@ -6,30 +6,30 @@
             {
                 offset: {
                     top: 100,
-                    bottom:50
+                    bottom: 50
+                  
                 }
             }
         );
     });
 
 
-   //footer ortalama 50px butun tarayıcılarda olctum
-        //yukardan scroll yapınca anlık kayma olmaması ıcın 0 yazdım ki oluyordu
-    //50px degerıne erişince yanı footer'a menude ne kadar eleman olsada duruyor
-    /* smooth scrolling sections */
-
-
+    var fixAffixWidth = function () {
+        $('[data-spy="affix"]').each(function () {
+            $(this).width($(this).parent().width());
+        });
+    }
+    fixAffixWidth();
+    $(window).resize(fixAffixWidth);
  
 </script>
-<style>
 
-</style>
-<link href="../../../css/sepet-css/sepet.css" rel="stylesheet" />
+<link href="css/sepet-css/sepet.css" rel="stylesheet" />
 <!-- sepet.css -->
-<section id="sepetScrollspy" data-spy="scroll" data-target="#nav">
+<section id="sepetScrollspy"class="col-sm-3"  data-spy="scroll">
     <div class="container outer">
         <div class="row inner">
-            <!-- item -->
+            <!-- scroll yaptıktan sonra buraya gırıyor ve buyuyor -->
             <div  class="col-sm-3 text-center navbar-nav">
                 <div id="nav" class="panel panel-danger panel-pricing" data-spy="affix" >
                     <div class="panel-heading">

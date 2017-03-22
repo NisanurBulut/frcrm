@@ -294,6 +294,7 @@
     <Content Include="js\ng-scratch-off.js" />
     <Content Include="js\plugins.js" />
     <Content Include="js\PushNotification.js" />
+    <Content Include="js\sepet-js\sepet-js.js" />
     <Content Include="js\sticky.js" />
     <Content Include="lib\chart\angular-fusioncharts.js" />
     <Content Include="lib\chart\deneme.js" />

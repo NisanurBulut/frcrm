@@ -4,7 +4,9 @@ body {
      position: absolute;
 }
 
-
+.affix {
+    position: fixed !important;
+}
 .input-attribute{
     width:20px;
     border-radius:25%;
