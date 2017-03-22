@@ -93,12 +93,12 @@ namespace FRCRM
         }
 
         [System.Web.Services.WebMethod]
-        public static string GetCitys()
+        public static string GetCitys(string account_id)
         {
             Grafikjson grafikjson = new Grafikjson();
             string sql;
             Grafiksql g = new Grafiksql();
-            sql = g.run_citys_query();
+            sql = g.run_citys_query(account_id);
             string json = grafikjson.JsonAl(sql);
             return json;
             /*GetBarchartData Sonu*/
@@ -106,23 +106,36 @@ namespace FRCRM
         }
 
         [System.Web.Services.WebMethod]
-        public static string GetAddress(string id)
+        public static string GetCitysx()
         {
             Grafikjson grafikjson = new Grafikjson();
             string sql;
             Grafiksql g = new Grafiksql();
-            sql = g.run_address_query(id);
+            sql = g.run_citys_queryx();
+            string json = grafikjson.JsonAl(sql);
+            return json;
+            /*GetBarchartData Sonu*/
+
+        }
+
+        [System.Web.Services.WebMethod]
+        public static string GetAddress(string id , string account_id)
+        {
+            Grafikjson grafikjson = new Grafikjson();
+            string sql;
+            Grafiksql g = new Grafiksql();
+            sql = g.run_address_query(id,account_id);
             string json = grafikjson.JsonAl(sql);
             return json;
         }
 
         [System.Web.Services.WebMethod]
-        public static string GetDistricts(string id)
+        public static string GetDistricts(string id , string account_id)
         {
             Grafikjson grafikjson = new Grafikjson();
             string sql;
             Grafiksql g = new Grafiksql();
-            sql = g.run_districts_query(id);
+            sql = g.run_districts_query(id,account_id);
             string json = grafikjson.JsonAl(sql);
             return json;
             /*GetBarchartData Sonu*/
