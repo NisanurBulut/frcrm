@@ -16,27 +16,25 @@
     var fixAffixWidth = function () {
         $('[data-spy="affix"]').each(function () {
             $(this).width($(this).parent().width());
+           
         });
     }
     fixAffixWidth();
     $(window).resize(fixAffixWidth);
- 
+    
 </script>
 <!-- sepet.css -->
 <link href="css/sepet-css/sepet.css" rel="stylesheet" />
 
-<section id="sepetScrollspy"class="col-sm-3"  data-spy="scroll">
-    <div class="container outer">
-        <div class="row inner">
+ 
+    <div class="container" id="sepetScrollspy"  data-spy="scroll">
+        <div class="row ">
             <!-- scroll yaptıktan sonra buraya gırıyor ve buyuyor -->
             <div  class="col-sm-3 text-center navbar-nav">
                 <div id="nav" class="panel panel-danger panel-pricing" data-spy="affix" >
                     <div class="panel-heading">
                         <i class="fa fa-shopping-cart"></i>
                         <h3>SEPETİM</h3>
-                    </div>
-                    <div class="panel-heading">
-                        <h3>DÜKKAN İSMİ</h3>
                     </div>
                     <div class="panel-body text-center">
                         <p class="plan-price"><strong>{{toplam}} TL</strong></p> 
@@ -76,7 +74,7 @@
 
 
 
-</section>
+
 
 
 
