@@ -1,11 +1,10 @@
-
-
+<!-- Vu script dosyaları sadece  sepetin scroll yaptgında responsive buyuyup kuculmesı ıcın kullanılır-->
 <script>
     $(document).ready(function () {
         $('#nav').affix(
             {
                 offset: {
-                    top: 100,
+                    top: 0, // scroll işlemine başlar başlamaz affix etkin olsun
                     bottom: 50
                   
                 }
@@ -23,9 +22,9 @@
     $(window).resize(fixAffixWidth);
  
 </script>
-
-<link href="css/sepet-css/sepet.css" rel="stylesheet" />
 <!-- sepet.css -->
+<link href="css/sepet-css/sepet.css" rel="stylesheet" />
+
 <section id="sepetScrollspy"class="col-sm-3"  data-spy="scroll">
     <div class="container outer">
         <div class="row inner">
@@ -35,6 +34,9 @@
                     <div class="panel-heading">
                         <i class="fa fa-shopping-cart"></i>
                         <h3>SEPETİM</h3>
+                    </div>
+                    <div class="panel-heading">
+                        <h3>DÜKKAN İSMİ</h3>
                     </div>
                     <div class="panel-body text-center">
                         <p class="plan-price"><strong>{{toplam}} TL</strong></p> 

@@ -2,7 +2,9 @@
 
 
 
-<!--Resim tıklanınca acılan sayfa-->
+
+
+    <!--Resim tıklanınca acılan sayfa-->
 <section>
     <div ng-controller="GroupAndProductCtrl" id="home">
 
@@ -42,7 +44,7 @@
                             <div class="col-sm-3">
                                 <div class="product-image-wrapper">
                                     <!div class="single-products">
-                                    <div class="productinfo text-center">  
+                                    <div class="productinfo text-center">
                                         <img src="https://i.ytimg.com/vi/EqXiTCXc6Ag/maxresdefault.jpg" />
                                         <h2 ng-if="urun.dmid < 1">{{urun.pfiyat}} TL</h2>
                                         <h2 ng-if="urun.dmid > 0">{{urun.dmfiyat}} TL</h2>

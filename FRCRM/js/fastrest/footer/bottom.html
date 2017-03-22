@@ -1,6 +1,26 @@
-<footer id="footer" style="margin-top:500px">
+<style>
+.footer-bottom {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:50px;
+   max-height:50px;
+   width:100%;
+ 
+}
 
-    <div class="footer-bottom" style="max-height:50px;">
+/* IE 6 */
+* html #footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+</style>
+
+
+
+<footer id="footer">
+
+    <div class="footer-bottom">
         <div class="container">
             <div class="row">
                 <p class="pull-left">Copyright © 2016 BEGÜM YAZILIM . www.begumyazilim.com.tr</p>

@@ -258,8 +258,6 @@
     <Content Include="js\datepicker.js" />
     <Content Include="js\account.js" />
     <Content Include="js\dynamic.js" />
-    <Content Include="js\fastrest\body\kategori.html" />
-    <Content Include="js\fastrest\body\urun.html" />
     <Content Include="js\fastrest\cart\cart.html" />
     <Content Include="js\fastrest\footer\bottom.html" />
     <Content Include="js\fastrest\frcontrol.js" />
@@ -294,7 +292,6 @@
     <Content Include="js\ng-scratch-off.js" />
     <Content Include="js\plugins.js" />
     <Content Include="js\PushNotification.js" />
-    <Content Include="js\sepet-js\sepet-js.js" />
     <Content Include="js\sticky.js" />
     <Content Include="lib\chart\angular-fusioncharts.js" />
     <Content Include="lib\chart\deneme.js" />
@@ -632,6 +629,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="js\fastrest\body\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

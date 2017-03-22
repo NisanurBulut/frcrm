@@ -89,16 +89,15 @@
         </div>
     </div>
 
+    <div  ng-view id="wiev" style="min-height:90%;width:100%;" ></div>
 
-    <div ng-view id="wiev" style="min-height:90%;width:100%;" ></div>
 
-
-    <section id="section3">
+  <%--  <section id="section3">
       <div class="container">
         <div class="col-sm-12"></div>
         <div class="clearfix"></div>
     </div>
-  </section>
+  </section>--%>
 
 
   <footer id="footer">
