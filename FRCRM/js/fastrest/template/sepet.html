@@ -23,10 +23,10 @@
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
 .panel-pricing .panel-heading {
-  padding: 20px 10px;
+  padding: 10px 5px;
 }
 .panel-pricing .panel-heading .fa {
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 25px;
 }
 .panel-pricing .list-group-item {
@@ -36,10 +36,14 @@
 
 .panel-pricing .panel-body {
   background-color: #f0f0f0;
-  font-size: 40px;
+  font-size: 20px;
   color: #777777;
-  padding: 20px;
+  padding: 10px;
   margin: 0px;
+}
+
+.font{
+ font-size:1.3vh;
 }
 
 </style>
@@ -58,11 +62,11 @@
                         <p class="plan-price"><strong>{{toplam}} TL</strong></p> 
                     </div>
                     <div class="panel-collapse">
-                        <table class="table table-responsive table-hover">
+                        <table class="table table-responsive table-hover font">
                            
                             <thead>
                                 <tr>
-                                    <th class="col-sm-7">Ürün</th>
+                                    <th class="col-sm-7" style="text-align:left;">Ürün</th>
                                     <th class="col-sm-2">Adet</th>
                                     <th class="col-sm-2">Fiyat</th>
                                     <th class="col-sm-1">Sil</th>
@@ -73,7 +77,7 @@
                                     <th class="col-sm-7" style="text-align:left;font-size:10px; color:#c70e0e;margin-left:5px;">{{sepet.adi}}
                                         <div style="text-align:left;font-size:8px; color:#777777;" ng-repeat="scm in sepet.dynasecim">{{scm.adi}}</div>
                                     </th>
-                                    <th class="col-sm-2" style="background-color:rebeccapurple;">
+                                    <th class="col-sm-2" >
                                         <input ng-model="sepet.adet" style="width:20px;border-radius:25%;text-align:center;position:center" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
                                     </th>
                                     <th class="col-sm-2" style="text-align:center">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
