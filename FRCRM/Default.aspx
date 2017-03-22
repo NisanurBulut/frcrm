@@ -90,7 +90,7 @@
     </div>
 
 
-    <div ng-view id="wiev" style="min-height:90%;width:100%;"></div>
+    <div ng-view id="wiev" style="min-height:90%;width:100%;" ></div>
 
 
     <section id="section3">

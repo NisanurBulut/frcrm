@@ -1,59 +1,37 @@
-<link href="css/sepet/sepet.css" rel="stylesheet" />
+
 
 <script>
-    $('#nav').affix({
-        offset: {
-            top: 0, bottom: 50//footer ortalama 500px butun tarayıcılarda olctum
-        }//yukardan scroll yapınca anlık kayma olmaması ıcın 0 yazdım ki oluyordu
-    });//500px degerıne erişince yanı footer'a menude ne kadar eleman olsada duruyor
+    $(document).ready(function () {
+        $('#nav').affix(
+            {
+                offset: {
+                    top: 100,
+                    bottom:50
+                }
+            }
+        );
+    });
 
 
+   //footer ortalama 50px butun tarayıcılarda olctum
+        //yukardan scroll yapınca anlık kayma olmaması ıcın 0 yazdım ki oluyordu
+    //50px degerıne erişince yanı footer'a menude ne kadar eleman olsada duruyor
+    /* smooth scrolling sections */
+
+
+ 
 </script>
 <style>
 
-
-    @import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
-
-.panel-pricing {
-  -moz-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  -webkit-transition: all .3s ease;
-}
-.panel-pricing:hover {
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
-}
-.panel-pricing .panel-heading {
-  padding: 10px 5px;
-}
-.panel-pricing .panel-heading .fa {
-  margin-top: 5px;
-  font-size: 25px;
-}
-.panel-pricing .list-group-item {
-  color: #777777;
-  border-bottom: 1px solid rgba(250, 250, 250, 0.5);
-}
-
-.panel-pricing .panel-body {
-  background-color: #f0f0f0;
-  font-size: 20px;
-  color: #777777;
-  padding: 10px;
-  margin: 0px;
-}
-
-.font{
- font-size:1.3vh;
-}
-
 </style>
-<!-- Plans -->
-<section id="plans">
-    <div class="container">
-        <div class="row">
+<link href="../../../css/sepet-css/sepet.css" rel="stylesheet" />
+<!-- sepet.css -->
+<section id="sepetScrollspy" data-spy="scroll" data-target="#nav">
+    <div class="container outer">
+        <div class="row inner">
             <!-- item -->
-            <div class="col-sm-3 text-center">
-                <div class="panel panel-danger panel-pricing">
+            <div  class="col-sm-3 text-center navbar-nav">
+                <div id="nav" class="panel panel-danger panel-pricing" data-spy="affix" >
                     <div class="panel-heading">
                         <i class="fa fa-shopping-cart"></i>
                         <h3>SEPETİM</h3>
@@ -62,26 +40,25 @@
                         <p class="plan-price"><strong>{{toplam}} TL</strong></p> 
                     </div>
                     <div class="panel-collapse">
-                        <table class="table table-responsive table-hover font">
-                           
+                        <table class="table table-responsive table-hover font"> 
                             <thead>
-                                <tr>
-                                    <th class="col-sm-7" style="text-align:left;">Ürün</th>
-                                    <th class="col-sm-2">Adet</th>
+                                <tr class="text-center">
+                                    <th class="col-sm-7">Ürün</th>
+                                    <th class="col-sm-2">Adet</th>                                    
                                     <th class="col-sm-2">Fiyat</th>
                                     <th class="col-sm-1">Sil</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="sepet in sepetim" ng-if="sepet.seviye == 0">
-                                    <th class="col-sm-7" style="text-align:left;font-size:10px; color:#c70e0e;margin-left:5px;">{{sepet.adi}}
-                                        <div style="text-align:left;font-size:8px; color:#777777;" ng-repeat="scm in sepet.dynasecim">{{scm.adi}}</div>
+                                    <th class="col-sm-7 basket-name">{{sepet.adi}}
+                                        <div style="" ng-repeat="scm in sepet.dynasecim">{{scm.adi}}</div>
                                     </th>
                                     <th class="col-sm-2" >
-                                        <input ng-model="sepet.adet" style="width:20px;border-radius:25%;text-align:center;position:center" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
+                                        <input ng-model="sepet.adet" class="input-attribute" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
                                     </th>
-                                    <th class="col-sm-2" style="text-align:center">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
-                                    <th class="col-sm-1" style="text-align:center;cursor:pointer;" ng-click="deleteItem(sepet,sepet.index)">x</th>
+                                    <th class="col-sm-2 text-center">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
+                                    <th class="col-sm-1 text-center" style="cursor:pointer;" ng-click="deleteItem(sepet,sepet.index)">x</th>
                                  </tr>
                             </tbody>
                         </table>
