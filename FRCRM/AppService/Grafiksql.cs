@@ -81,7 +81,7 @@ namespace FRCRM.AppService
             return account_query;
         }
 
-        public string run_citys_query()
+        public string run_citys_queryx()
         {
             citys_query = "select distinct(c.cityid) as cityid , c.plate as plate , "+
                         " (select count(*) from accounts where city_id = a.city_id and city_id > 0 and active = true) "+
@@ -92,20 +92,36 @@ namespace FRCRM.AppService
             return citys_query;
         }
 
-        public string run_districts_query(string city_id)
+        public string run_citys_query(string account_id)
         {
-            districts_query = "select * from districts where active = true and city_id = "+city_id;
+            citys_query = "select distinct(c.cityid) as cityid , c.plate as plate , " +
+                        " (select count(*) from accounts where city_id = a.city_id and city_id > 0 and active = true) " +
+                        " as account_count , c.name as name " +
+                        " from(select * from accounts ) as a " +
+                        " left outer join citys c on (a.city_id = c.cityid) " +
+                        " left outer join a_care_places care on (care.account_id = " + account_id + ")" +
+                        " where a.city_id > 0 and a.active = true  and care.care_city_id = a.city_id";
+            return citys_query;
+        }
+
+        public string run_districts_query(string city_id, string account_id)
+        {
+            districts_query = "select a.* from districts as a " +
+                        " left outer join a_care_places care on (care.account_id = " + account_id + ") " +
+                        " where a.active = true and city_id = " + city_id + " and care.care_district_id = a.districtid ";
             return districts_query;
         }
 
-        public string run_address_query(string id)
+        public string run_address_query(string id ,string account_id)
         {
             address_query = "select addressid as id, a.name as tanim , a.address as adres , c.name as sehir, d.name as ilce, "+
             " m.lc_email as mail , a.phone as telefon,m.adi as adi , m.soyadi as soyadi  from " +
             " (select * from addresss where lastuserid = "+id+") as a "+
             " left outer join citys c on (a.city_id = c.cityid) "+
             " left outer join districts d on(a.district_id = d.districtid) "+
-            " left outer join ads_musteri m on(m.mustid = "+id+")";
+            " left outer join ads_musteri m on(m.mustid = "+id+") "+
+            " left outer join a_care_places care on (care.account_id = "+account_id+") "+
+            " where a.district_id = care.care_district_id";
             return address_query;
         }
 

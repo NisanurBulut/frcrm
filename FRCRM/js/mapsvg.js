@@ -88,7 +88,7 @@
 ];
 app.controller('mapsvgctrl', function ($scope, $rootScope, $http, localStorageService, $location) {
     var jsn;
-    $http.post('Default.aspx/GetCitys', '{}').success(function (data) {
+    $http.post('Default.aspx/GetCitysx', '{}').success(function (data) {
         jsn = data.d;
         jsn = JSON.parse(jsn);
         for (var x = 0; x <= jsn.length; x++) {

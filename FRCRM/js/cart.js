@@ -115,7 +115,7 @@
     }
     GetAddress();
     function GetAddress() {
-        var jsn = '{"id":"' + mustid + '"}';
+        var jsn = '{"id":"' + mustid + '","account_id":"'+ac_id+'"}';
         $http.post('Default.aspx/GetAddress', jsn).success(function (data) {
             var adr = data.d;
             adr = JSON.parse(adr);
@@ -124,7 +124,7 @@
 
         }).error();
     }
-    $http.post('Default.aspx/GetCitys', '{}').success(function (data) {
+    $http.post('Default.aspx/GetCitys', '{"account_id":"' + ac_id + '"}').success(function (data) {
         var jsn = data.d;
         jsn = JSON.parse(jsn);
         $scope.sehirlerjson = jsn;
@@ -132,7 +132,7 @@
     }).error();
 
     $scope.adres_deg = function (id) {
-        $http.post('Default.aspx/GetDistricts', '{"id":' + id + '}').success(function (data) {
+        $http.post('Default.aspx/GetDistricts', '{"id":"' + id + '","account_id":"' + ac_id + '"}').success(function (data) {
             var jsn = data.d;
             jsn = JSON.parse(jsn);
             $scope.ilcelerjson = jsn;
