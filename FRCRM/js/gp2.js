@@ -3,12 +3,20 @@
     var urljsn = JSON.stringify($location.search());
     urljsn = JSON.parse(urljsn);
     var urlaccount = urljsn.accountid;
+    var urlaccountname = urljsn.accountname;
     //alert(urlaccount);
     cart = localStorageService.get('restaurant-cart') || [];
+    $scope.account_name = localStorageService.get('account_name');
+    if (urlaccountname) {
+        localStorageService.set('account_name', urlaccountname);
+        $scope.account_name = urlaccountname;
+    }
     var ac_id = localStorageService.get('accountid');
     if (urlaccount) {
         localStorageService.set('accountid', urlaccount);
         ac_id = localStorageService.get('accountid');
+        localStorageService.set('account_name', urlaccountname);
+        $scope.account_name = urlaccountname;
     }
     if (ac_id == 0) { $location.path('/'); }
     $scope.sepetim = cart;

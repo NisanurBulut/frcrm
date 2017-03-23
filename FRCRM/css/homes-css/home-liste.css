@@ -1,12 +1,11 @@
-﻿body {
-}
+﻿
   table {
         margin: 10px 0px;
         border: none !important;
     }
 
     thead {
-        font-weight: 700;
+        font-weight: 100;
     }
 
     .table tbody > tr > td, .table tfoot > tr > td {
@@ -22,7 +21,7 @@
         content: none;
     }
 
-    @media (max-width: 632px) {
+    @media (max-width: 500px) {
 
         /*Responsive Table*/
         thead {

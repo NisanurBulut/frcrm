@@ -1,7 +1,7 @@
 ﻿app.controller('accountsctrl', function ($scope, $http, localStorageService,$location) {
     localStorageService.set('accountid', 0);
-    $scope.openAccount = function (id) {
-        
+    $scope.openAccount = function (id,name) {
+        localStorageService.set('account_name', name);
         localStorageService.set('accountid', id);
         $location.path('/home-liste')
     }
