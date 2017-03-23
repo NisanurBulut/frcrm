@@ -89,20 +89,27 @@
         </div>
     </div>
 
-    <div  ng-view id="wiev" style="min-height:90%;width:100%;" ></div>
-
-
-  <%--  <section id="section3">
-      <div class="container">
-        <div class="col-sm-12"></div>
-        <div class="clearfix"></div>
+    <div class="container" style="margin-bottom:60px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <div  ng-view id="wiev"></div>
+            </div>
+        </div>
     </div>
-  </section>--%>
+    
+
+    <div class="container" id="footer">
+        <div class="row">
+            <div class="col-sm-12">
+                <footer>
+	                 <fr-footer-bottom></fr-footer-bottom>
+                </footer>	
+            </div>
+        </div>
+    </div>
 
 
-  <footer id="footer">
-	  <fr-footer-bottom></fr-footer-bottom>
-  </footer>	
+  
 
 		
 <fr-dynamic-modal></fr-dynamic-modal>	
