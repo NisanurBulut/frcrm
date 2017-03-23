@@ -9,7 +9,8 @@ frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'lo
         var cart = localStorageService.get('restaurant-cart') || [];
         localStorageService.set('restaurant-cart', cart);
         var ac_id = localStorageService.get('accountid');
-
+        var account_name = localStorageService.get('account_name');
+        $scope.account_name = account_name;
         function getNextIndexCart() {
             var zmn = new Date();
             zmn = zmn.getTime();
