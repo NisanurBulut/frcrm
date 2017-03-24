@@ -26,56 +26,51 @@
 <link href="css/sepet-css/sepet.css" rel="stylesheet" />
 
 <section id="sepetScrollspy"class="col-sm-3"  data-spy="scroll">
-    <div class="container outer">
-        <div class="row inner">
-            <!-- scroll yaptıktan sonra buraya gırıyor ve buyuyor -->
-            <div  class="col-sm-3 text-center navbar-nav">
-                <div id="nav" class="panel panel-danger panel-pricing" data-spy="affix" >
-                    <div class="panel-heading">
-                        <i class="fa fa-shopping-cart"></i>
-                        <h3>SEPETİM</h3>
-                    </div>
-                    <div class="panel-heading">
-                        <h3>{{account_name}}</h3>
-                    </div>
-                    <div class="panel-body text-center">
-                        <p class="plan-price"><strong>{{toplam}} TL</strong></p> 
-                    </div>
-                    <div class="panel-collapse">
-                        <table class="table table-responsive table-hover font"> 
-                            <thead>
-                                <tr class="text-center">
-                                    <th class="col-sm-7">Ürün</th>
-                                    <th class="col-sm-2">Adet</th>                                    
-                                    <th class="col-sm-2">Fiyat</th>
-                                    <th class="col-sm-1">Sil</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="sepet in sepetim" ng-if="sepet.seviye == 0">
-                                    <th class="col-sm-7 basket-name">{{sepet.adi}}
-                                        <div style="" ng-repeat="scm in sepet.dynasecim">{{scm.adi}}</div>
-                                    </th>
-                                    <th class="col-sm-2" >
-                                        <input ng-model="sepet.adet" class="input-attribute" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
-                                    </th>
-                                    <th class="col-sm-2 text-center">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
-                                    <th class="col-sm-1 text-center" style="cursor:pointer;" ng-click="deleteItem(sepet,sepet.index)">x</th>
-                                 </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="panel-footer">
-                        <a href="#cart" class="btn btn-sm btn-block btn-danger" ng-if="sepetim.length > 0" >{{toplam}} TL - TAMAMLA!</a>
-                    </div>
+    <div class="container">
+        <!-- scroll yaptıktan sonra buraya gırıyor ve buyuyor -->
+        <div class="col-sm-3 text-center navbar-nav">
+            <div id="nav" class="panel panel-danger panel-pricing" data-spy="affix">
+                <div class="panel-heading">
+                    <i class="fa fa-shopping-cart"></i>
+                    <h3>SEPETİM</h3>
+                </div>
+                <div class="panel-heading">
+                    <h3>{{account_name}}</h3>
+                </div>
+                <div class="panel-body text-center">
+                    <p class="plan-price"><strong>{{toplam}} TL</strong></p>
+                </div>
+                <div class="panel-collapse">
+                    <table class="table table-responsive table-hover font">
+                        <thead>
+                            <tr class="text-center">
+                                <th class="col-sm-7">Ürün</th>
+                                <th class="col-sm-2">Adet</th>
+                                <th class="col-sm-2">Fiyat</th>
+                                <th class="col-sm-1">Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="sepet in sepetim" ng-if="sepet.seviye == 0">
+                                <th class="col-sm-7 basket-name">
+                                    {{sepet.adi}}
+                                    <div style="" ng-repeat="scm in sepet.dynasecim">{{scm.adi}}</div>
+                                </th>
+                                <th class="col-sm-2">
+                                    <input ng-model="sepet.adet" class="input-attribute" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
+                                </th>
+                                <th class="col-sm-2 text-center">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
+                                <th class="col-sm-1 text-center" style="cursor:pointer;" ng-click="deleteItem(sepet,sepet.index)">x</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <a href="#cart" class="btn btn-sm btn-block btn-danger" ng-if="sepetim.length > 0">{{toplam}} TL - TAMAMLA!</a>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
 </section>
 
 

@@ -68,7 +68,6 @@
     <script src="js/mapsvg.js"></script>
 
     
-    
 </head>
 <body fr-control >
 
@@ -102,7 +101,6 @@
         <div class="row">
             <div class="col-sm-12">
                 <footer>
-	                 <fr-footer-bottom></fr-footer-bottom>
                 </footer>	
             </div>
         </div>
