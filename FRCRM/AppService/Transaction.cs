@@ -27,7 +27,7 @@ namespace FRCRM.AppService
                 NpgsqlTransaction myTrans = pgConnection.BeginTransaction(System.Data.IsolationLevel.ReadCommitted);
                 NpgsqlCommand pgCommand = pgConnection.CreateCommand();
                 try
-                {
+                { 
                     JavaScriptSerializer ser = new JavaScriptSerializer();
                     cartList cart = ser.Deserialize<cartList>(json);
 
