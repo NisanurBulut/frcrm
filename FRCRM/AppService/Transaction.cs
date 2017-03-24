@@ -29,6 +29,7 @@ namespace FRCRM.AppService
                 NpgsqlCommand pgCommand = pgConnection.CreateCommand();
                 try
                 { 
+
                     JavaScriptSerializer ser = new JavaScriptSerializer();
                     cartList cart = ser.Deserialize<cartList>(json);
                     Grafikjson gj = new Grafikjson();
