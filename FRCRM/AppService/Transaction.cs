@@ -18,7 +18,7 @@ namespace FRCRM.AppService
     {
 
         string islem;
-        public string RunNpgsqlTransaction(string json, string k_id, string adres_id, string odeme_id, string account_id)
+        public string RunNpgsqlTransaction(string json, string k_id, string adres_id, string odeme_id, string account_id ,string adsnot)
         {
             string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
             using (NpgsqlConnection pgConnection = new NpgsqlConnection(constr))
@@ -29,7 +29,6 @@ namespace FRCRM.AppService
                 NpgsqlCommand pgCommand = pgConnection.CreateCommand();
                 try
                 { 
-
 
                     JavaScriptSerializer ser = new JavaScriptSerializer();
                     cartList cart = ser.Deserialize<cartList>(json);
@@ -63,6 +62,7 @@ namespace FRCRM.AppService
                     }
                     myTrans.Commit();
                     islem = "0";
+                    dt = gj.JsonDataAl("insert into ads_notlar (adsno,adsnot) values ("+adsno+",'"+adsnot+"')");
                     Console.WriteLine("işlem tamam");
                     
 
