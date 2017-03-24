@@ -10,6 +10,7 @@ using System.Collections;
 using System.Collections.ObjectModel;
 using System.Dynamic;
 using System.Globalization;
+using System.Data;
 
 namespace FRCRM.AppService
 {
@@ -30,6 +31,11 @@ namespace FRCRM.AppService
                 { 
                     JavaScriptSerializer ser = new JavaScriptSerializer();
                     cartList cart = ser.Deserialize<cartList>(json);
+                    Grafikjson gj = new Grafikjson();
+                    DataTable dt = new DataTable();
+                    dt = gj.JsonDataAl("SELECT adsnoartir(1,1)");
+                    string adsno = dt.Rows[0]["adsnoartir"].ToString();
+
 
                     for (int i = 0; i <= cart.cart.Count-1; i++) {
                         string id = cart.cart[i].id;
@@ -47,7 +53,7 @@ namespace FRCRM.AppService
                                  " 9999,"+id+", " +
                                  " "+adet+","+fiyat+","+tutar+", '1',1,1,false," +
                                  " 1, 'ack1', 'ack2', " +
-                                 " 'ack3', '4',1234, NOW(), NOW(), '0', '-1', '0', '0', '-1'," +
+                                 " 'ack3', '4',"+adsno+", NOW(), NOW(), '1', '-1', '0', '0', '-1'," +
                                  " 1, NOW(),NOW(), '0', '0', '0', '0',8,1,-1,0,"+dmenu+","+seviye+ "," + k_id + "," + adres_id + "," + odeme_id + "," + account_id + ")";
                         pgCommand.CommandText = sqlx;
                         pgCommand.ExecuteNonQuery();
