@@ -1,60 +1,66 @@
 ﻿<link href="css/homes-css/home-picture.css" rel="stylesheet" />
+<link href="css/sepet-css/sepet.css" rel="stylesheet" />
 
+<style>
+     @import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+
+     .pic-fontSize{
+         font-size:1.3vw 1.3vh;
+     }
+</style>
     <!--Resim tıklanınca acılan sayfa-->
 <section>
     <div ng-controller="GroupAndProductCtrl" id="home">
 
         <!--home sayfasında salatalar dinamik menüler gibi grup isimleri gelir-->
-      
-            <div class="container">
-                <div class="row">
-                    <div class="scrolling-tabs-container">
-                        <div scrolling-tabs-wrapper>
-                            <uib-tabset>
-                                <uib-tab ng-repeat="group in groups" heading="{{group.adi}}" ng-click="ClikGroup(group.id)">
+        <div class="container">
 
-                                </uib-tab>
-                            </uib-tabset>
-                        </div>
-
-                    </div>
-                </div>
-      
             <div class="row">
-                <div class="col-sm-4 hidden-xs hidden-xs"><!--telefonlarda sepetin gorunmesını kaldırıyorum-->
-                    <div>
-                        <fr-sepet></fr-sepet>
+                <div class="scrolling-tabs-container">
+                    <div scrolling-tabs-wrapper>
+                        <uib-tabset>
+                            <uib-tab ng-repeat="group in groups" heading="{{group.adi}}" ng-click="ClikGroup(group.id)"></uib-tab>
+                        </uib-tabset>
                     </div>
-                </div>
 
-                <div class="col-sm-8">
-                    <div class="features_items">
-                        <div ng-repeat="urun in urunler">
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">    
-                                    <div class="productinfo text-center">
-                                        <img src="https://i.ytimg.com/vi/EqXiTCXc6Ag/maxresdefault.jpg" />
-                                        <h2 ng-if="urun.dmid < 1">{{urun.pfiyat}} TL</h2>
-                                        <h2 ng-if="urun.dmid > 0">{{urun.dmfiyat}} TL</h2>
-                                        <p>{{urun.pname}}</p>
-                                        <a class="btn btn-default add-to-cart" ng-if="urun.dmid < 1" ng-click="sepeteAt(urun,$index,1)">
-                                            <i class="fa fa-shopping-cart"></i>Sepete Ekle
-                                        </a>
-                                        <a class="btn btn-default add-to-cart" ng-if="urun.dmid > 0" ng-click="dynamicModalOpen(urun,$index,1);">
-                                            <i class="fa fa-shopping-cart"></i>Sepete Ekle
-                                        </a>
-                                    </div> 
+                </div>
+            </div>
+          
+                        <div class="row">
+                            <div class="col-sm-4 hidden-xs">
+                                <!--telefonlarda sepetin gorunmesını kaldırıyorum-->
+                                <div>
+                                    <fr-sepet></fr-sepet>
                                 </div>
                             </div>
-                            <div class="col-sm-12" ng-if="($index+1)%4 == 0"></div>
+
+                            <div class="col-sm-7">
+                                <div class="features_items">
+                                    <div ng-repeat="urun in urunler">
+                                        <div class="col-md-3 col-sm-3 col-xs-6">
+                                            <div class="product-image-wrapper">
+                                                <div class="productinfo text-center pic-fontSize">
+                                                    <img src="https://i.ytimg.com/vi/EqXiTCXc6Ag/maxresdefault.jpg" class="img-responsive" />
+                                                    <h2 class="pic-fontSize" ng-if="urun.dmid < 1">{{urun.pfiyat}} TL</h2>
+                                                    <h2 class="pic-fontSize" ng-if="urun.dmid > 0">{{urun.dmfiyat}} TL</h2>
+                                                    <p>{{urun.pname}}</p>
+                                                    <a class="btn btn-sm add-to-cart pic-fontSize" ng-if="urun.dmid < 1" ng-click="sepeteAt(urun,$index,1)">
+                                                        <i class="fa fa-shopping-cart"></i><br />Sepete Ekle
+                                                    </a>
+                                                    <a class="btn btn-sm add-to-cart pic-fontSize" ng-if="urun.dmid > 0" ng-click="dynamicModalOpen(urun,$index,1);">
+                                                        <i class="fa fa-shopping-cart"></i><br />Sepete Ekle
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12" ng-if="($index+1)%4 == 0"></div>
+                                    </div>
+                                </div>
+
+                            </div><!--features_items-->
+
                         </div>
-                    </div>
-
-                </div><!--features_items-->
-
-               
+                    
+             </div>
             </div>
-        </div>
-    </div>
-
 </section>

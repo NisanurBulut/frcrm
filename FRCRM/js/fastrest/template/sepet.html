@@ -4,7 +4,7 @@
         $('#nav').affix(
             {
                 offset: {
-                    top: 0, // scroll işlemine başlar başlamaz affix etkin olsun
+                    top: 200, // scroll işlemine başlar başlamaz affix etkin olsun
                     bottom: 50
                   
                 }
@@ -25,8 +25,8 @@
 <!-- sepet.css -->
 <link href="css/sepet-css/sepet.css" rel="stylesheet" />
 
-<section id="sepetScrollspy" class="col-sm-3"  data-spy="scroll">
-    <div class="container">
+<section id="sepetScrollspy" class="col-sm-3">
+    <div class="container" data-spy="scroll">
         <!-- scroll yaptıktan sonra buraya gırıyor ve buyuyor -->
         <div class="col-sm-3 text-center navbar-nav">
             <div id="nav" class="panel panel-danger panel-pricing" data-spy="affix">
@@ -38,7 +38,7 @@
                     <h3>{{account_name}}</h3>
                 </div>
                 <div class="panel-body text-center">
-                    <p class="plan-price"><strong>{{toplam}} TL</strong></p>
+                    <p class="plan-price" ><strong>{{toplam}} TL</strong></p>
                 </div>
                 <div class="panel-collapse">
                     <table class="table table-responsive table-hover font">
@@ -54,10 +54,10 @@
                             <tr ng-repeat="sepet in sepetim" ng-if="sepet.seviye == 0">
                                 <th class="col-sm-7 basket-name">
                                     {{sepet.adi}}
-                                    <div style="" ng-repeat="scm in sepet.dynasecim">{{scm.adi}}</div>
+                                    <div  ng-repeat="scm in sepet.dynasecim" class="dynamic-menu">{{scm.adi}}</div>
                                 </th>
                                 <th class="col-sm-2">
-                                    <input ng-model="sepet.adet" class="input-attribute" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
+                                    <input ng-model="sepet.adet" class="input-attribute" style="width:20px;" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);" />
                                 </th>
                                 <th class="col-sm-2 text-center">{{(sepet.fiyat * sepet.adet).toFixed(2)}}</th>
                                 <th class="col-sm-1 text-center" style="cursor:pointer;" ng-click="deleteItem(sepet,sepet.index)">x</th>
@@ -66,7 +66,7 @@
                     </table>
                 </div>
                 <div class="panel-footer">
-                    <a href="#cart" class="btn btn-sm btn-block btn-danger" ng-if="sepetim.length > 0">{{toplam}} TL - TAMAMLA!</a>
+                    <a href="#cart" class="btn btn-sm btn-block btn-danger" style="font-size:1.3vh 1.3vw;" ng-if="sepetim.length > 0">{{toplam}} TL - TAMAMLA!</a>
                 </div>
             </div>
         </div>
