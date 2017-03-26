@@ -186,10 +186,10 @@ namespace FRCRM
         }
 
         [WebMethod]
-        public static string AdsAcik(string json , string k_id , string adres_id , string odeme_id,string account_id)
+        public static string AdsAcik(string json , string k_id , string adres_id , string odeme_id,string account_id,string adsnot)
         {
             Transaction trans = new Transaction();
-            string gjsn = trans.RunNpgsqlTransaction(json,k_id,adres_id,odeme_id,account_id);
+            string gjsn = trans.RunNpgsqlTransaction(json,k_id,adres_id,odeme_id,account_id,adsnot);
            
 
             return gjsn;
