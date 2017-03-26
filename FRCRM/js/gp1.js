@@ -1,4 +1,18 @@
 ﻿app.controller('GroupAndProductCtrl', function ($scope, $rootScope, $http, localStorageService, $location) {
+    $scope.triggerRefresh = false;
+
+    $scope.forceARefresh=function() {
+        $scope.triggerRefresh = true;
+        $timeout(function () {
+            $scope.triggerRefresh = false;
+            alert($scope.triggerRefresh);
+        });
+        alert($scope.triggerRefresh);
+    }
+
+
+
+
     // alert(JSON.stringify($location.search()))
     var urljsn = JSON.stringify($location.search());
     urljsn = JSON.parse(urljsn);
@@ -71,4 +85,11 @@
         tt();
     });
 
+
+
+
+
+
+
+   
     });
