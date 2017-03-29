@@ -119,9 +119,21 @@
         sepeteat2(urunbilgi);
     }
     function sepeteat2(urunbilgi) {
-        if (urunbilgi.adet) {
-            saveToCart(urunbilgi, urunbilgi.adet);
-            return;
+
+        var resid = localStorageService.get('resid') || 0;
+        if (resid != 0 && resid == ac_id) {
+            if (urunbilgi.adet) {
+                saveToCart(urunbilgi, urunbilgi.adet);
+                return;
+            }
+        } else if (resid == 0) {
+            if (urunbilgi.adet) {
+                localStorageService.set('resid', ac_id);
+                saveToCart(urunbilgi, urunbilgi.adet);
+                return;
+            }
+        } else if (resid != ac_id) {
+            alert('Sepetinizde farklı bir Restaurant a ait ürün var ekleme yapamazsınız');
         }
 
     }
