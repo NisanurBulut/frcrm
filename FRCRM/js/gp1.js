@@ -18,7 +18,8 @@
     if (urlaccount) {
         localStorageService.set('accountid', urlaccount);
         ac_id = localStorageService.get('accountid');
-        
+        localStorageService.set('account_name', urlaccountname);
+        $scope.account_name = urlaccountname;
     }
     if (ac_id == 0) { $location.path('/'); }
     $scope.sepetim = cart;
