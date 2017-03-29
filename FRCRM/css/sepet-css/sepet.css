@@ -15,8 +15,8 @@ body {
 }
 .basket-name{
     text-align:left;
-    font-size:10px; 
-    color:#c70e0e;
+     font-size:1.3vh;
+       color:#c70e0e;
     margin-left:5px;
 }
 .panel-pricing {
@@ -32,11 +32,15 @@ body {
 }
 .panel-pricing .panel-heading .fa {
   margin-top: 5px;
-  font-size: 7.3vh;
+  font-size: 4.3vw;
+}
+.panel-pricing .panel-heading .h3 {
+  margin-top: 5px;
+  font-size: 4.3vw;
 }
 .panel-pricing .panel-body {
   background-color: #f0f0f0;
-  font-size: 4.3vh;
+  font-size: 2.3vw;
   color: #777777;
   padding: 10px;
   margin: 0px;
@@ -48,6 +52,6 @@ body {
 
  .dynamic-menu{
 text-align:left;
-font-size:2.4vh; 
+font-size:0.3vw; 
 color:#777777;
  }

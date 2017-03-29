@@ -1,4 +1,7 @@
 ﻿app.controller('GroupAndProductCtrl', function ($scope, $rootScope, $http, localStorageService, $location) {
+   
+  
+
     // alert(JSON.stringify($location.search()))
     var urljsn = JSON.stringify($location.search());
     urljsn = JSON.parse(urljsn);
@@ -71,4 +74,11 @@
         tt();
     });
 
+
+
+
+
+
+
+   
     });
