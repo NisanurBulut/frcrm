@@ -118,25 +118,25 @@
 
         sepeteat2(urunbilgi);
     }
-    function sepeteat2(urunbilgi) {
+        function sepeteat2(urunbilgi) {
+            var ac_id = localStorageService.get('accountid');
+            var resid = localStorageService.get('resid') || 0;
+            if (resid != 0 && resid == ac_id) {
+                if (urunbilgi.adet) {
+                    saveToCart(urunbilgi, urunbilgi.adet);
+                    return;
+                }
+            } else if (resid == 0) {
+                if (urunbilgi.adet) {
+                    localStorageService.set('resid', ac_id);
+                    saveToCart(urunbilgi, urunbilgi.adet);
+                    return;
+                }
+            } else if (resid != ac_id) {
+                alert('Sepetinizde farklı bir Restaurant a ait ürün var ekleme yapamazsınız')
+            }
 
-        var resid = localStorageService.get('resid') || 0;
-        if (resid != 0 && resid == ac_id) {
-            if (urunbilgi.adet) {
-                saveToCart(urunbilgi, urunbilgi.adet);
-                return;
-            }
-        } else if (resid == 0) {
-            if (urunbilgi.adet) {
-                localStorageService.set('resid', ac_id);
-                saveToCart(urunbilgi, urunbilgi.adet);
-                return;
-            }
-        } else if (resid != ac_id) {
-            alert('Sepetinizde farklı bir Restaurant a ait ürün var ekleme yapamazsınız');
         }
-
-    }
     function saveToCart(urunbilgi, adet) {
 
         cart = localStorageService.get('restaurant-cart');
