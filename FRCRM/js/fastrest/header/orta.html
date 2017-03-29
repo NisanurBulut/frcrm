@@ -68,14 +68,14 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" id="toggleButton" class="navbar-toggle plan-buttonn " data-toggle="collapse" data-target="#myNavbar">
+            <button type="button" id="toggleButton" class="navbar-toggle plan-buttonn " data-toggle="collapse" data-target="#myNavbar collapse.in">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
             <a ng-click="logox();"><img src="{{logo}}" alt="Fast Rest Akıllı Restoran" style="height:30px;margin:10px 10px 10px 10px" /></a>
         </div>
-        <div class="collapse navbar-collapse collapse" id="myNavbar">
+        <div class="collapse navbar-collapse" id="myNavbar">
           
             <ul class="nav navbar-nav navbar-right" ng-hide="headerlogin">
                 <li class="li-loginItem-Margin">
@@ -99,7 +99,7 @@
                     <li><a href="{{favorilerim}}"><i class="fa fa-image"></i>Resim</a></li>
                     <li><a href="{{sepetim}}"><i style="color:#FE980F;font-weight:bold;">{{spetadet}}</i><i class="fa fa-shopping-cart"></i> {{ tutar}} TL</a></li>
                     <li><a ng-click="cikis()"><i class="fa fa-sign-out"></i>ÇIKIŞ - {{kmail}}</a></li>
-            </ul>
+                 </ul>
            
         </div>
     </div>
@@ -112,4 +112,8 @@
             $('#myNavbar').collapse('toggle');
         });
     });
+    $('ul').click(function () {
+        $('#myNavbar').collapse('hide');
+    });
+
 </script>
