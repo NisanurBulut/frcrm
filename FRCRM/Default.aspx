@@ -8,8 +8,8 @@
     <META http-equiv=content-type content=text/html;charset=iso-8859-9>
     <META http-equiv=content-type content=text/html;charset=windows-1254>
     <META http-equiv=content-type content=text/html;charset=x-mac-turkish>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <title>FrCart</title>
     <link href="csss/bootstrap.min.css" rel="stylesheet"/>
     <link href="csss/font-awesome.min.css" rel="stylesheet"/>
