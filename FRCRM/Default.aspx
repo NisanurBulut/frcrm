@@ -118,6 +118,7 @@
 	<script src="jsq/price-range.js"></script>
     <script src="jsq/jquery.prettyPhoto.js"></script>
     <script src="jsq/main.js"></script> 
+
     </form>
 </body>
 </html>

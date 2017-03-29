@@ -68,14 +68,14 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle plan-buttonn " data-toggle="collapse" data-target="#myNavbar">
+            <button type="button" id="toggleButton" class="navbar-toggle plan-buttonn " data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
             <a ng-click="logox();"><img src="{{logo}}" alt="Fast Rest Akıllı Restoran" style="height:30px;margin:10px 10px 10px 10px" /></a>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="collapse navbar-collapse collapse" id="myNavbar">
           
             <ul class="nav navbar-nav navbar-right" ng-hide="headerlogin">
                 <li class="li-loginItem-Margin">
@@ -106,3 +106,10 @@
     
 </nav>
 
+<script>
+    $(document).ready(function () {
+        $('#toggleButton').click(function () {
+            $('#myNavbar').collapse('toggle');
+        });
+    });
+</script>
