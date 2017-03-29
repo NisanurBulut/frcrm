@@ -38,10 +38,10 @@
                 <div class="panel-heading">
                     <h3>{{account_name}}</h3>
                 </div>
-                <div class="panel-body text-center">
+                <div class="panel-body text-center" ng-if="sepetim.length > 0">
                     <p class="plan-price" ><strong>{{toplam}} TL</strong></p>
                 </div>
-                <div class="panel-collapse">
+                <div class="panel-collapse"ng-if="sepetim.length > 0">
                     <table class="table table-responsive table-hover font">
                         <thead>
                             <tr class="text-center">
