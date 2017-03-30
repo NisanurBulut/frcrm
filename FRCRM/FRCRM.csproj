@@ -267,7 +267,7 @@
     <Content Include="js\fastrest\header\ust.html" />
     <Content Include="js\fastrest\login\lgn.html" />
     <Content Include="js\fastrest\ng-fastrest.js" />
-    <Content Include="js\fastrest\slider\Slider.html" />
+    <Content Include="js\fastrest\slider\slider.html" />
     <Content Include="js\fastrest\solmenu\solmenu.html" />
     <Content Include="js\fastrest\sosyal\sosyal.html" />
     <Content Include="js\fastrest\template\addresscard.html" />

@@ -4,6 +4,15 @@
     var adres_id = 0;
     var odeme_id = 0;
     if (cart.length < 1) { $location.path('/home-liste'); }
+
+    $scope.getRadio = function ()
+    {
+        alert("selam");
+        console.log("selam");
+    }
+
+
+
     $scope.sonok = function () {
         var odemeid = $scope.odemeradio.id;
         odeme_id = odemeid;
@@ -148,9 +157,6 @@
         $scope.odemetipleri = jsn;
         $scope.odemeradio = { id: $scope.odemetipleri[0].id };
     }).error();
-
-
-
 
     var giris = localStorageService.get('giris') || 0;
     var giris_zamani = localStorageService.get('giris_zamani') || 0;

@@ -1,10 +1,14 @@
-﻿<style>.addressheader {
+﻿<style>
+    
+    .addressheader {
         border: 1px solid #808080;
         background-color: #c70e0e;
         border-bottom-color: transparent;
         font-size: 20px;
         color: white;
-    }</style>
+    }
+    </style>
+
 <div ng-repeat="adres in adresler">
     <div class="addressheader col-sm-12">
         <div class="col-sm-11">
@@ -15,9 +19,10 @@
         </div>
     </div>
     <div class="clearfix"></div>
-    <div class="col-sm-8">
+   
+    <div class="col-sm-8"> <!-- buradaki click ı almak ıstıyorum-->
         <div class="col-sm-12">
-            <input type="radio" name="adresradio" ng-model="adresradio.id" value="{{adres.id}}"  /> <i>{{adres. adi+' '+adres.soyadi}}</i>
+            <input type="radio" name="adresradio" ng-model="adresradio.id" value="{{adres.id}}"/> <i>{{adres. adi+' '+adres.soyadi}}</i>
         </div>
         <div class="clearfix"></div>
         <div class="col-sm-12">
@@ -27,6 +32,7 @@
         <div class="col-sm-12">
             <i>{{adres.ilce +' , '+ adres.sehir}}</i>
         </div>
+   
     </div>
 
     <div class="col-sm-4">
@@ -39,6 +45,8 @@
             <i>{{adres.telefon}}</i>
         </div>
     </div>
+
+
     <div class="clearfix"></div>
     <div class="col-sm-12">
     </div>

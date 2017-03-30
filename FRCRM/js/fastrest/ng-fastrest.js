@@ -88,7 +88,7 @@ frOrder.controller('frHeaderUstController',['$scope','$attrs',function($scope,$a
 frOrder.directive("frSlider", [function(){
         return {
             restrict: "EA", 
-            templateUrl: "js/fastrest/slider/Slider.html",
+            templateUrl: "js/fastrest/slider/slider.html",
             controller:'frSliderController'
         }
 }]);    
