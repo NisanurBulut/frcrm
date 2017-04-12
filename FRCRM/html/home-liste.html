@@ -1,21 +1,21 @@
 ﻿
 <link href="../css/homes-css/home-liste.css" rel="stylesheet" />
-
+<link href="../css/homes-css/home-color.css" rel="stylesheet" />
 
 <div ng-controller="GroupAndProductCtrl2" id="home">
 
-            <div class="container">
+            <div class="container" data-spy="scroll">
                 <div class="row">
                     <div class="col-sm-4"></div>
                     <div class="col-sm-8">
                         <div class="row" style="margin-bottom:20px">
                             <!--<fr-slider></fr-slider>-->
-                            <fr-account-info></fr-account-info>
+                            <fr-account-info ></fr-account-info>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4 hidden-xs">
+                    <div class="col-sm-4 hidden-sm">
                         <!--telefonlarda sepetin gorunmesını kaldırıyorum-->
 
                         <fr-sepet></fr-sepet>
@@ -25,9 +25,9 @@
                         
                         <div class="row">
 
-                            <div class="panel panel-danger">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Ürünler</h3>
+                            <div class="panel">
+                                <div class="panel-heading orange">
+                                    <h3 class="panel-title text-faded">Ürünler</h3>
                                 </div>
                                 <table class="table table-responsive table-hover" ng-repeat="group in groups">
                                     <!--home sayfasında salatalar dinamik menüler gibi grup isimleri gelir-->
@@ -39,7 +39,7 @@
                                     <!--home sayfasında listele dendiğinde gruplar altında listelenen yemekler-->
                                     <tbody style="border: 1px solid rgba(13, 11, 11, 0.1); font-size:10px;">
                                         <tr style="background:#fff;" ng-repeat="urun in group.product">
-                                            <!--Adjust bg and font colors inline-->
+                                          
                                             <td style="width:7%;"><input type="number" value="{{price}}" style="width:100%;border-radius:10%;" ng-model="price" /></td>
                                             <td ng-if="urun.dmid < 1"
                                                 ng-click="sepeteAt(urun,$index,price)" style="width:7%;padding:1px;border-radius:20%;text-align:center;">

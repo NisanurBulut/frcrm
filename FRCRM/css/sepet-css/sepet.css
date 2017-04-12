@@ -16,7 +16,7 @@ body {
 .basket-name{
     text-align:left;
      font-size:1.3vh;
-       color:#c70e0e;
+     color:#c70e0e;
     margin-left:5px;
 }
 .panel-pricing {
@@ -39,9 +39,9 @@ body {
   font-size: 2.3vw;
 }
 .panel-pricing .panel-body {
-  background-color: #f0f0f0;
+  /*background-color: #f0f0f0;*/
   font-size: 2.3vw;
-  color: #777777;
+  /*color: #777777;*/
   padding: 10px;
   margin: 0px;
 }
