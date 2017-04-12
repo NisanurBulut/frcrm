@@ -63,7 +63,7 @@
 
     }
 
-    $scope.ClikGroup = function (id) {
+    $scope.ClikGroup = function (id) { 
        
         GetProduct(id);
       
