@@ -143,6 +143,7 @@
     <Content Include="css\app.css" />
     <Content Include="css\app.js" />
     <Content Include="css\header-css\header-orta.css" />
+    <Content Include="css\homes-css\home-color.css" />
     <Content Include="css\homes-css\home-picture.css" />
     <Content Include="css\homes-css\home-liste.css" />
     <Content Include="css\ngdialog\myth\ngDialog-theme-default.css" />

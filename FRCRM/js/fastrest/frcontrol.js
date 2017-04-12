@@ -107,8 +107,6 @@ frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'lo
 
 
         function saveToCart(urunbilgi, adet) {
-
-
             cart.push(urunbilgi);
             var calert = JSON.stringify(cart);
             //alert(calert);
@@ -168,6 +166,7 @@ frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'lo
         $rootScope.$on('GetAdr', function (event) {
             GetAddress(); 
         });
+
         function GetAddress() {
             ac_id = localStorageService.get('accountid');
             mustid = localStorageService.get('mustid');
@@ -178,6 +177,7 @@ frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'lo
                 adresjson = adr;
                 $scope.adresler = adr;
                 $scope.adresradio = { id: $scope.adresler[0].id };
+                $scope.adres_sehir = $scope.adresler[0];//ilk adresin seçili gelmesi
                 change_address($scope.adresler[0].id);
                 $scope.$apply();
 
@@ -200,12 +200,9 @@ frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'lo
                     $scope.kapsaat      = kapsaat.substring(0, 5);   //$filter('date')(kapsaat, 'hh:mm');
                     $scope.minpak       = minpaktut;
                     minpaktutar         = minpaktut;
-                    $scope.servissure   = servissure;
+                    $scope.servissure = servissure;
                     break;
                 }
-            }
+            }    
         }
-
-
-
     }]);
