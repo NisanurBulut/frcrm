@@ -5,7 +5,7 @@ body {
 }
 
 .affix {
-     position: fixed !important; /*sepetin responsive genıslıge sahıp olabılmesı ıcın position fized olmalıdır*/
+     position: fixed !important; /*sepetin responsive genıslıge sahıp olabılmesı ıcın position fiXed olmalıdır*/
 }
 .input-attribute{
     width:20px;
@@ -32,11 +32,11 @@ body {
 }
 .panel-pricing .panel-heading .fa {
   margin-top: 5px;
-  font-size: 4.3vw;
+  font-size: 2.3vw;
 }
 .panel-pricing .panel-heading .h3 {
   margin-top: 5px;
-  font-size: 4.3vw;
+  font-size: 2.3vw;
 }
 .panel-pricing .panel-body {
   background-color: #f0f0f0;

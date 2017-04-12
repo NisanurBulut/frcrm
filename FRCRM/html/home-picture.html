@@ -17,13 +17,24 @@
  </style>
 
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 
     <!--Resim tıklanınca acılan sayfa-->
 <section>
-    <div class="container" ng-controller="GroupAndProductCtrl as main" id="home">
-
+    <div class="container" ng-controller="GroupAndProductCtrl" id="home">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+                <div class="row" style="margin-bottom:20px">
+                    <!--<fr-slider></fr-slider>-->
+                    <fr-account-info></fr-account-info>
+                </div>
+            </div>
+        </div>
         <!--home sayfasında salatalar dinamik menüler gibi grup isimleri gelir-->
         <div class="row">
             <div class="col-sm-4 hidden-xs">
@@ -34,16 +45,14 @@
             </div>
             <div class="col-sm-8">
                
-                  <fr-slider></fr-slider>
+                  <!--<fr-slider></fr-slider>-->
 
                 <!-- wrap tabset kuculdugunde responsive olmuyor sorun var -->
                     <div class="scrolling-tabs-container">
-                      
-                        
                         <!-- wrap tabset in a div with scrolling-tabs-wrapper directive on it -->
                         <div scrolling-tabs-wrapper>
                             <uib-tabset>
-                                <uib-tab ng-repeat="group in groups" heading="{{group.adi}}"  ng-click="ClikGroup(group.id)"></uib-tab>
+                                <uib-tab ng-repeat="group in groups" heading="{{group.adi}}" ng-click="ClikGroup(group.id)"></uib-tab>
                             </uib-tabset>
                         </div>
                     </div>

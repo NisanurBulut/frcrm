@@ -229,6 +229,14 @@ frOrder.directive("frTrSvgMap", [function () {
 }]);
 
 
+frOrder.directive("frAccountInfo", [function () {
+    return {
+        restrict: "EA",
+        templateUrl: "js/fastrest/template/accountinfo.html"
+    }
+}]);
+
+
 
 
 // restrict: "EA",//Nitelik kullanım şekli    

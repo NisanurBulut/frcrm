@@ -172,6 +172,7 @@
     <Content Include="css\sepet-css\sepet.css" />
     <Content Include="css\tabbar.css" />
     <Content Include="Default.aspx" />
+    <Content Include="duzen.html" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -270,6 +271,7 @@
     <Content Include="js\fastrest\slider\slider.html" />
     <Content Include="js\fastrest\solmenu\solmenu.html" />
     <Content Include="js\fastrest\sosyal\sosyal.html" />
+    <Content Include="js\fastrest\template\accountinfo.html" />
     <Content Include="js\fastrest\template\addresscard.html" />
     <Content Include="js\fastrest\template\adresscheck.html" />
     <Content Include="js\fastrest\template\carttemplate.html" />

@@ -114,6 +114,9 @@
         $scope.sepetim = localStorageService.get('restaurant-cart');
         tt();
     });
+    $rootScope.$emit('GetAdr');
+
+
 
 
 });

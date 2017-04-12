@@ -35,7 +35,8 @@ frOrder.controller('frHeaderOrtaController', ['$scope', '$attrs', 'localStorageS
         var sifre = $scope.sifre;
         var jsdt = '{"mail":"' + email + '","sifre":"' + sifre + '"}';
 
-        $http.post('Default.aspx/Logins', jsdt).success(function (data) {
+        if(email.length > 0 && sifre.length > 0){
+             $http.post('Default.aspx/Logins', jsdt).success(function (data) {
             var durumx = data.d;
             durumx = JSON.parse(durumx);
             localStorageService.set('musadi', durumx.adi);
@@ -53,10 +54,11 @@ frOrder.controller('frHeaderOrtaController', ['$scope', '$attrs', 'localStorageS
                 if (cartx.length > 0) { $location.path('/cart'); } else { $location.path('/home-liste'); }
 
 
-            }
+        }
             if (durum == '1') { $location.path('/login'); $scope.hatamesaji = 'Hatalı kullanıcı adı yada şifre '; }
             if (durum == '2') { $location.path('/login'); $scope.hatamesaji = 'Tekrar deneyin'; }
         }).error(function (err) { });
+        }
 
     }
     $scope.$on('cartLogin', function (event) { $scope.headerlogin = true; $scope.kmail = localStorageService.get('kmail'); });

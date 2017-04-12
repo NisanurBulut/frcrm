@@ -115,7 +115,9 @@ namespace FRCRM.AppService
         public string run_address_query(string id ,string account_id)
         {
             address_query = "select addressid as id, a.name as tanim , a.address as adres , c.name as sehir, d.name as ilce, "+
-            " m.lc_email as mail , a.phone as telefon,m.adi as adi , m.soyadi as soyadi  from " +
+            " m.lc_email as mail , a.phone as telefon,m.adi as adi , m.soyadi as soyadi , " +
+            " care.minimum as min_pak_tutar , care.minute as servis_sure , care.opening_time as acsaat , care.closing_time as kapsaat , "+
+            " (select count(*) from a_care_places where current_time > opening_time and current_time < closing_time and account_id = care.account_id and care_district_id = care.care_district_id) as openctrl from " +
             " (select * from addresss where lastuserid = "+id+") as a "+
             " left outer join citys c on (a.city_id = c.cityid) "+
             " left outer join districts d on(a.district_id = d.districtid) "+

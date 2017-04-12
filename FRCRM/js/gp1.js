@@ -75,6 +75,10 @@
         tt();
     });
 
+    $rootScope.$emit('GetAdr');
+
+
+
 
    
     });

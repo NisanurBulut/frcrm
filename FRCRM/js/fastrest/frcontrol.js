@@ -4,9 +4,16 @@
         controller: "frControlController"
     }
 }]);
-frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'localStorageService', '$location', '$http', 'ngDialog',
-    function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngDialog) {
+frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'localStorageService', '$location', '$http', 'ngDialog','$filter',
+    function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngDialog,$filter) {
+        var mustid = localStorageService.get('mustid');
         var cart = localStorageService.get('restaurant-cart') || [];
+        var adresjson = [];
+        var minpaktutar = 0;
+        var sepettoplam = 0;
+        var acsaat = new Date();
+        var kapsaat = new Date();
+        var simdikizaman = new Date();
         localStorageService.set('restaurant-cart', cart);
         var ac_id = localStorageService.get('accountid');
         var account_name = localStorageService.get('account_name');
@@ -33,6 +40,7 @@ frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'lo
             }
 
             $scope.toplam = parseFloat(ttr).toFixed(2);
+            sepettoplam = parseFloat(ttr).toFixed(2);
             $rootScope.$emit('cartGncl');
             $scope.$emit('cartCount', adet, parseFloat(ttr).toFixed(2));
         }
@@ -72,7 +80,14 @@ frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'lo
         function sepeteat2(urunbilgi) {
 
             var resid = localStorageService.get('resid') || 0;
-            if (resid != 0 && resid == ac_id) {
+            ac_id = localStorageService.get('accountid');
+            if (cart.length == 0) {
+                if (urunbilgi.adet) {
+                    localStorageService.set('resid', ac_id);
+                    saveToCart(urunbilgi, urunbilgi.adet);
+                    return;
+                }
+            } else if (resid != 0 && resid == ac_id) {
                 if (urunbilgi.adet) {
                     saveToCart(urunbilgi, urunbilgi.adet);
                     return;
@@ -133,6 +148,62 @@ frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'lo
             localStorageService.set('restaurant-cart', cart);
             $scope.sepetim = localStorageService.get('restaurant-cart');
             tt();
+        }
+
+        $scope.toCart = function () {
+            tt();
+           
+            if (parseFloat(sepettoplam) < parseFloat(minpaktutar)) {
+                alert('SEPETİNİZDEKİ ÜRÜNLER MİNİMUM SİPARİŞ TUTARININ ALTINDADIR');
+            }
+            else if (simdikizaman < 1) {
+                alert('HİZMET SAATLERİ DIŞINDAYIZ');
+            }
+            else {
+                $location.path('/cart');
+            }
+        }
+
+        GetAddress();
+        $rootScope.$on('GetAdr', function (event) {
+            GetAddress(); 
+        });
+        function GetAddress() {
+            ac_id = localStorageService.get('accountid');
+            mustid = localStorageService.get('mustid');
+            var jsn = '{"id":"' + mustid + '","account_id":"' + ac_id + '"}';
+            $http.post('Default.aspx/GetAddress', jsn).success(function (data) {
+                var adr = data.d;
+                adr = JSON.parse(adr);
+                adresjson = adr;
+                $scope.adresler = adr;
+                $scope.adresradio = { id: $scope.adresler[0].id };
+                change_address($scope.adresler[0].id);
+                $scope.$apply();
+
+            }).error();
+        }
+
+        $scope.change_address = function (adid){
+            change_address(adid);
+        }
+
+        function change_address(adid) {
+            for (var i = 0; i <= adresjson.length - 1; i++) {
+                if (adresjson[i].id == adid) {
+                    var minpaktut       = adresjson[i].min_pak_tutar; minpaktut = parseFloat(minpaktut).toFixed(2);
+                    var servissure      = adresjson[i].servis_sure;
+                    simdikizaman        = adresjson[i].openctrl;
+                    acsaat              = adresjson[i].acsaat;
+                    kapsaat             = adresjson[i].kapsaat;
+                    $scope.acsaat       = acsaat.substring(0,5);    //$filter('date')(acsaat, 'hh:mm');
+                    $scope.kapsaat      = kapsaat.substring(0, 5);   //$filter('date')(kapsaat, 'hh:mm');
+                    $scope.minpak       = minpaktut;
+                    minpaktutar         = minpaktut;
+                    $scope.servissure   = servissure;
+                    break;
+                }
+            }
         }
 
 

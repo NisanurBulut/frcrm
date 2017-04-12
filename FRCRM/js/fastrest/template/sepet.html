@@ -4,7 +4,7 @@
         $('#nav').affix(
             {
                 offset: {
-                    top: 200, // scroll işlemine başlar başlamaz affix etkin olsun
+                    top: 300, // scroll işlemine başlar başlamaz affix etkin olsun
                     bottom: 50
                   
                 }
@@ -30,17 +30,21 @@
     <div class="container" data-spy="scroll">
         <!-- scroll yaptıktan sonra buraya gırıyor ve buyuyor -->
         <div class="col-sm-3 text-center navbar-nav">
-            <div id="nav" class="panel panel-danger panel-pricing" data-spy="affix" data-offset-top="200">
+            
+            <div id="nav" class="panel panel-danger panel-pricing" data-spy="affix" data-offset-top="100">
                 <div class="panel-heading">
-                    <i class="fa fa-shopping-cart"></i>
-                    <h3>SEPETİM</h3>
+                    <h3>ADRESLERİM</h3>
+                    <label ng-repeat="adres in adresler" style="margin:10px 10px 10px 10px;width:100%;font-weight:100;">
+                        <input type="radio" name="adresradio" ng-model="adresradio.id" value="{{adres.id}}" style="float:left;" ng-click="change_address({{adres.id}});">
+                        <i>{{adres.tanim}}</i><br />
+                    </label>
                 </div>
-                <div class="panel-heading">
+                <!--<div class="panel-heading">
                     <h3>{{account_name}}</h3>
                 </div>
                 <div class="panel-body text-center" ng-if="sepetim.length > 0">
                     <p class="plan-price" ><strong>{{toplam}} TL</strong></p>
-                </div>
+                </div>-->
                 <div class="panel-collapse"ng-if="sepetim.length > 0">
                     <table class="table table-responsive table-hover font">
                         <thead>
@@ -67,7 +71,7 @@
                     </table>
                 </div>
                 <div class="panel-footer">
-                    <a href="#cart" class="btn btn-sm btn-block btn-danger" style="font-size:1.3vh 1.3vw;" ng-if="sepetim.length > 0">{{toplam}} TL - TAMAMLA!</a>
+                    <a ng-click="toCart();" class="btn btn-sm btn-block btn-danger" style="font-size:1.3vh 1.3vw;" ng-if="sepetim.length > 0">{{toplam}} TL - TAMAMLA!</a>
                 </div>
             </div>
         </div>

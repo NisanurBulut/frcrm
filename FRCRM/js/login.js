@@ -7,6 +7,7 @@ app.controller('loginctrl', function ($scope, $http, localStorageService, $locat
         var kayitsifretekrar = $scope.kayitsifretekrar;
         var kayitemail = $scope.kayitmail;
         var jsdt = '{"adi":"' + kayitadi + '","soyadi":"' + kayitsoyadi + '","mail":"' + kayitemail + '","sifre":"' + kayitsifre + '"}';
+        
         //alert(jsdt);
         $http.post('Default.aspx/SignUp', jsdt).success(function (data) {
             var durum = data.d;

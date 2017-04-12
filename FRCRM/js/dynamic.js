@@ -45,9 +45,16 @@
                     var adi = dynamicMenuJsn[a].adi;
                     var mik = dynamicMenuJsn[a].miktar;
                     var art = dynamicMenuJsn[a].arttirim;
-                    if (parseFloat(art) > 0) { adi = adi + '      +' + art + '  TL'; }
+                    /*var adilng = adi.length;
+                    var lng = 30;
+                    var lngspace = '    ';
+                    for (var x = 0; x <= lng - adilng; x++) {
+                        lngspace = lngspace + '     ';
+                    }*/
+                    if (parseFloat(art) > 0) { adi = adi  +' +' + art + ' TL'; }
                     var a_jsn = { 'sp_id': sid, 'adi': adi, 'miktar': mik, 'arttirim': art };
                     icr.push(a_jsn);
+                    lngspace = ' ';
 
                 }
             }
@@ -121,7 +128,13 @@
         function sepeteat2(urunbilgi) {
             var ac_id = localStorageService.get('accountid');
             var resid = localStorageService.get('resid') || 0;
-            if (resid != 0 && resid == ac_id) {
+            if (cart.length == 0) {
+                if (urunbilgi.adet) {
+                    localStorageService.set('resid', ac_id);
+                    saveToCart(urunbilgi, urunbilgi.adet);
+                    return;
+                }
+            } else if (resid != 0 && resid == ac_id) {
                 if (urunbilgi.adet) {
                     saveToCart(urunbilgi, urunbilgi.adet);
                     return;
