@@ -10,6 +10,12 @@
                 }
             }
         );
+
+        $('#nav').affix({
+            offset: {
+                top: $('myCarousel').height()
+            }
+        });
     });
 
 
@@ -24,7 +30,7 @@
 </script>
 <style>   
      .affix {
-        top:70px;
+        top:470px;
     }
 
    .btn:hover {
