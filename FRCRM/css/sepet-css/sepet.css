@@ -14,10 +14,10 @@ body {
     position:center;
 }
 .basket-name{
-    text-align:left;
+     text-align:left;
      font-size:1.3vh;
      color:#c70e0e;
-    margin-left:5px;
+    /*margin-left:5px;*/
 }
 .panel-pricing {
   -moz-transition: all .3s ease;
@@ -27,24 +27,26 @@ body {
 .panel-pricing:hover {
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
-.panel-pricing .panel-heading {
-  padding: 10px 5px;
-}
+/*.panel-pricing .panel-heading {
+  /*padding: 10px 5px;*/
+/*}
 .panel-pricing .panel-heading .fa {
   margin-top: 5px;
   font-size: 2.3vw;
-}
-.panel-pricing .panel-heading .h3 {
+}*/
+/*.panel-pricing .panel-heading .h3 {
   margin-top: 5px;
-  font-size: 2.3vw;
-}
-.panel-pricing .panel-body {
+  font-size: 2.0vw;
+}*/
+/*.panel-pricing .panel-body {
   /*background-color: #f0f0f0;*/
-  font-size: 2.3vw;
-  /*color: #777777;*/
-  padding: 10px;
-  margin: 0px;
-}
+  /*font-size: 1.5vw;
+  color: #777777;*/
+  /*padding: 10px;*/
+  
+
+  /*margin: 0px;*/
+/*}/*/
 .font{
  font-size:1.3vh;
 }

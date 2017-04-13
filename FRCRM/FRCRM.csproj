@@ -143,6 +143,7 @@
     <Content Include="css\app.css" />
     <Content Include="css\app.js" />
     <Content Include="css\header-css\header-orta.css" />
+    <Content Include="css\homes-css\accountInfo.css" />
     <Content Include="css\homes-css\home-color.css" />
     <Content Include="css\homes-css\home-picture.css" />
     <Content Include="css\homes-css\home-liste.css" />
@@ -278,6 +279,7 @@
     <Content Include="js\fastrest\template\carttemplate.html" />
     <Content Include="js\fastrest\template\dynamicmodal.html" />
     <Content Include="js\fastrest\template\invoice.html" />
+    <Content Include="js\fastrest\template\oldOrders.html" />
     <Content Include="js\fastrest\template\paywizard.html" />
     <Content Include="js\fastrest\template\sepet.html" />
     <Content Include="js\fastrest\template\trmap.html" />

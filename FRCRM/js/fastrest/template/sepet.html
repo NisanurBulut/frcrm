@@ -40,21 +40,24 @@
     -webkit-transition: color 1s; /* For Safari 3.1 to 6.0 */
     transition: color 1s;
 }
+
 </style>
 <!-- sepet.css -->
+<link href="css/homes-css/home-color.css" rel="stylesheet" />
 <link href="css/sepet-css/sepet.css" rel="stylesheet" />
-<link href="../css/homes-css/home-color.css" rel="stylesheet" />
-<section id="sepetScrollspy" class="col-sm-3">
+
+
+<section id="sepetScrollspy" class="col-sm-4">
     <div class="container">
         <!-- scroll yaptıktan sonra buraya gırıyor ve buyuyor -->
-        <div class="col-sm-3 text-center navbar-nav">
+        <div class="col-sm-3">
             
-            <div id="nav" class="panel panel-pricing" data-spy="affix" >
+            <div id="nav" class="panel borderpanel" data-spy="affix" >
                
-                <div class="panel-body orange text-center" ng-if="sepetim.length > 0">
-                    <p class="plan-price"><strong class="text-faded">{{toplam}} TL</strong></p>
+                <div class="panel-heading text-center orange" style="font-size:2.3vh;" ng-if="sepetim.length > 0">
+                    <p ><strong class="text-faded">{{toplam}} TL</strong></p>
                 </div>
-                <div class="panel-collapse"ng-if="sepetim.length > 0">
+                <div ng-if="sepetim.length > 0">
                     <table class="table table-responsive table-hover font">
                         <thead>
                             <tr class="text-center">

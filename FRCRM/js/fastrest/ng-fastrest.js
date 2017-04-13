@@ -1,17 +1,32 @@
+/// <reference path="C:\Users\nisanur\Source\Repos\frcrm\FRCRM\html/oldOrders.html" />
 
 var frOrder = angular.module('fr.order', ['LocalStorageModule', 'ngRoute','ngDialog']);
 
 
 
-frOrder.directive('frSepet', function() {
-	
-	var html = '';
-        return {
-	        restrict: "EA",
-            templateUrl:'js/fastrest/template/sepet.html',
-            controller:'frSepetController'
-        }
+frOrder.directive('frOldOlders', function () {
+
+    var html = '';
+    return {
+        restrict: "EA",
+        templateUrl: 'js/fastrest/template/oldOrders.html',
+        controller: ''
+    }
 });
+
+frOrder.directive('frSepet', function () {
+
+    var html = '';
+    return {
+        restrict: "EA",
+        templateUrl: 'js/fastrest/template/sepet.html',
+        controller: 'frSepetController'
+    }
+});
+
+frOrder.controller('frSepetController', ['$scope', function ($scope) {
+
+}]);
 
 
 
@@ -48,11 +63,7 @@ frOrder.controller('frSolMenuController', ['$scope','$attrs','$http',function($s
 
 
     
-frOrder.controller('frSepetController', ['$scope', function($scope) {
-        
-}]);
-    
-    
+
 frOrder.controller('frSosyalController',['$scope','$attrs',function($scope,$attrs){
 	    $scope.fb = $attrs.bilgiFb;
 	    $scope.tw = $attrs.bilgiTw;

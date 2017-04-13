@@ -6,10 +6,15 @@
 
             <div class="container" data-spy="scroll">
                 <div class="row">
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-8">
-                        <div class="row" style="margin-bottom:20px">
-                            <!--<fr-slider></fr-slider>-->
+                    <div class="col-sm-4 hidden-xs">
+
+                    <fr-old-olders></fr-old-olders>
+                    
+                    </div>
+
+                    <div class="col-sm-8 hidden-xs">
+                        <div class="row">
+                            
                             <fr-account-info ></fr-account-info>
                         </div>
                     </div>
@@ -21,10 +26,12 @@
                         <fr-sepet></fr-sepet>
 
                     </div>
+
                     <div class="col-sm-8">
-                            <div class="panel">
+                        <fr-slider></fr-slider>
+                            <div class="panel borderpanel">
                                 <div class="panel-heading orange">
-                                    <h3 class="panel-title text-faded">Ürünler</h3>
+                                    <p class="text-faded">Ürünler</p>
                                 </div>
                                 <table class="table table-responsive table-hover" ng-repeat="group in groups">
                                     <!--home sayfasında salatalar dinamik menüler gibi grup isimleri gelir-->

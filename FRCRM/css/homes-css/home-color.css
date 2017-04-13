@@ -1,4 +1,6 @@
-﻿
+﻿.borderpanel {
+     border-color: #f39c12;
+    }
  .dark-blue {
     background-color: #34495e;
 }
