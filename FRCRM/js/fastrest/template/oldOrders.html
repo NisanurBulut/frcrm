@@ -17,29 +17,23 @@ $(document).ready(function(){
                    <table class="table table-hover font" style="font:bold;">
  
                        <tbody class="text-center">
-                           <tr>
-                               <td>Adres</td>
-                               <td>Sipariş Tutarı</td>
+                           <tr ng-repeat="ord in oldorders">
+                               <td class="text-left">{{ord.tanim}}</td>
+                               <td class="text-center">{{ord.tutar}}₺</td>
                                <td>
-                                   <i class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Nisanur:)"></i>
+                                   <i ng-if="ord.durum == 0" class="fa fa-circle-o fa-2x" data-toggle="tooltip" data-placement="top" title="Siparişiniz verildi"></i>
+                                   <i ng-if="ord.durum == 1" class="fa fa-clock-o fa-2x" data-toggle="tooltip" data-placement="top" title="Siparişiniz hazırlanıyor"></i>
+                                   <i ng-if="ord.durum == 2" class="fa fa-car fa-2x" data-toggle="tooltip" data-placement="top" title="Siparişiniz Yolda"></i>
+                                   <i ng-if="ord.durum == 3" class="fa fa-check-circle fa-2x" data-toggle="tooltip" data-placement="top" title="Siparişiniz teslim edildi"></i>
+                                   <i ng-if="ord.durum == 4" class="fa fa-times-circle fa-2x" data-toggle="tooltip" data-placement="top" title="Siparişiniz Teknik bir sorun nedeni ile iptal edildi"></i>
+                                   <i ng-if="ord.durum == 5" class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Durum 5"></i>
+                                   <i ng-if="ord.durum == 6" class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Durum 6"></i>
+                                   <i ng-if="ord.durum == 7" class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Durum 7"></i>
+                                   <i ng-if="ord.durum == 8" class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Durum 8"></i>
+                                   <i ng-if="ord.durum == 9" class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Durum 9"></i>
+                                   <i ng-if="ord.durum == 10" class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Durum 10"></i>
                                </td>  
                            </tr>
-                          
-                           <tr>
-                               <td>Adres</td>
-                               <td>Sipariş Tutarı</td>
-                               <td>
-                                   <i class="fa fa-location-arrow fa-2x" data-toggle="tooltip"  data-placement="top" title="Nisanur:)"></i>
-                               </td>  
-                           </tr>
-                           <tr>
-                               <td>Adres</td>
-                               <td>Sipariş Tutarı</td>
-                               <td>
-                                   <i class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Nisanur:)"></i>
-                               </td>  
-                           </tr>
-
                        </tbody>
                    </table>
          </div>

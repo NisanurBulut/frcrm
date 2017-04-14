@@ -9,7 +9,7 @@ namespace FRCRM.AppService
     public class Grafiksql
     {
         HttpContext context = HttpContext.Current;/*Session için*/
-        public string group_query,dynamic_menu_query, product_query,product_list_query,dyna_query, account_query,citys_query,districts_query,address_query,paytype_query;
+        public string group_query,dynamic_menu_query, product_query,product_list_query,dyna_query, account_query,citys_query,districts_query,address_query,paytype_query,oldsip_query;
 
         public string run_group_guery(string account_id)
         {
@@ -132,6 +132,14 @@ namespace FRCRM.AppService
             paytype_query = "select *from (select * from ads_odmsekli_account where active = true and account_id = "+id+") as a "+
             " left outer join ads_odmsekli o on (o.odmno = a.odmno_id)";
             return paytype_query;
+        }
+
+        public string run_oldsip_query(string id ,string account_id )
+        {
+            oldsip_query = "select adr.name as tanim , a.total as tutar , a.order_state as durum , a.order_date as tarih , a.adsno as adsno "+
+            " from(select * from ads_order_state where customer_id = "+id+" and account_id = "+account_id+") as a "+
+            " left outer join addresss adr on (adr.addressid = a.address_id) order by tarih desc";
+            return oldsip_query;
         }
 
         /*Grafiksql Sonu*/

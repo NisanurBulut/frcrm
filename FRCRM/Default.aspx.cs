@@ -195,6 +195,17 @@ namespace FRCRM
             return gjsn;
         }
 
+        [WebMethod]
+        public static string OldOrders(string id,string account_id)
+        {
+            Grafikjson grafikjson = new Grafikjson();
+            string sql;
+            Grafiksql g = new Grafiksql();
+            sql = g.run_oldsip_query(id,account_id);
+            string json = grafikjson.JsonAl(sql);
+            return json;
+        }
+
 
 
 

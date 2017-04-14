@@ -1,6 +1,7 @@
 ﻿app.controller('cartCtrl', function ($scope, $http, localStorageService, $location, $rootScope, ngDialog, $timeout) {
     var mustid = localStorageService.get('mustid');
     var ac_id = localStorageService.get('accountid');
+    var chsad = localStorageService.get('chosedadid');
     var adres_id = 0;
     var odeme_id = 0;
     if (cart.length < 1) { $location.path('/home-liste'); }
@@ -130,7 +131,7 @@
             var adr = data.d;
             adr = JSON.parse(adr);
             $scope.adresler = adr;
-            $scope.adresradio = { id: $scope.adresler[0].id };
+            $scope.adresradio = { id: chsad };
 
         }).error();
     }

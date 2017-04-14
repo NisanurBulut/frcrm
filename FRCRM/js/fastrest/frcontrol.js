@@ -189,6 +189,7 @@ frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'lo
         }
 
         function change_address(adid) {
+            localStorageService.set('chosedadid',adid);
             for (var i = 0; i <= adresjson.length - 1; i++) {
                 if (adresjson[i].id == adid) {
                     var minpaktut       = adresjson[i].min_pak_tutar; minpaktut = parseFloat(minpaktut).toFixed(2);
@@ -205,4 +206,24 @@ frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'lo
                 }
             }    
         }
+
+
+        GetOldOrders();
+        $rootScope.$on('GetOldOrders', function (event) {
+            GetOldOrders();
+        });
+
+        function GetOldOrders() {
+            ac_id = localStorageService.get('accountid');
+            mustid = localStorageService.get('mustid');
+            var jsn = '{"id":"' + mustid + '","account_id":"' + ac_id + '"}';
+            $http.post('Default.aspx/OldOrders', jsn).success(function (data) {
+                var ord = data.d;
+                ord = JSON.parse(ord);
+                $scope.oldorders = ord;
+                $scope.$apply();
+
+            }).error();
+        }
+
     }]);
