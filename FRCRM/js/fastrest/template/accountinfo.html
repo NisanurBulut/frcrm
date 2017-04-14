@@ -2,91 +2,104 @@
 <link href="../../../css/homes-css/accountInfo.css" rel="stylesheet" />
 
 <div class="row">
+   
     <div class="col-lg-3 col-md-3 col-sm-6">
-        <div class="circle-tile">
-            <a>
-                <div class="circle-tile-heading blue">
-                    <i class="fa fa-location-arrow fa-fw fa-3x"></i>
-                </div>
-            </a>
-            <div class="circle-tile-content blue">
-                <div class="circle-tile-description text-faded">
-                    Adreslerim
-                </div>
-
-                <div class="circle-tile-dropdown blue">
-                    <div class="select-wrapper">
-                        <select class="select blue text-faded"ng-model="adres_sehir" name="adres_sehir"
- ng-options="Atanim as Atanim.tanim for Atanim in adresler track by Atanim.id"
-ng-change="change_address(adres_sehir.id)">
-                           
-                        </select>
-                        <span class="select-icon entypo-arrow-combo"></span>
+        <div class="panel red">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3" id="icon">
+                        <i class="fa fa-support fa-3x text-faded"></i>
                     </div>
-                    <!--<select   class="blue text-faded" ng-model="adres_sehir" name="adres_sehir"
- ng-options="Atanim as Atanim.tanim for Atanim in adresler track by Atanim.id"
-ng-change="change_address(adres_sehir.id)"></select>-->
 
+                    <div class="col-xs-9 text-right">
+                        <div class="circle-tile-number text-faded">Adresim</div>
+                    </div>
                 </div>
-               
             </div>
+
+            <div class="panel-footer select-wrapper panel-footerAttr">
+
+                <select class="select text-red" ng-model="adres_sehir" name="adres_sehir"
+                        ng-options="Atanim as Atanim.tanim for Atanim in adresler track by Atanim.id"
+                        ng-change="change_address(adres_sehir.id)"></select>
+
+            </div>
+
         </div>
-  
-        </div>
+    </div>
     <div class="col-lg-3 col-md-3 col-sm-6">
-        <div class="circle-tile">
-            <a>
-                <div class="circle-tile-heading green">
-                    <i class="fa fa-money fa-fw fa-3x"></i>
-                </div>
-            </a>
-            <div class="circle-tile-content green">
-                <div class="circle-tile-description text-faded">
-                    Minimum Sipariş
-                </div>
-                <div class="circle-tile-number text-faded">
-                    {{minpak}} ₺
+        <div class="panel green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-money fa-fw fa-3x text-faded"></i>
+                    </div>
+                   
+                    <div class="col-xs-9 text-right">
+                        <div class="text-faded circle-tile-number">{{minpak}} ₺</div>
+                    </div>
                 </div>
             </div>
+            
+                <div class="panel-footer panel-footerAttr">
+                    <span class="text-center">Minumum Tutar</span>
+                    
+                    <div class="clearfix"></div>
+                </div>
+           
+        </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-3 col-sm-6">
+        <div class="panel blue">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-car fa-fw fa-3x text-faded"></i>
+                    </div>
+                    
+                    <div class="col-xs-9 text-right">
+                        <div class="huge"></div>
+                        <div class="text-faded circle-tile-number">{{servissure}} DK</div>
+                    </div>
+                </div>
+            </div>
+            
+                <div class="panel-footer panel-footerAttr">
+                    <div class="text-center">Servis Süresi</div>
+                    <div class="clearfix"></div>
+                </div>
+           
         </div>
     </div>
 
+   
     <div class="col-lg-3 col-md-3 col-sm-6">
-        <div class="circle-tile">
-            <a>
-                <div class="circle-tile-heading red">
-                    <i class="fa fa-car fa-fw fa-3x"></i>
-                </div>
-            </a>
-            <div class="circle-tile-content red">
-                <div class="circle-tile-description text-faded">
-                    Servis süresi
-                </div>
-                <div class="circle-tile-number text-faded">
-                    {{servissure}} DAKİKA
-                    <span id="sparklineC"></span>
-                </div>
-            </div>
-        </div>
-    </div>
+       
+       
+        <div class="panel orange">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-clock-o fa-fw fa-3x text-faded"></i>
+                    </div>
 
-    <div class="col-lg-3 col-md-3 col-sm-6">
-        <div class="circle-tile">
-            <a>
-                <div class="circle-tile-heading orange">
-                    <i class="fa fa-clock-o fa-fw fa-3x"></i>
-                </div>
-            </a>
-            <div class="circle-tile-content orange">
-                <div class="circle-tile-description text-faded">
-                    Hizmet Saatleri
-                </div>
-                <div class="circle-tile-number text-faded">
-                    {{acsaat +' '+kapsaat}} 
-                    <span id="sparklineC"></span>
+                    <div class="col-xs-9 text-right">
+                        <div class="text-faded circle-tile-number">{{acsaat +' '+kapsaat}}</div>
+                    </div>
                 </div>
             </div>
+
+            <div class="panel-footer panel-footerAttr">
+                <div class="text-center">Hizmet Saatleri</div>
+
+                <div class="clearfix"></div>
+            </div>
+
         </div>
     </div>
 
 </div>
+
+
+
