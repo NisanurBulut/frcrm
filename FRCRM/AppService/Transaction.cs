@@ -63,6 +63,9 @@ namespace FRCRM.AppService
                     myTrans.Commit();
                     islem = "0";
                     dt = gj.JsonDataAl("insert into ads_notlar (adsno,adsnot) values ("+adsno+",'"+adsnot+"')");
+                    pgCommand.CommandText = "insert into ads_order_state (adsno,customer_id,account_id,order_state,address_id,pay_type_id) values (" +
+                        " "+adsno+" , "+k_id+","+account_id+",0,"+adres_id+","+odeme_id+") ";
+                    pgCommand.ExecuteNonQuery();
                     Console.WriteLine("işlem tamam");
                     
 
