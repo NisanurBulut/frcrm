@@ -1,4 +1,9 @@
-﻿
+﻿ .panel-footerAttr {
+   
+    height:55px; /*select ten dolayı oluşan kaymayı önlemek için*/
+  
+  
+}
 @media (min-width: 768px){
 .circle-tile {
     margin-bottom: 30px;
@@ -41,14 +46,14 @@
 }
 
 .circle-tile-number {
-    padding: 5px 0 15px;
-    font-size: 26px;
+    /*padding: 5px 0 15px;*/
+    font-size: 15px;
     font-weight: 700;
     line-height: 1;
 }
 .circle-tile-dropdown {
-    padding: 5px 0 10px;
-    font-size: 12px;
+    padding: 5px 0 15px;
+    font-size: 15px;
     font-weight: 700;
     line-height: 1;
 }
