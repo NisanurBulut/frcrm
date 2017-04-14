@@ -24,7 +24,7 @@
     -webkit-box-sizing:border-box;
     -webkit-transition: border 0.3s ease-out, color 0.3s ease 0.5s;
     -moz-transition: border 0.3s ease-out, color 0.3s ease 0.5s;
-    -ms-transition: border 0.3s ease-out, color 0.3s ease 0.5s; /* IE10 is actually unprefixed */
+    -ms-transition: border 0.3s ease-out, color 0.3s ease 0.5s; /* IE10 is actually unproductefixed */
     -o-transition: border 0.3s ease-out, color 0.3s ease 0.5s;
     transition: border 0.3s ease-out, color 0.3s ease 0.5s;
     -webkit-animation: pulsate 1.2s linear infinite;

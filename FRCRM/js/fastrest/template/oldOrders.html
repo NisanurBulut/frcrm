@@ -4,26 +4,45 @@
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
 </style>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 <section class="col-sm-4">
     <div class="container">
         <div class="col-sm-3">
-            <div class="panel orange">
-                <div class="panel-heading">
-                    <p class="text-center text-faded">Geçmiş Siparişlerim</p>
-                </div>
-                <ul class="list-group list-group-flush text-center">
-                    <li class="list-group-item">
-                        <span class="fa fa-coffee"></span> NİSANUR Kahve Sever
-                    </li>
-                    <li class="list-group-item">
-                        <span class="glyphicon glyphicon-heart"></span> NİSANUR Papatya Sever
-                    </li>
-                    <li class="list-group-item">
-                        <span class="glyphicon glyphicon-heart"></span>NİSANUR Balıkları Sever
-                    </li>
-                </ul>
-            </div>
+            <div class="panel borderpanel">
+                <div class="panel-heading orange text-faded text-center">Sipariş Durumu</div>   
+                   <table class="table table-hover font" style="font:bold;">
+ 
+                       <tbody class="text-center">
+                           <tr>
+                               <td>Adres</td>
+                               <td>Sipariş Tutarı</td>
+                               <td>
+                                   <i class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Nisanur:)"></i>
+                               </td>  
+                           </tr>
+                          
+                           <tr>
+                               <td>Adres</td>
+                               <td>Sipariş Tutarı</td>
+                               <td>
+                                   <i class="fa fa-location-arrow fa-2x" data-toggle="tooltip"  data-placement="top" title="Nisanur:)"></i>
+                               </td>  
+                           </tr>
+                           <tr>
+                               <td>Adres</td>
+                               <td>Sipariş Tutarı</td>
+                               <td>
+                                   <i class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Nisanur:)"></i>
+                               </td>  
+                           </tr>
 
+                       </tbody>
+                   </table>
+         </div>
         </div>
     </div>
 
