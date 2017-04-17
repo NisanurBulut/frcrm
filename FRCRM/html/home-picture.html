@@ -1,7 +1,7 @@
 ﻿<link href="css/homes-css/home-picture.css" rel="stylesheet" />
 <link href="css/sepet-css/sepet.css" rel="stylesheet" />
 <link href="../js/scrolltab-js/scrolling-tabs.css" rel="stylesheet"/>
-
+<link rel="stylesheet" href="../css/homes-css/animate.css">
 <style>
      @import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
 
@@ -12,7 +12,22 @@
         /*border-style:none;  şimdiik förmek amaclı border rengi var ama normalde kaldırıcam*/
         border-color:#e74c3c;
      }
+     div.show-image {
+    position: relative;
+    float:left;
+    margin:5px;}
 
+div.show-image:hover a
+  {
+  display: block;
+  }
+
+div.show-image a {
+   
+    top:0;
+    left:0;
+    display:none;
+}
 
  </style>
 
@@ -58,7 +73,7 @@
                     <div ng-repeat="urun in urunler">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="product-image-wrapper">
-                                <div class="productinfo text-center pic-fontSize img-thumbnail">
+                                <div class="productinfo text-center pic-fontSize img-thumbnail show-image">
                                     <p class="pic-fontSize">{{urun.pname}}</p>
                                     <img src="https://i.ytimg.com/vi/EqXiTCXc6Ag/maxresdefault.jpg" class="img-responsive thumbnail" />
                                     <!--h2 olduğu için yazdıgım font uygulanmıyor-->
@@ -66,10 +81,10 @@
                                     <h2 ng-if="urun.dmid > 0">{{urun.dmfiyat}} TL</h2>
 
                                     <!--yazdığım margin ile sayfa kuculse dahi butonun thumbnaıl ıcerısınde sıkısmasını kenaralra yapısmasını onledım-->
-                                    <a class="btn red btn-sm btn-block pic-fontSize" style="padding:4px 7px 7px 4px" ng-if="urun.dmid < 1" ng-click="sepeteAt(urun,$index,1)">
+                                    <a class="btn red btn-sm btn-block pic-fontSize the-buttons" style="padding:4px 7px 7px 4px" ng-if="urun.dmid < 1" ng-click="sepeteAt(urun,$index,1)">
                                         <i class="fa fa-shopping-cart text-faded"></i><br /><em class="text-faded">Sepete Ekle</em>
                                     </a>
-                                    <a class="btn red btn-sm btn-block add-to-cart pic-fontSize" ng-if="urun.dmid > 0" style="padding:4px 7px 7px 4px" ng-click="dynamicModalOpen(urun,$index,1);">
+                                    <a class="btn red btn-sm btn-block add-to-cart pic-fontSize the-buttons fadeInUp" ng-if="urun.dmid > 0" style="padding:4px 7px 7px 4px" ng-click="dynamicModalOpen(urun,$index,1);">
                                         <i class="fa fa-shopping-cart text-faded"></i><br /><em class="text-faded">Sepete Ekle</em>
                                     </a>
                                 </div>

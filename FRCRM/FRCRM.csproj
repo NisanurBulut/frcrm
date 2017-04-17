@@ -139,14 +139,21 @@
     <Content Include="csss\prettyPhoto.css" />
     <Content Include="csss\price-range.css" />
     <Content Include="csss\responsive.css" />
+    <Content Include="css\.gitignore" />
     <Content Include="css\anket.css" />
     <Content Include="css\app.css" />
     <Content Include="css\app.js" />
+    <Content Include="css\Gruntfile.js" />
     <Content Include="css\header-css\header-orta.css" />
     <Content Include="css\homes-css\accountInfo.css" />
+    <Content Include="css\homes-css\animate.css" />
     <Content Include="css\homes-css\home-color.css" />
     <Content Include="css\homes-css\home-picture.css" />
     <Content Include="css\homes-css\home-liste.css" />
+    <Content Include="css\hover.jpg" />
+    <Content Include="css\license.txt" />
+    <Content Include="css\logo-transparent.png" />
+    <Content Include="css\modern-slide-in.png" />
     <Content Include="css\ngdialog\myth\ngDialog-theme-default.css" />
     <Content Include="css\ngdialog\myth\ngDialog-theme-plain.css" />
     <Content Include="css\ngdialog\myth\ngDialog.css" />
@@ -168,11 +175,14 @@
     <Content Include="css\onsen-css-components.css" />
     <Content Include="css\onsen-css-components.min.css" />
     <Content Include="css\onsenui.css" />
+    <Content Include="css\photo-stack.png" />
     <Content Include="css\plugins.css" />
     <Content Include="css\radio.css" />
     <Content Include="css\roots.css" />
     <Content Include="css\sepet-css\sepet.css" />
+    <Content Include="css\sequence-logo.png" />
     <Content Include="css\tabbar.css" />
+    <Content Include="css\two-up.png" />
     <Content Include="Default.aspx" />
     <Content Include="duzen.html" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -588,6 +598,12 @@
     <Content Include="js\scrolltab-js\package.json" />
     <Content Include="js\scrolltab-js\README.md" />
     <Content Include="js\scrolltab-js\scrolling-tabs.scss" />
+    <Content Include="css\.editorconfig" />
+    <Content Include="css\bower.json" />
+    <Content Include="css\CONTRIBUTING.md" />
+    <Content Include="css\HISTORY.md" />
+    <Content Include="css\package.json" />
+    <Content Include="css\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
