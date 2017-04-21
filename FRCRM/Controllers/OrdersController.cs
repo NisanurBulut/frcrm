@@ -15,7 +15,7 @@ namespace FRCRM.Controllers
 
         [ScriptMethod(UseHttpGet = true)]
         public DataTable Get(string id)
-        {
+        { 
             
             Grafikjson grafikjson = new Grafikjson();
            
