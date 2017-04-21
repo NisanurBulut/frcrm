@@ -88,20 +88,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Npgsql, Version=3.1.9.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.3.1.9\lib\net451\Npgsql.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Swashbuckle.Core.5.5.3\lib\net40\Swashbuckle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http" />
@@ -133,10 +125,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
-      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="adresekle.html" />
@@ -151,14 +139,23 @@
     <Content Include="csss\prettyPhoto.css" />
     <Content Include="csss\price-range.css" />
     <Content Include="csss\responsive.css" />
+    <Content Include="css\.gitignore" />
     <Content Include="css\anket.css" />
     <Content Include="css\app.css" />
     <Content Include="css\app.js" />
+    <Content Include="css\Gruntfile.js" />
     <Content Include="css\header-css\header-orta.css" />
     <Content Include="css\homes-css\accountInfo.css" />
     <Content Include="css\homes-css\home-color.css" />
     <Content Include="css\homes-css\home-picture.css" />
     <Content Include="css\homes-css\home-liste.css" />
+    <Content Include="css\hover.jpg" />
+    <Content Include="css\hover\css\demo-page.css" />
+    <Content Include="css\hover\css\hover-min.css" />
+    <Content Include="css\hover\css\hover.css" />
+    <Content Include="css\license.txt" />
+    <Content Include="css\logo-transparent.png" />
+    <Content Include="css\modern-slide-in.png" />
     <Content Include="css\ngdialog\myth\ngDialog-theme-default.css" />
     <Content Include="css\ngdialog\myth\ngDialog-theme-plain.css" />
     <Content Include="css\ngdialog\myth\ngDialog.css" />
@@ -180,11 +177,14 @@
     <Content Include="css\onsen-css-components.css" />
     <Content Include="css\onsen-css-components.min.css" />
     <Content Include="css\onsenui.css" />
+    <Content Include="css\photo-stack.png" />
     <Content Include="css\plugins.css" />
     <Content Include="css\radio.css" />
     <Content Include="css\roots.css" />
     <Content Include="css\sepet-css\sepet.css" />
+    <Content Include="css\sequence-logo.png" />
     <Content Include="css\tabbar.css" />
+    <Content Include="css\two-up.png" />
     <Content Include="Default.aspx" />
     <Content Include="duzen.html" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -600,7 +600,244 @@
     <Content Include="js\scrolltab-js\package.json" />
     <Content Include="js\scrolltab-js\README.md" />
     <Content Include="js\scrolltab-js\scrolling-tabs.scss" />
-    <None Include="Properties\PublishProfiles\MARKALARSP.pubxml" />
+    <Content Include="css\.editorconfig" />
+    <Content Include="css\bower.json" />
+    <Content Include="css\CONTRIBUTING.md" />
+    <Content Include="css\HISTORY.md" />
+    <Content Include="css\package.json" />
+    <Content Include="css\README.md" />
+    <Content Include="css\hover\css\hover.css.map" />
+    <Content Include="css\hover\less\effects\2d-transitions\_backward.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_bob.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_bounce-in.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_bounce-out.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_buzz-out.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_buzz.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_float.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_forward.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_grow-rotate.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_grow.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_hang.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_pop.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_pulse-grow.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_pulse-shrink.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_pulse.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_push.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_rotate.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_shrink.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_sink.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_skew-backward.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_skew-forward.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_skew.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_wobble-bottom.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_wobble-horizontal.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_wobble-skew.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_wobble-to-bottom-right.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_wobble-to-top-right.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_wobble-top.less" />
+    <Content Include="css\hover\less\effects\2d-transitions\_wobble-vertical.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_back-pulse.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_bounce-to-bottom.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_bounce-to-left.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_bounce-to-right.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_bounce-to-top.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_fade.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_radial-in.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_radial-out.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_rectangle-in.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_rectangle-out.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_shutter-in-horizontal.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_shutter-in-vertical.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_shutter-out-horizontal.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_shutter-out-vertical.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_sweep-to-bottom.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_sweep-to-left.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_sweep-to-right.less" />
+    <Content Include="css\hover\less\effects\background-transitions\_sweep-to-top.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_border-fade.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_hollow.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_outline-in.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_outline-out.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_overline-from-center.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_overline-from-left.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_overline-from-right.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_overline-reveal.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_reveal.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_ripple-in.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_ripple-out.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_round-corners.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_trim.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_underline-from-center.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_underline-from-left.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_underline-from-right.less" />
+    <Content Include="css\hover\less\effects\border-transitions\_underline-reveal.less" />
+    <Content Include="css\hover\less\effects\curls\_curl-bottom-left.less" />
+    <Content Include="css\hover\less\effects\curls\_curl-bottom-right.less" />
+    <Content Include="css\hover\less\effects\curls\_curl-top-left.less" />
+    <Content Include="css\hover\less\effects\curls\_curl-top-right.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-back.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-bob.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-bounce-out.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-bounce.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-buzz-out.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-buzz.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-down.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-drop.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-fade.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-float-away.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-float.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-forward.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-grow-rotate.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-grow.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-hang.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-pop.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-pulse-grow.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-pulse-shrink.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-pulse.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-push.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-rotate.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-shrink.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-sink-away.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-sink.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-spin.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-up.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-wobble-horizontal.less" />
+    <Content Include="css\hover\less\effects\icons\_icon-wobble-vertical.less" />
+    <Content Include="css\hover\less\effects\shadow-and-glow-transitions\_box-shadow-inset.less" />
+    <Content Include="css\hover\less\effects\shadow-and-glow-transitions\_box-shadow-outset.less" />
+    <Content Include="css\hover\less\effects\shadow-and-glow-transitions\_float-shadow.less" />
+    <Content Include="css\hover\less\effects\shadow-and-glow-transitions\_glow.less" />
+    <Content Include="css\hover\less\effects\shadow-and-glow-transitions\_grow-shadow.less" />
+    <Content Include="css\hover\less\effects\shadow-and-glow-transitions\_shadow-radial.less" />
+    <Content Include="css\hover\less\effects\shadow-and-glow-transitions\_shadow.less" />
+    <Content Include="css\hover\less\effects\speech-bubbles\_bubble-bottom.less" />
+    <Content Include="css\hover\less\effects\speech-bubbles\_bubble-float-bottom.less" />
+    <Content Include="css\hover\less\effects\speech-bubbles\_bubble-float-left.less" />
+    <Content Include="css\hover\less\effects\speech-bubbles\_bubble-float-right.less" />
+    <Content Include="css\hover\less\effects\speech-bubbles\_bubble-float-top.less" />
+    <Content Include="css\hover\less\effects\speech-bubbles\_bubble-left.less" />
+    <Content Include="css\hover\less\effects\speech-bubbles\_bubble-right.less" />
+    <Content Include="css\hover\less\effects\speech-bubbles\_bubble-top.less" />
+    <Content Include="css\hover\less\hover.less" />
+    <Content Include="css\hover\less\_hacks.less" />
+    <Content Include="css\hover\less\_mixins.less" />
+    <Content Include="css\hover\less\_options.less" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_backward.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_bob.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_bounce-in.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_bounce-out.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_buzz-out.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_buzz.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_float.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_forward.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_grow-rotate.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_grow.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_hang.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_pop.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_pulse-grow.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_pulse-shrink.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_pulse.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_push.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_rotate.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_shrink.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_sink.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_skew-backward.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_skew-forward.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_skew.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_wobble-bottom.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_wobble-horizontal.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_wobble-skew.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_wobble-to-bottom-right.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_wobble-to-top-right.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_wobble-top.scss" />
+    <Content Include="css\hover\scss\effects\2d-transitions\_wobble-vertical.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_back-pulse.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_bounce-to-bottom.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_bounce-to-left.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_bounce-to-right.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_bounce-to-top.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_fade.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_radial-in.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_radial-out.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_rectangle-in.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_rectangle-out.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_shutter-in-horizontal.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_shutter-in-vertical.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_shutter-out-horizontal.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_shutter-out-vertical.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_sweep-to-bottom.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_sweep-to-left.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_sweep-to-right.scss" />
+    <Content Include="css\hover\scss\effects\background-transitions\_sweep-to-top.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_border-fade.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_hollow.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_outline-in.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_outline-out.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_overline-from-center.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_overline-from-left.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_overline-from-right.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_overline-reveal.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_reveal.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_ripple-in.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_ripple-out.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_round-corners.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_trim.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_underline-from-center.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_underline-from-left.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_underline-from-right.scss" />
+    <Content Include="css\hover\scss\effects\border-transitions\_underline-reveal.scss" />
+    <Content Include="css\hover\scss\effects\curls\_curl-bottom-left.scss" />
+    <Content Include="css\hover\scss\effects\curls\_curl-bottom-right.scss" />
+    <Content Include="css\hover\scss\effects\curls\_curl-top-left.scss" />
+    <Content Include="css\hover\scss\effects\curls\_curl-top-right.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-back.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-bob.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-bounce-out.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-bounce.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-buzz-out.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-buzz.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-down.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-drop.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-fade.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-float-away.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-float.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-forward.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-grow-rotate.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-grow.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-hang.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-pop.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-pulse-grow.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-pulse-shrink.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-pulse.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-push.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-rotate.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-shrink.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-sink-away.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-sink.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-spin.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-up.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-wobble-horizontal.scss" />
+    <Content Include="css\hover\scss\effects\icons\_icon-wobble-vertical.scss" />
+    <Content Include="css\hover\scss\effects\shadow-and-glow-transitions\_box-shadow-inset.scss" />
+    <Content Include="css\hover\scss\effects\shadow-and-glow-transitions\_box-shadow-outset.scss" />
+    <Content Include="css\hover\scss\effects\shadow-and-glow-transitions\_float-shadow.scss" />
+    <Content Include="css\hover\scss\effects\shadow-and-glow-transitions\_glow.scss" />
+    <Content Include="css\hover\scss\effects\shadow-and-glow-transitions\_grow-shadow.scss" />
+    <Content Include="css\hover\scss\effects\shadow-and-glow-transitions\_shadow-radial.scss" />
+    <Content Include="css\hover\scss\effects\shadow-and-glow-transitions\_shadow.scss" />
+    <Content Include="css\hover\scss\effects\speech-bubbles\_bubble-bottom.scss" />
+    <Content Include="css\hover\scss\effects\speech-bubbles\_bubble-float-bottom.scss" />
+    <Content Include="css\hover\scss\effects\speech-bubbles\_bubble-float-left.scss" />
+    <Content Include="css\hover\scss\effects\speech-bubbles\_bubble-float-right.scss" />
+    <Content Include="css\hover\scss\effects\speech-bubbles\_bubble-float-top.scss" />
+    <Content Include="css\hover\scss\effects\speech-bubbles\_bubble-left.scss" />
+    <Content Include="css\hover\scss\effects\speech-bubbles\_bubble-right.scss" />
+    <Content Include="css\hover\scss\effects\speech-bubbles\_bubble-top.scss" />
+    <Content Include="css\hover\scss\hover.scss" />
+    <Content Include="css\hover\scss\_hacks.scss" />
+    <Content Include="css\hover\scss\_mixins.scss" />
+    <Content Include="css\hover\scss\_options.scss" />
+    <Content Include="css\hover\bower.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -627,9 +864,10 @@
     </Compile>
     <Compile Include="AppService\Signup.cs" />
     <Compile Include="AppService\Transaction.cs" />
-    <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ShopsController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
