@@ -34,7 +34,7 @@
                     <label class="col-sm-2 control-label" for="textinput">Şehir</label>
                     <div class="col-sm-10">
                         <div style="color:red">*</div>
-                        <!input type="text" placeholder="Şehir" class="form-control"  ng-model="adres_sehir" required >
+                     
                         <select ng-model="adres_sehir" name="city" 
                                 ng-options="sehir as sehir.name for sehir in sehirlerjson track by sehir.cityid" 
                                 ng-change="adres_deg(adres_sehir.cityid)"></select>
@@ -46,7 +46,7 @@
                     <label class="col-sm-2 control-label" for="textinput">İlçe</label>
                     <div class="col-sm-10">
                         <div style="color:red">*</div>
-                        <!input type="text" placeholder="İlçe" class="form-control"  ng-model="adres_ilce" required >
+                      
                         <select ng-model="adres_ilce" name="country" 
                                 ng-options="ilce as ilce.name for ilce in ilcelerjson track by ilce.districtid"></select>
                     </div>
