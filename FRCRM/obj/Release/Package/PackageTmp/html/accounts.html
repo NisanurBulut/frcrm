@@ -1,0 +1,29 @@
+﻿
+<!--<section>
+    <fr-slider></fr-slider>
+</section>-->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 padding-right" ng-controller="accountsctrl">
+                <div class="features_items">
+                    <!--features_items-->
+                    <h2 class="title text-center">Dükkanlar</h2>
+                    <div class="col-sm-4" ng-repeat="account in accounts">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <h2>{{account.name}}</h2>
+                                    <p>{{account.name}}</p>
+                                    <a  class="btn btn-default add-to-cart" ng-click="openAccount(account.accountid,account.name)">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--features_items-->
+        </div>
+    </div>
+</section>

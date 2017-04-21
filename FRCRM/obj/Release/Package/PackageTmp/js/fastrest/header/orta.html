@@ -1,0 +1,55 @@
+
+<link href="../css/header-css/header-orta.css" rel="stylesheet" />
+<link href="../css/homes-css/home-color.css" rel="stylesheet" />
+<nav class="navbar navbar-default navbar-fixed-top" id="header">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" id="toggleButton" class="navbar-toggle plan-buttonn " data-toggle="collapse" data-target="#myNavbar collapse.in">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a ng-click="logox();"><img src="{{logo}}" alt="Fast Rest Akıllı Restoran" style="height:30px;margin:10px 10px 10px 10px" /></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          
+            <ul class="nav navbar-nav navbar-right" ng-hide="headerlogin">
+                <li class="li-loginItem-Margin">
+                    <input type="email" class="form-control nav-margin"  id="exampleInputEmail2" placeholder="Email address" ng-model="email" required>
+                </li>
+                <li class="li-loginItem-Margin">
+                    <input type="password" class="form-control"  id="exampleInputPassword2" placeholder="Password" ng-model="sifre" required>
+                </li>
+                <li class="li-loginItem-Margin">
+
+                    <button class="form-control btn plan-buttonn" type="button" ng-click="girisyapx();">Giriş</button>
+
+                 </li>
+                <li class="li-loginItem-Margin">
+
+                    <button class="form-control btn plan-buttonn" type="button" ng-click="kayitx();">Kayıt</button>
+                </li>
+            </ul>
+                <ul class="nav navbar-nav navbar-right text-left" ng-show="headerlogin">
+                    <li><a href="{{hesabim}}"><i class="fa fa-list"></i>Liste</a></li>
+                    <li><a href="{{favorilerim}}"><i class="fa fa-image"></i>Resim</a></li>
+                    <li><a ng-click="toCart();"><i style="color:#FE980F;font-weight:bold;">{{spetadet}}</i><i class="fa fa-shopping-cart"></i> {{ tutar}} TL</a></li>
+                    <li ><a ng-click="cikis()"><i class="fa fa-sign-out"></i>ÇIKIŞ - {{kmail}}</a></li>
+                 </ul>
+           
+        </div>
+    </div>
+    
+</nav>
+
+<script>
+    $(document).ready(function () {
+        $('#toggleButton').click(function () {
+            $('#myNavbar').collapse('toggle');
+        });
+    });
+    //$('li').click(function () {
+    //    $('#myNavbar').collapse('toggle');
+    //});
+
+</script>

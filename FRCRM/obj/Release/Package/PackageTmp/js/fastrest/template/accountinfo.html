@@ -1,0 +1,105 @@
+﻿<link href="../css/homes-css/home-color.css" rel="stylesheet" />
+<link href="../../../css/homes-css/accountInfo.css" rel="stylesheet" />
+
+<div class="row">
+   
+    <div class="col-lg-3 col-md-3 col-sm-6">
+        <div class="panel red">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3" id="icon">
+                        <i class="fa fa-location-arrow fa-3x text-faded"></i>
+                    </div>
+
+                    <div class="col-xs-9 text-right">
+                        <div class="circle-tile-number text-faded">Adresim</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-footer select-wrapper panel-footerAttr">
+
+                <select class="select text-red" ng-model="adres_sehir" name="adres_sehir"
+                        ng-options="Atanim as Atanim.tanim for Atanim in adresler track by Atanim.id"
+                        ng-change="change_address(adres_sehir.id)"></select>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6">
+        <div class="panel green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-turkish-lira fa-fw fa-3x text-faded"></i>
+                    </div>
+                   
+                    <div class="col-xs-9 text-right">
+                        <div class="text-faded circle-tile-number">{{minpak}} ₺</div>
+                    </div>
+                </div>
+            </div>
+            
+                <div class="panel-footer panel-footerAttr">
+                    <div class="text-center text-green">Minumum Tutar</div>
+                    
+                    <div class="clearfix"></div>
+                </div>
+           
+        </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-3 col-sm-6">
+        <div class="panel blue">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-car fa-fw fa-3x text-faded"></i>
+                    </div>
+                    
+                    <div class="col-xs-9 text-right">
+                        <div class="huge"></div>
+                        <div class="text-faded circle-tile-number">{{servissure}} DK</div>
+                    </div>
+                </div>
+            </div>
+            
+                <div class="panel-footer panel-footerAttr">
+                    <div class="text-center text-blue">Servis Süresi</div>
+                    <div class="clearfix"></div>
+                </div>
+           
+        </div>
+    </div>
+
+   
+    <div class="col-lg-3 col-md-3 col-sm-6">
+       
+       
+        <div class="panel orange">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-clock-o fa-fw fa-3x text-faded"></i>
+                    </div>
+
+                    <div class="col-xs-9 text-right">
+                        <div class="text-faded circle-tile-number">{{acsaat +' '+kapsaat}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-footer panel-footerAttr">
+                <div class="text-center text-orange">Hizmet Saatleri</div>
+
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+

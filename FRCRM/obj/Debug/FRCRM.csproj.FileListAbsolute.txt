@@ -292,3 +292,6 @@ C:\Users\nisanur\Source\Repos\frcrm\FRCRM\bin\System.Web.Http.WebHost.xml
 C:\Users\nisanur\Source\Repos\frcrm\FRCRM\obj\Debug\FRCRM.csprojResolveAssemblyReference.cache
 C:\Users\nisanur\Source\Repos\frcrm\FRCRM\obj\Debug\FRCRM.dll
 C:\Users\nisanur\Source\Repos\frcrm\FRCRM\obj\Debug\FRCRM.pdb
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\Swashbuckle.Core.dll
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\WebActivatorEx.dll

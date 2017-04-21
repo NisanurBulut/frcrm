@@ -1,0 +1,93 @@
+﻿
+  table {
+        margin: 10px 0px;
+        border: none !important;
+    }
+
+    thead {
+        font-weight: 100;
+    }
+
+    .table tbody > tr > td, .table tfoot > tr > td {
+        padding: 8px;
+        line-height: 1.428571429;
+        vertical-align: top;
+        border-top: none;
+    }
+
+    .spacing {
+        height: 10px;
+        background: transparent;
+        content: none;
+    }
+
+    @media (max-width: 500px) {
+
+        /*Responsive Table*/
+        thead {
+            display: none;
+        }
+
+        tr:nth-of-type(odd) {
+            background: #eee;
+        }
+
+        td, tr {
+            display: block;
+        }
+
+        /*Column Section Titles*/
+        .stats td:nth-of-type(1):before {
+            content: "Superhero: ";
+        }
+
+        .stats td:nth-of-type(2):before {
+            content: "Alter Ego: ";
+        }
+
+        .stats td:nth-of-type(3):before {
+            content: "Sidekick: ";
+        }
+
+        .stats td:nth-of-type(4):before {
+            content: "Vehicle: ";
+        }
+
+        .spacing td:before {
+            content: " " !important;
+        }
+        /*Add More based on the number of columns you have*/
+    }
+
+
+    th {
+        text-align: center;
+    }
+
+    .trth th {
+        text-align: left;
+    }
+
+    .plan table {
+    }
+
+    /*
+        ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    }
+    */
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
