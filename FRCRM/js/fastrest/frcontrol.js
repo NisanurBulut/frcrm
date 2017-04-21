@@ -222,7 +222,6 @@ frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'lo
                 ord = JSON.parse(ord);
                 $scope.oldorders = ord;
                 $scope.$apply();
-
             }).error();
         }
 

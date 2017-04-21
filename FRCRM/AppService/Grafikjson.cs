@@ -19,8 +19,7 @@ namespace FRCRM.AppService
         public NpgsqlConnection baglanti;
 
         public string JsonAl(string sql)
-        {
-            string json;
+        { 
             Frdb frdb = new Frdb();
             baglantiMetni = frdb.Baglantim();
             baglanti = new NpgsqlConnection(baglantiMetni);

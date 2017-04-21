@@ -140,6 +140,33 @@
     <Content Include="csss\price-range.css" />
     <Content Include="csss\responsive.css" />
     <Content Include="css\.gitignore" />
+    <Content Include="css\angular-tooltips-master\.gitignore" />
+    <Content Include="css\angular-tooltips-master\conf\paths.js" />
+    <Content Include="css\angular-tooltips-master\conf\tasks\annotate.js" />
+    <Content Include="css\angular-tooltips-master\conf\tasks\build.js" />
+    <Content Include="css\angular-tooltips-master\conf\tasks\clean.js" />
+    <Content Include="css\angular-tooltips-master\conf\tasks\lint.js" />
+    <Content Include="css\angular-tooltips-master\conf\tasks\minify.js" />
+    <Content Include="css\angular-tooltips-master\conf\tasks\move.js" />
+    <Content Include="css\angular-tooltips-master\conf\tasks\scss.js" />
+    <Content Include="css\angular-tooltips-master\conf\tasks\serve.js" />
+    <Content Include="css\angular-tooltips-master\conf\tasks\watch.js" />
+    <Content Include="css\angular-tooltips-master\demo\js\index.js" />
+    <Content Include="css\angular-tooltips-master\demo\views\index-with-embedded-controller.html" />
+    <Content Include="css\angular-tooltips-master\demo\views\index-without-embedded-controller.html" />
+    <Content Include="css\angular-tooltips-master\dist\angular-tooltips.css" />
+    <Content Include="css\angular-tooltips-master\dist\angular-tooltips.js" />
+    <Content Include="css\angular-tooltips-master\dist\angular-tooltips.min.css" />
+    <Content Include="css\angular-tooltips-master\dist\angular-tooltips.min.js" />
+    <Content Include="css\angular-tooltips-master\flexbox.html" />
+    <Content Include="css\angular-tooltips-master\gulpfile.js" />
+    <Content Include="css\angular-tooltips-master\index.html" />
+    <Content Include="css\angular-tooltips-master\index.js" />
+    <Content Include="css\angular-tooltips-master\lib\angular-tooltips.js" />
+    <Content Include="css\angular-tooltips-master\ng-click.html" />
+    <Content Include="css\angular-tooltips-master\ng-material.html" />
+    <Content Include="css\angular-tooltips-master\ng-model.html" />
+    <Content Include="css\angular-tooltips-master\twitter-bootstrap.html" />
     <Content Include="css\anket.css" />
     <Content Include="css\app.css" />
     <Content Include="css\app.js" />
@@ -149,7 +176,6 @@
     <Content Include="css\homes-css\home-color.css" />
     <Content Include="css\homes-css\home-picture.css" />
     <Content Include="css\homes-css\home-liste.css" />
-    <Content Include="css\hover.jpg" />
     <Content Include="css\hover\css\demo-page.css" />
     <Content Include="css\hover\css\hover-min.css" />
     <Content Include="css\hover\css\hover.css" />
@@ -177,14 +203,11 @@
     <Content Include="css\onsen-css-components.css" />
     <Content Include="css\onsen-css-components.min.css" />
     <Content Include="css\onsenui.css" />
-    <Content Include="css\photo-stack.png" />
     <Content Include="css\plugins.css" />
     <Content Include="css\radio.css" />
     <Content Include="css\roots.css" />
     <Content Include="css\sepet-css\sepet.css" />
-    <Content Include="css\sequence-logo.png" />
     <Content Include="css\tabbar.css" />
-    <Content Include="css\two-up.png" />
     <Content Include="Default.aspx" />
     <Content Include="duzen.html" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -196,7 +219,6 @@
     <Content Include="html\home-picture.html" />
     <Content Include="html\mapsvg.html" />
     <Content Include="html\payment\payments.html" />
-    <Content Include="icon.png" />
     <Content Include="imagess\404\404.png" />
     <Content Include="imagess\blog\blog-one.jpg" />
     <Content Include="imagess\blog\blog-three.jpg" />
@@ -838,6 +860,19 @@
     <Content Include="css\hover\scss\_mixins.scss" />
     <Content Include="css\hover\scss\_options.scss" />
     <Content Include="css\hover\bower.json" />
+    <Content Include="css\angular-tooltips-master\.csslintrc" />
+    <Content Include="css\angular-tooltips-master\.eslintrc" />
+    <Content Include="css\angular-tooltips-master\.jscsrc" />
+    <Content Include="css\angular-tooltips-master\.jshintrc" />
+    <Content Include="css\angular-tooltips-master\.sass-lint.yml" />
+    <Content Include="css\angular-tooltips-master\bower.json" />
+    <Content Include="css\angular-tooltips-master\CHANGELOG.md" />
+    <Content Include="css\angular-tooltips-master\dist\angular-tooltips.css.map" />
+    <Content Include="css\angular-tooltips-master\dist\angular-tooltips.js.map" />
+    <Content Include="css\angular-tooltips-master\lib\angular-tooltips.scss" />
+    <Content Include="css\angular-tooltips-master\package.json" />
+    <Content Include="css\angular-tooltips-master\Readme.md" />
+    <Content Include="css\angular-tooltips-master\tasks\bower-version-bump" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -865,9 +900,7 @@
     <Compile Include="AppService\Signup.cs" />
     <Compile Include="AppService\Transaction.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\ShopsController.cs" />
-    <Compile Include="Controllers\GroupController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
