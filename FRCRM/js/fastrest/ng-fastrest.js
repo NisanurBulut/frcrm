@@ -10,7 +10,7 @@ frOrder.directive('frOldOlders', function () {
     return {
         restrict: "EA",
         templateUrl: 'js/fastrest/template/oldOrders.html',
-        controller: ''
+        controller: ""
     }
 });
 
@@ -24,12 +24,12 @@ frOrder.directive('frSepet', function () {
     }
 });
 
+
+
+
 frOrder.controller('frSepetController', ['$scope', function ($scope) {
 
 }]);
-
-
-
 frOrder.directive("sosyalButon", [function(){
         return {
             restrict: "EA", 

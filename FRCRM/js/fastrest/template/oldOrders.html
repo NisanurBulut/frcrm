@@ -1,37 +1,24 @@
 ﻿<link href="../css/homes-css/accountInfo.css" rel="stylesheet" />
+<link href="../css/angular-tooltips-master/dist/angular-tooltips.min.css" rel="stylesheet" type="text/css" />
 <style>
     .panel:hover {
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
 </style>
-<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-});
-</script>
+
+
 <section class="col-sm-4">
     <div class="container">
         <div class="col-sm-3">
-            <div class="panel borderpanel">
-                <div class="panel-heading orange text-faded text-center">Sipariş Durumu</div>   
+            <div class="panel borderpanel" >
+                <div class="panel-heading orange text-faded text-center"><strong class="text-faded">Sipariş Durumu</strong></div>   
                    <table class="table table-hover font" style="font:bold;">
- 
-                       <tbody class="text-center">
-                           <tr ng-repeat="ord in oldorders">
+                       <tbody class="text-center" ng-repeat="ord in oldorders">
+                           <tr  title="{{ord.ostate}}">
                                <td class="text-left">{{ord.tanim}}</td>
                                <td class="text-center">{{ord.tutar}}₺</td>
-                               <td>
-                                   <i ng-if="ord.durum == 0" class="fa fa-circle-o fa-2x" data-toggle="tooltip" data-placement="top" title="Siparişiniz verildi"></i>
-                                   <i ng-if="ord.durum == 1" class="fa fa-clock-o fa-2x" data-toggle="tooltip" data-placement="top" title="Siparişiniz hazırlanıyor"></i>
-                                   <i ng-if="ord.durum == 2" class="fa fa-car fa-2x" data-toggle="tooltip" data-placement="top" title="Siparişiniz Yolda"></i>
-                                   <i ng-if="ord.durum == 3" class="fa fa-check-circle fa-2x" data-toggle="tooltip" data-placement="top" title="Siparişiniz teslim edildi"></i>
-                                   <i ng-if="ord.durum == 4" class="fa fa-times-circle fa-2x" data-toggle="tooltip" data-placement="top" title="Siparişiniz Teknik bir sorun nedeni ile iptal edildi"></i>
-                                   <i ng-if="ord.durum == 5" class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Durum 5"></i>
-                                   <i ng-if="ord.durum == 6" class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Durum 6"></i>
-                                   <i ng-if="ord.durum == 7" class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Durum 7"></i>
-                                   <i ng-if="ord.durum == 8" class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Durum 8"></i>
-                                   <i ng-if="ord.durum == 9" class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Durum 9"></i>
-                                   <i ng-if="ord.durum == 10" class="fa fa-location-arrow fa-2x" data-toggle="tooltip" data-placement="top" title="Durum 10"></i>
+                               <td>        
+                                   <i class="{{ord.icon}}"></i>                                   
                                </td>  
                            </tr>
                        </tbody>
