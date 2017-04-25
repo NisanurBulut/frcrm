@@ -206,7 +206,16 @@ namespace FRCRM
             return json;
         }
 
-
+        [WebMethod]
+        public static string getSlider(string account_id)
+        {
+            Grafikjson grafikjson = new Grafikjson();
+            string sql="";
+            Grafiksql g = new Grafiksql();
+            sql = g.run_slider_query(account_id);
+            string json = grafikjson.JsonAl(sql);
+            return json;
+        }
 
 
 

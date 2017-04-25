@@ -116,7 +116,7 @@
     });
     $rootScope.$emit('GetAdr');
     $rootScope.$emit('GetOldOrders');
-
+    $rootScope.$emit('GetSlider');
 
 
 

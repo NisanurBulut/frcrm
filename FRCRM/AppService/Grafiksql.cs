@@ -9,7 +9,7 @@ namespace FRCRM.AppService
     public class Grafiksql
     {
         HttpContext context = HttpContext.Current;/*Session için*/
-        public string group_query,dynamic_menu_query, product_query,product_list_query,dyna_query, account_query,citys_query,districts_query,address_query,paytype_query,oldsip_query;
+        public string group_query,dynamic_menu_query, product_query,product_list_query,dyna_query, account_query,citys_query,districts_query,address_query,paytype_query,oldsip_query,slider_query;
 
         public string run_group_guery(string account_id)
         {
@@ -136,10 +136,19 @@ namespace FRCRM.AppService
 
         public string run_oldsip_query(string id ,string account_id )
         {
-            oldsip_query = "select adr.name as tanim , a.total as tutar , a.order_state as durum , a.order_date as tarih , a.adsno as adsno "+
+            oldsip_query = "select adr.name as tanim , a.total as tutar "+
+            ", a.order_state as durum , a.order_date as tarih , a.adsno as adsno , ost.state_name as ostate , ost.state_icon as icon"+
             " from(select * from ads_order_state where customer_id = "+id+" and account_id = "+account_id+") as a "+
-            " left outer join addresss adr on (adr.addressid = a.address_id) order by tarih desc";
+            " left outer join addresss adr on (adr.addressid = a.address_id) "+
+            " left outer join order_state_table ost on (ost.state_number = a.order_state)"+
+            " order by tarih desc";
             return oldsip_query;
+        }
+
+        public string run_slider_query(string account_id)
+        {
+            slider_query = "select * from account_slider_table where account_id="+account_id+" order by priority";
+            return slider_query;
         }
 
         /*Grafiksql Sonu*/

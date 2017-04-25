@@ -225,4 +225,25 @@ frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'lo
             }).error();
         }
 
+        GetSlider();
+        $rootScope.$on('GetSlider', function (event) {
+            GetSlider();
+        });
+
+        function GetSlider() {
+            ac_id = localStorageService.get('accountid');
+  
+            var jsn = '{"account_id":"' + ac_id + '"}';
+            $http.post('Default.aspx/getSlider', jsn).success(function (data) {
+                var sad = data.d;
+                sad = JSON.parse(sad);
+                $scope.sads = sad;
+                $scope.$apply();
+            }).error();
+        }
+
+
+
+
+
     }]);
