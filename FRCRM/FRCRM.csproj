@@ -816,6 +816,7 @@
     <Compile Include="AppService\Frdb.cs" />
     <Compile Include="AppService\Grafikjson.cs" />
     <Compile Include="AppService\Grafiksql.cs" />
+    <Compile Include="AppService\InsertTransaction.cs" />
     <Compile Include="AppService\JsonConverter.cs" />
     <Compile Include="AppService\Login.cs" />
     <Compile Include="AppService\ProductService.asmx.cs">
@@ -824,7 +825,9 @@
     </Compile>
     <Compile Include="AppService\Signup.cs" />
     <Compile Include="AppService\Transaction.cs" />
+    <Compile Include="AppService\UpdateTransaction.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CheckController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
