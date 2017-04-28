@@ -33,9 +33,8 @@ function getRandomColor() {
     }
     return color;
 }
-var app = angular.module('app', ['ngRoute', 'ngCookies', 'LocalStorageModule', 'angular-images-loaded', 'ngMap', 'angular-carousel',
+var app = angular.module('app', ['ngRoute', 'ngCookies', 'LocalStorageModule', 'angular-images-loaded', 'ngMap',
     'ngSanitize', 'ngDialog', 'googlechart', 'shoppinpal.scratch-off', 'fr.order', 'sticky', 'ui.bootstrap', 'mj.scrollingTabs']);
-
 (function(){
   'use strict';
     //'LocalStorageModule'
@@ -153,7 +152,9 @@ var app = angular.module('app', ['ngRoute', 'ngCookies', 'LocalStorageModule', '
 
   app.config(['$httpProvider', function ($httpProvider) {
         delete $httpProvider.defaults.headers.common["X-Requested-With"]
-    }]);  
+  }]);
+
+
 
   app.directive('datePicker', function () {
       return {

@@ -40,12 +40,8 @@ namespace FRCRM.AppService
             
         }
 
-
-
-
         public DataTable JsonDataAl(string sql)
         {
-            string json;
             Frdb frdb = new Frdb();
             baglantiMetni = frdb.Baglantim();
             baglanti = new NpgsqlConnection(baglantiMetni);

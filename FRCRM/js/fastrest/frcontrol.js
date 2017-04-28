@@ -4,8 +4,8 @@
         controller: "frControlController"
     }
 }]);
-frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'localStorageService', '$location', '$http', 'ngDialog','$filter',
-    function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngDialog,$filter) {
+frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'localStorageService', '$location', '$http', 'ngDialog', '$log', '$filter',
+function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngDialog, $log, $filter) {
         var mustid = localStorageService.get('mustid');
         var cart = localStorageService.get('restaurant-cart') || [];
         var adresjson = [];
@@ -148,20 +148,6 @@ frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'lo
             tt();
         }
 
-        $scope.toCart = function () {
-            tt();
-           
-            if (parseFloat(sepettoplam) < parseFloat(minpaktutar)) {
-                alert('SEPETİNİZDEKİ ÜRÜNLER MİNİMUM SİPARİŞ TUTARININ ALTINDADIR');
-            }
-            else if (simdikizaman < 1) {
-                alert('HİZMET SAATLERİ DIŞINDAYIZ');
-            }
-            else {
-                $location.path('/cart');
-            }
-        }
-
         GetAddress();
         $rootScope.$on('GetAdr', function (event) {
             GetAddress(); 
@@ -242,8 +228,29 @@ frOrder.controller('frControlController', ['$scope', '$rootScope', '$attrs', 'lo
             }).error();
         }
 
+        $scope.modalShown = false;
+      
+        $scope.toCart = function () {
+            tt();
 
+            if (parseFloat(sepettoplam) < parseFloat(minpaktutar)) {
+                createDialog('SEPETİNİZDEKİ ÜRÜNLER MİNİMUM SİPARİŞ TUTARININ ALTINDADIR');
+                $scope.modalShown = !$scope.modalShown;
+            }
+            else if (simdikizaman < 1) {
+                createDialog('HİZMET SAATLERİ DIŞINDAYIZ');
+            }
+            else {
+                $location.path('/cart');
+            }
+        }
 
+        $scope.$on('createDialog', function (event, durummesaj) { createDialog(durummesaj); });
 
-
-    }]);
+        function createDialog(durummesaj) {
+            localStorageService.set('alertMessageInfo', durummesaj);
+            ngDialog.open({ template: 'alertMessage', width: '40%', height: '30%', className: 'ngdialog-theme-default' });
+            $scope.alertMessageInfo = localStorageService.get('alertMessageInfo');
+            
+        }
+}]);

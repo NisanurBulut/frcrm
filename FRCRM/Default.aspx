@@ -69,10 +69,12 @@
 
     
 </head>
-<body fr-control >
+<body fr-control>
 
     <form id="form1" runat="server">
- 
+
+
+
 	<div class="container">
         <div class="row">
            <header id="header"><!--header-->
