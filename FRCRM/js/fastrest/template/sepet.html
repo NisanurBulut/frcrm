@@ -53,15 +53,18 @@
         <div class="col-sm-3">
             
             <div id="nav" class="panel borderpanel" data-spy="affix" >
-                <div class="panel-heading text-center orange" style="font-size:2.3vh;">
-                    <p><strong class="text-faded">SEPETİM</strong></p>
-                </div>
-                <div class="panel-heading text-center" style="font-size:2.3vh;" ng-if="sepetim.length > 0">
-                    <p ><strong class="text-faded">{{toplam}} TL</strong></p>
-                </div>
+                <div class="panel-heading orange">
+                    <div class="text-center" style="font-size:2.3vh;">
+                        <p><strong class="text-faded">SEPETİM</strong></p>
+                    </div>
+                    <div class="text-center" style="font-size:2.3vh;" ng-if="sepetim.length > 0">
+                        <p><strong class="text-faded">{{toplam}} ₺</strong></p>
+                    </div>
+               
                 <div class="panel-heading text-center orange" style="font-size:2.3vh;" ng-if="sepetim.length < 1">
                     <p><strong class="text-faded">Sepetinizde ürün yok</strong></p>
                 </div>
+                     </div>
                 <div ng-if="sepetim.length > 0">
                     <table class="table table-responsive table-hover font">
                         <thead>

@@ -345,8 +345,6 @@
     <Content Include="css\homes-css\home-picture.css" />
     <Content Include="css\homes-css\home-liste.css" />
     <Content Include="css\license.txt" />
-    <Content Include="css\logo-transparent.png" />
-    <Content Include="css\modern-slide-in.png" />
     <Content Include="css\ngdialog\myth\ngDialog-theme-default.css" />
     <Content Include="css\ngdialog\myth\ngDialog-theme-plain.css" />
     <Content Include="css\ngdialog\myth\ngDialog.css" />
@@ -373,9 +371,7 @@
     <Content Include="css\radio.css" />
     <Content Include="css\roots.css" />
     <Content Include="css\sepet-css\sepet.css" />
-    <Content Include="css\sequence-logo.png" />
     <Content Include="css\tabbar.css" />
-    <Content Include="css\two-up.png" />
     <Content Include="Default.aspx" />
     <Content Include="duzen.html" />
     <Content Include="fonts\fontawesome-webfont.svg" />
