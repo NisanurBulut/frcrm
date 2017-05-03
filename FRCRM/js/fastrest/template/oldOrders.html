@@ -4,10 +4,13 @@
     .panel:hover {
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
+     [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
 </style>
 
 
-<section class="col-sm-4">
+<section class="col-sm-4" ng-cloak>
     <div class="container">
         <div class="col-sm-3">
             <div class="panel borderpanel" >

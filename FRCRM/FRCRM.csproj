@@ -358,7 +358,6 @@
     <Content Include="Global.asax" />
     <Content Include="html\accounts.html" />
     <Content Include="html\home-liste.html" />
-    <Content Include="html\login_.html" />
     <Content Include="html\home-picture.html" />
     <Content Include="html\mapsvg.html" />
     <Content Include="html\payment\payments.html" />
@@ -415,7 +414,6 @@
     <Content Include="js\fastrest\template\dynamicmodal.html" />
     <Content Include="js\fastrest\template\invoice.html" />
     <Content Include="js\fastrest\template\oldOrders.html" />
-    <Content Include="js\fastrest\template\paywizard.html" />
     <Content Include="js\fastrest\template\sepet.html" />
     <Content Include="js\fastrest\template\trmap.html" />
     <Content Include="js\gp1.js" />

@@ -41,13 +41,16 @@
     transition: color 1s;
 }
 
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
 </style>
 <!-- sepet.css -->
 <link href="css/homes-css/home-color.css" rel="stylesheet" />
 <link href="css/sepet-css/sepet.css" rel="stylesheet" />
 
 
-<section id="sepetScrollspy" class="col-sm-4">
+<section id="sepetScrollspy" class="col-sm-4" ng-cloak>
     <div class="container">
         <!-- scroll yaptıktan sonra buraya gırıyor ve buyuyor -->
         <div class="col-sm-3">

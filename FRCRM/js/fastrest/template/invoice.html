@@ -14,9 +14,12 @@
 .table > tbody > tr > .thick-line {
     border-top: 2px solid;
 }
+ [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
 </style>
 
-    <div class="row">
+    <div class="row" ng-cloak>
         <div class="col-xs-12">
             <div class="row" ng-repeat="adres in teslimatadres">
                 <div class="col-xs-6 text-left">

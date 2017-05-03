@@ -57,9 +57,14 @@ p
     .btn-update {
         margin-left: 15px;
     }
+
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
 </style>
 
-<div class="row">
+<div class="row" ng-cloak>
     <div ng-repeat="adres in adresler">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
             <div class="thumbnail">
