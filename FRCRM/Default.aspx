@@ -56,9 +56,8 @@
      <link rel="stylesheet"  href="js/scrolltab-js/scrolling-tabs.css"/>
     <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
     <!------------------------------------------------------------------------------->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-  
+<link rel="stylesheet" href="https://cdn.rawgit.com/codekraft-studio/angular-page-loader/master/dist/angular-page-loader.css"/>
+<script type="text/javascript" src="https://cdn.rawgit.com/codekraft-studio/angular-page-loader/master/dist/angular-page-loader.min.js"></script>  
     <script src="js/gp1.js"></script>
     <script src="js/gp2.js"></script>
     <script src="js/login.js"></script>

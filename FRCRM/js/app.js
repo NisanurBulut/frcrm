@@ -34,7 +34,7 @@ function getRandomColor() {
     return color;
 }
 var app = angular.module('app', ['ngRoute', 'ngCookies', 'LocalStorageModule', 'angular-images-loaded', 'ngMap',
-    'ngSanitize', 'ngDialog', 'googlechart', 'shoppinpal.scratch-off', 'fr.order', 'sticky', 'ui.bootstrap', 'mj.scrollingTabs']);
+    'ngSanitize', 'ngDialog', 'googlechart', 'shoppinpal.scratch-off', 'fr.order', 'sticky', 'ui.bootstrap', 'mj.scrollingTabs', 'angular-page-loader']);
 (function(){
   'use strict';
     //'LocalStorageModule'
@@ -46,7 +46,20 @@ var app = angular.module('app', ['ngRoute', 'ngCookies', 'LocalStorageModule', '
       }
     }
   );
+  //app.run(function($timeout, $rootScope) {
 
+  //    // Use a root scope flag to access everywhere in your app
+  //    $rootScope.isLoading = true;
+
+  //    // simulate long page loading
+  //    $timeout(function() {
+
+  //        // turn "off" the flag
+  //        $rootScope.isLoading = false;
+
+  //    }, 2000)
+
+  //})
   app.factory('appCartService', function ($rootScope, localStorageService, $filter) {
       var restaurantCartKey = 'restaurant-cart';
       var cart = localStorageService.get(restaurantCartKey) || [];
