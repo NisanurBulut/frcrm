@@ -230,5 +230,4 @@ app.config(function($routeProvider) {
     });
 });
 
-
 })();

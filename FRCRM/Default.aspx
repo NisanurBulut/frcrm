@@ -19,11 +19,8 @@
     <link href="csss/main.css" rel="stylesheet"/>
     <link href="csss/responsive.css" rel="stylesheet"/>
     <link rel="shortcut icon" href="imagess/ico/favicon.ico"/>
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="imagess/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="imagess/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="imagess/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="imagess/ico/apple-touch-icon-57-precomposed.png"/>
-    <link rel="stylesheet" href="css/app.css" />
+  
+
     <link rel="stylesheet" href="css/ngdialog/ngDialog.min.css" />
     <link rel="stylesheet" href="css/ngdialog/ngDialog-theme-default.css"/>
     <link rel="stylesheet" href="css/ngdialog/ngDialog-theme-plain.css"/>
@@ -59,22 +56,19 @@
      <link rel="stylesheet"  href="js/scrolltab-js/scrolling-tabs.css"/>
     <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
     <!------------------------------------------------------------------------------->
-
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+  
     <script src="js/gp1.js"></script>
     <script src="js/gp2.js"></script>
     <script src="js/login.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/mapsvg.js"></script>
 
-    
+ 
 </head>
 <body fr-control>
-
     <form id="form1" runat="server">
-
-
-
 	<div class="container">
         <div class="row">
            <header id="header"><!--header-->

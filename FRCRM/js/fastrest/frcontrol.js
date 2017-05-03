@@ -34,7 +34,9 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
                     var adt = cart[i].adet;
                     ttr += parseFloat(sep * adt);
                     //alert(cart[i]);
-                    $scope.$apply();
+                    if (!$scope.$$phase) {
+                        $scope.$apply();
+                    }
                     if (cart[i].seviye == 0) { adet++ }
                 }
             }
@@ -165,7 +167,9 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
                 $scope.adresradio = { id: $scope.adresler[0].id };
                 $scope.adres_sehir = $scope.adresler[0];//ilk adresin seçili gelmesi
                 change_address($scope.adresler[0].id);
-                $scope.$apply();
+                if (!$scope.$$phase) {
+                    $scope.$apply();
+                }
 
             }).error();
         }
@@ -207,7 +211,9 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
                 var ord = data.d;
                 ord = JSON.parse(ord);
                 $scope.oldorders = ord;
-                $scope.$apply();
+                if (!$scope.$$phase) {
+                    $scope.$apply();
+                }
             }).error();
         }
 
@@ -224,7 +230,11 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
                 var sad = data.d;
                 sad = JSON.parse(sad);
                 $scope.sads = sad;
-                $scope.$apply();
+                if (!$scope.$$phase) {
+                    $scope.$apply();
+                }
+
+                
             }).error();
         }
 
