@@ -6,13 +6,6 @@
     var odeme_id = 0;
     if (cart.length < 1) { $location.path('/home-liste'); }
 
-    $scope.getRadio = function ()
-    {
-        alert("selam");
-        console.log("selam");
-    }
-
-
 
     $scope.sonok = function () {
         var odemeid = $scope.odemeradio.id;
