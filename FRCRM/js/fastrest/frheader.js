@@ -20,7 +20,7 @@ frOrder.controller('frHeaderOrtaController', ['$scope', '$attrs', 'localStorageS
     if (giris == 1) { $scope.headerlogin = true; }
 
     $scope.logox = function () {
-        $location.path('/home-liste');
+        $location.path('/home-listef');
     }
     $scope.kayitx = function () {
         $location.path('/login');
