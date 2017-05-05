@@ -17,7 +17,9 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
         localStorageService.set('restaurant-cart', cart);
         var ac_id = localStorageService.get('accountid');
         var account_name = localStorageService.get('account_name');
+        $scope.statusAddr = false;
         $scope.account_name = account_name;
+       
         function getNextIndexCart() {
             var zmn = new Date();
             zmn = zmn.getTime();
@@ -33,7 +35,7 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
                     var sep = parseLocalNum(cart[i].fiyat);
                     var adt = cart[i].adet;
                     ttr += parseFloat(sep * adt);
-                    //alert(cart[i]);
+                  
                     if (!$scope.$$phase) {
                         $scope.$apply();
                     }
@@ -70,17 +72,20 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
 
         }
 
+        $scope.AddressInfo = function () {
+           
+            ngDialog.open({ template: 'AddressInfo', controller: 'addressInfoCtrl', width: '70%' });
+        }
+
         $scope.sepeteAt = function (urun, indx, price, dyn, seviye) {
             cart = localStorageService.get('restaurant-cart');
             var fy = urun.pfiyat;
             fy = parseLocalNum(fy);
             fy = fy.toFixed(2);
             var urunbilgi = { 'id': urun.id, 'adi': urun.pname, 'fiyat': fy, 'adet': price, 'dynamic': false, 'seviye': 0, 'index': getNextIndexCart() }
-
             sepeteat2(urunbilgi);
         }
         function sepeteat2(urunbilgi) {
-
             var resid = localStorageService.get('resid') || 0;
             ac_id = localStorageService.get('accountid');
             if (cart.length == 0) {
@@ -110,15 +115,14 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
 
         function saveToCart(urunbilgi, adet) {
             cart.push(urunbilgi);
-            var calert = JSON.stringify(cart);
-            //alert(calert);
+            var calert = JSON.stringify(cart);   
             localStorageService.set('restaurant-cart', cart);
             tt();
         }
 
         $scope.deleteItem = function (item, index) {
             cart = localStorageService.get('restaurant-cart');
-            //alert(JSON.stringify(index))
+            
             var dynactr = 0;
             for (var i = cart.length - 1; i >= 0; i--) {
                 if (index == cart[i].index) {
@@ -156,45 +160,100 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
         });
 
         function GetAddress() {
+         
+            var adr = [];
             ac_id = localStorageService.get('accountid');
             mustid = localStorageService.get('mustid');
             var jsn = '{"id":"' + mustid + '","account_id":"' + ac_id + '"}';
             $http.post('Default.aspx/GetAddress', jsn).success(function (data) {
-                var adr = data.d;
-                adr = JSON.parse(adr);
+                adr = data.d;
+               
+                if (!data.d) {
+                    $scope.statusAddr = false;
+                    if (!$scope.$$phase) {
+                        $scope.$apply();
+
+                    }
+                  
+                    accountInfo();
+                    
+                } else {
+                    adr = JSON.parse(adr);//bull dönüyo
+                    $scope.statusAddr = true;
+                    if (!$scope.$$phase) {
+                        $scope.$apply();
+
+                    }
+                  
+                }
+               
+                //bu dönmelerin null olması error olarak yansıyor
+                //bunlar ilgilide düzenlemeler yapılması gerekıyor
                 adresjson = adr;
                 $scope.adresler = adr;
                 $scope.adresradio = { id: $scope.adresler[0].id };
                 $scope.adres_sehir = $scope.adresler[0];//ilk adresin seçili gelmesi
                 change_address($scope.adresler[0].id);
+                console.log("adr:", adr);
                 if (!$scope.$$phase) {
                     $scope.$apply();
+                    
                 }
-
+                
             }).error();
+            
         }
 
         $scope.change_address = function (adid){
             change_address(adid);
         }
-
-        function change_address(adid) {
-            localStorageService.set('chosedadid',adid);
-            for (var i = 0; i <= adresjson.length - 1; i++) {
-                if (adresjson[i].id == adid) {
-                    var minpaktut       = adresjson[i].min_pak_tutar; minpaktut = parseFloat(minpaktut).toFixed(2);
-                    var servissure      = adresjson[i].servis_sure;
-                    simdikizaman        = adresjson[i].openctrl;
-                    acsaat              = adresjson[i].acsaat;
-                    kapsaat             = adresjson[i].kapsaat;
-                    $scope.acsaat       = acsaat.substring(0,5);    //$filter('date')(acsaat, 'hh:mm');
-                    $scope.kapsaat      = kapsaat.substring(0, 5);   //$filter('date')(kapsaat, 'hh:mm');
-                    $scope.minpak       = minpaktut;
-                    minpaktutar         = minpaktut;
-                    $scope.servissure = servissure;
-                    break;
+        function accountInfo()
+        {
+            
+            $http.post('Default.aspx/GetAccountInfo', '{"account_id":"' + ac_id + '"}').success(function (data) {
+                 
+                adr = JSON.parse(data.d);
+                console.log("adr:",adr);
+                //adres olmaması durumunda açılış kapanış saatı ve mınumum tutarın gelmesı saglanıyor
+                var minpaktut = adr[0].min_pak_tutar;
+                
+                minpaktut = parseFloat(minpaktut).toFixed(2);
+                var servissure = adr[0].servis_sure;
+                simdikizaman = adr[0].openctrl;
+                acsaat = adr[0].acsaat;
+                kapsaat = adr[0].kapsaat;
+                $scope.acsaat = acsaat.substring(0, 5);  //$filter('date')(acsaat, 'hh:mm');
+                $scope.kapsaat = kapsaat.substring(0, 5); //$filter('date')(kapsaat, 'hh:mm');
+                $scope.minpak = minpaktut;
+                minpaktutar = minpaktut;
+                $scope.servissure = servissure;
+                if (!$scope.$$phase) {
+                    $scope.$apply();
                 }
-            }    
+            }).error();
+
+        }
+        function change_address(adid) {
+            localStorageService.set('chosedadid', adid);
+            for (var i = 0; i <= adresjson.length - 1; i++) {
+                    if (adresjson[i].id == adid) {
+                        var minpaktut = adresjson[i].min_pak_tutar;
+                        minpaktut = parseFloat(minpaktut).toFixed(2);
+                        var servissure = adresjson[i].servis_sure;
+                        simdikizaman = adresjson[i].openctrl;
+                        acsaat = adresjson[i].acsaat;
+                        kapsaat = adresjson[i].kapsaat;
+                        $scope.acsaat = acsaat.substring(0, 5);    //$filter('date')(acsaat, 'hh:mm');
+                        $scope.kapsaat = kapsaat.substring(0, 5);   //$filter('date')(kapsaat, 'hh:mm');
+                        $scope.minpak = minpaktut;
+                        minpaktutar = minpaktut;
+                        $scope.servissure = servissure;
+                       
+                        break;
+                    }
+                
+            }
+             
         }
 
 
@@ -263,4 +322,5 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
             $scope.alertMessageInfo = localStorageService.get('alertMessageInfo');
             
         }
+      
 }]);

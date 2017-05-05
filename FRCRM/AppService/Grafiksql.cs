@@ -9,7 +9,7 @@ namespace FRCRM.AppService
     public class Grafiksql
     {
         HttpContext context = HttpContext.Current;/*Session için*/
-        public string group_query,dynamic_menu_query, product_query,product_list_query,dyna_query, account_query,citys_query,districts_query,address_query,paytype_query,oldsip_query,slider_query;
+        public string group_query,dynamic_menu_query, product_query,product_list_query,dyna_query, account_query,citys_query,districts_query,address_query,paytype_query,oldsip_query,slider_query, accountInfo_query;
 
         public string run_group_guery(string account_id)
         {
@@ -127,6 +127,11 @@ namespace FRCRM.AppService
             return address_query;
         }
 
+        public string run_accountInfo_query(string account_id)
+        {
+            accountInfo_query = "select care.minimum as min_pak_tutar , care.minute as servis_sure , care.opening_time as acsaat , care.closing_time as kapsaat from a_care_places as care where account_id=" + account_id+" limit 1";
+            return accountInfo_query;
+        }
         public string run_paytype_query(string id)
         {
             paytype_query = "select *from (select * from ads_odmsekli_account where active = true and account_id = "+id+") as a "+

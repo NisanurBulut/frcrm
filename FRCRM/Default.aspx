@@ -44,6 +44,7 @@
     <script type="text/javascript" src="js/ng-scratch-off.js"></script>
     <script type="text/javascript" src="js/fastrest/ng-fastrest.js"></script>
     <script type="text/javascript" src="js/fastrest/frcontrol.js"></script>
+    <script type="text/javascript" src="js/fastrest/addressAdding.js"></script>
     <script type="text/javascript" src="js/fastrest/frheader.js"></script>
     <script src="js/sticky.js"></script>
     <script src="js/app.js"></script>
@@ -106,6 +107,7 @@
 
 		
 <fr-dynamic-modal></fr-dynamic-modal>	
+        <fr-address-adding></fr-address-adding>
 	
     <script src="jsq/jquery.js"></script>
 	<script src="jsq/bootstrap.min.js"></script>

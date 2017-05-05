@@ -394,6 +394,7 @@
     <Content Include="js\datepicker.js" />
     <Content Include="js\account.js" />
     <Content Include="js\dynamic.js" />
+    <Content Include="js\fastrest\addressAdding.js" />
     <Content Include="js\fastrest\cart\cart.html" />
     <Content Include="js\fastrest\footer\bottom.html" />
     <Content Include="js\fastrest\frcontrol.js" />
@@ -407,6 +408,7 @@
     <Content Include="js\fastrest\solmenu\solmenu.html" />
     <Content Include="js\fastrest\sosyal\sosyal.html" />
     <Content Include="js\fastrest\template\accountinfo.html" />
+    <Content Include="js\fastrest\template\addressAdding.html" />
     <Content Include="js\fastrest\template\addresscard.html" />
     <Content Include="js\fastrest\template\adresscheck.html" />
     <Content Include="js\fastrest\template\alertSepet.html" />
@@ -415,7 +417,7 @@
     <Content Include="js\fastrest\template\invoice.html" />
     <Content Include="js\fastrest\template\oldOrders.html" />
     <Content Include="js\fastrest\template\sepet.html" />
-    <Content Include="js\fastrest\template\trmap.html" />
+    <Content Include="js\fastrest\trmap.html" />
     <Content Include="js\gp1.js" />
     <Content Include="js\gp2.js" />
     <Content Include="js\scrolltab-js\.gitignore" />

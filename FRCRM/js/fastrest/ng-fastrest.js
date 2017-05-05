@@ -232,6 +232,12 @@ frOrder.directive("frDynamicModal", [function () {
     }
 }]);
 
+frOrder.directive("frAddressAdding", [function () {
+    return {
+        restrict: "EA",
+        templateUrl: "js/fastrest/template/addressAdding.html"
+    }
+}]);
 frOrder.directive("frTrSvgMap", [function () {
     return {
         restrict: "EA",

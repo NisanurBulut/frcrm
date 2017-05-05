@@ -130,6 +130,17 @@ namespace FRCRM
         }
 
         [System.Web.Services.WebMethod]
+        public static string GetAccountInfo(string account_id)
+        {
+            Grafikjson grafikjson = new Grafikjson();
+            string sql;
+            Grafiksql g = new Grafiksql();
+            sql = g.run_accountInfo_query(account_id);
+            string json = grafikjson.JsonAl(sql);
+            return json;
+        }
+
+        [System.Web.Services.WebMethod]
         public static string GetDistricts(string id , string account_id)
         {
             Grafikjson grafikjson = new Grafikjson();

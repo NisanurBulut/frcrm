@@ -1,0 +1,72 @@
+﻿<script type="text/ng-template" id="AddressInfo">
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+    <div class="row setup-content" ng-cloak>
+        <div class="col-md-12 col-md-offset-0">
+            <form class="form-horizontal" role="form">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Adres Detayları</legend>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="textinput">Adres Adı</label>
+                        <div class="col-sm-10">
+                            <div style="color:red">*</div> <input type="text" placeholder="Adres Adı" class="form-control" ng-model="adres_adi" required min="3">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">&nbsp;</div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="textinput">Telefon</label>
+                        <div class="col-sm-10">
+                            <div style="color:red">*</div> <input type="number" placeholder="Başında 0 olmadan : 5xxx xxx xx xx " class="form-control" ng-model="adres_telefon" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">&nbsp;</div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="textinput">Detay</label>
+                        <div class="col-sm-10">
+                            <div style="color:red">*</div><input type="text" placeholder="Mahalle , Cadde , Sokak , Kapı no, Apt, Daire No" class="form-control" ng-model="adres_detay" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">&nbsp;</div>
+                    <!-- Text input-->
+                    <div class="col-sm-12">&nbsp;</div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="textinput">Şehir</label>
+                        <div class="col-sm-10">
+                            <div style="color:red">*</div>
+
+                            <select ng-model="adres_sehir" name="city"
+                                    ng-options="sehir as sehir.name for sehir in sehirlerjson track by sehir.cityid"
+                                    ng-change="adres_deg(adres_sehir.cityid)"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">&nbsp;</div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="textinput">İlçe</label>
+                        <div class="col-sm-10">
+                            <div style="color:red">*</div>
+
+                            <select ng-model="adres_ilce" name="country"
+                                    ng-options="ilce as ilce.name for ilce in ilcelerjson track by ilce.districtid"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">&nbsp;</div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-primary" ng-click="adres_ekle();" ng-show="adekbut">Ekle</button>
+                                <button type="button" class="btn btn-primary" ng-click="adres_guncelle();" ng-show="adgunbut">Güncelle</button>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</script>
