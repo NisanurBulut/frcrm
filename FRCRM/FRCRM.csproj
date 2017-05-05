@@ -430,6 +430,7 @@
     <Content Include="imagess\home\sale.png" />
     <Content Include="imagess\home\searchicon.png" />
     <Content Include="imagess\home\shipping.jpg" />
+    <Content Include="imagess\loading.gif" />
     <Content Include="imagess\product-details\1.jpg" />
     <Content Include="imagess\product-details\new.jpg" />
     <Content Include="imagess\product-details\rating.png" />
