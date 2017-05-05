@@ -72,9 +72,10 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
 
         }
 
-        $scope.AddressInfo = function () {
-           
-            ngDialog.open({ template: 'AddressInfo', controller: 'addressInfoCtrl', width: '70%' });
+        $scope.AddressInfoModal = function () {
+            //alert(2);
+            ngDialog.open({ template: 'addressInfoModal', controller: 'addressInfoCtrl', width: '70%' });
+            //ngDialog.open({ template: 'dynamicmodal', controller: 'dynamicmodalDiaCtrl', width: '90%' });
         }
 
         $scope.sepeteAt = function (urun, indx, price, dyn, seviye) {

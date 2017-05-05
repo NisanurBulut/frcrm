@@ -27,7 +27,7 @@
                 <select class="select text-red" ng-model="adres_sehir" name="adres_sehir"
                         ng-options="Atanim as Atanim.tanim for Atanim in adresler track by Atanim.id"
                         ng-change="change_address(adres_sehir.id)"  ng-if="statusAddr"></select>
-                <button class="btn btn-block btn-danger" ng-if="!statusAddr" ng-click="AddressInfo()"></button>
+                <a class="btn btn-block btn-danger" ng-if="!statusAddr" ng-click="AddressInfoModal();"></a>
             </div>
 
         </div>

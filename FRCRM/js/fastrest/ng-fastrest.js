@@ -152,9 +152,6 @@ frOrder.directive("frFooterBottom", [function(){
 
 frOrder.controller('frFooterBottomController',['$scope','$attrs',function($scope,$attrs){
 
-	    
-	    
-
 }]); 
 
 frOrder.directive("frCart", [function(){

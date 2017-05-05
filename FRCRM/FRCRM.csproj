@@ -417,7 +417,7 @@
     <Content Include="js\fastrest\template\invoice.html" />
     <Content Include="js\fastrest\template\oldOrders.html" />
     <Content Include="js\fastrest\template\sepet.html" />
-    <Content Include="js\fastrest\trmap.html" />
+    <Content Include="js\fastrest\template\trmap.html" />
     <Content Include="js\gp1.js" />
     <Content Include="js\gp2.js" />
     <Content Include="js\scrolltab-js\.gitignore" />
@@ -788,7 +788,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54006</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54006/</IISUrl>
+          <IISUrl>http://localhost:54017/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -107,7 +107,7 @@
 
 		
 <fr-dynamic-modal></fr-dynamic-modal>	
-        <fr-address-adding></fr-address-adding>
+<fr-address-adding></fr-address-adding>
 	
     <script src="jsq/jquery.js"></script>
 	<script src="jsq/bootstrap.min.js"></script>

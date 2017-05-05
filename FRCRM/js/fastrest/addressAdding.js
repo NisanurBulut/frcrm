@@ -1,5 +1,8 @@
-﻿app.controller('addressInfoCtrl', function($scope, $rootScope,localStorageService,$location, $http,ngDialog,$log,$filter){
-    $scope.adres_ekle = function () {
+﻿frOrder.controller('addressInfoCtrl', function ($scope, $http, $rootScope, ngDialog, localStorageService, $location,$route) {
+    var mustid = localStorageService.get('mustid');
+    var ac_id = localStorageService.get('accountid');
+    var chsad = localStorageService.get('chosedadid');
+    $scope.adress_adding = function () {
         var adres_adi = $scope.adres_adi;
         var adres_detay = $scope.adres_detay;
         var adres_sehir = $scope.adres_sehir.cityid;
@@ -22,22 +25,14 @@
                     $scope.adres_sehir = null;
                     $scope.adres_ilce = null;
                     $scope.adres_telefon = null;
-                    GetAddress();
+                    ngDialog.close();
+                    $route.reload();
                 } else { alert('Bir sorun oluştu'); }
             }).error();
         }
     }
-    GetAddress();
-    function GetAddress() {
-        var jsn = '{"id":"' + mustid + '","account_id":"' + ac_id + '"}';
-        $http.post('Default.aspx/GetAddress', jsn).success(function (data) {
-            var adr = data.d;
-            adr = JSON.parse(adr);
-            $scope.adresler = adr;
-            $scope.adresradio = { id: chsad };
+ 
 
-        }).error();
-    }
     $http.post('Default.aspx/GetCitys', '{"account_id":"' + ac_id + '"}').success(function (data) {
         var jsn = data.d;
         jsn = JSON.parse(jsn);
@@ -54,7 +49,5 @@
         }).error();
     }
 
-
- 
 
 });
