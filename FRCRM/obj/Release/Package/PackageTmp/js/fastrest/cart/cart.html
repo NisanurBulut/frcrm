@@ -235,13 +235,13 @@
                                 <div class="row">
                                     <div class="col-xs-3"></div>
                                     <div class="col-xs-6">
-                                        <div class="panel panel-info">
-                                            <div class="panel-heading" style="background-color:rgba(254, 152, 15, 0.85)">
+                                        <div class="panel borderpanel">
+                                            <div class="panel-heading orange">
                                                 <div class="panel-title">
                                                     <div class="row">
                                                         <div class="col-xs-6">
-                                                            <h5 style="color:#FFF">
-                                                                <span class="glyphicon glyphicon-shopping-cart"></span> Sepetim
+                                                            <h5 class="text-faded" style="cursor:default;">
+                                                                <span class=" fa fa fa-shopping-cart"></span><strong>Sepetim</strong>
                                                             </h5>
                                                         </div>
                                                         <div class="col-xs-6">
@@ -257,7 +257,7 @@
                                                     <div class="col-xs-4">
                                                         <h4 class="product-name" style="color:#FE980f; border-radius:6px;font-style:oblique; font-size:10px;">
                                                             <strong>{{sepet.adi}}</strong>
-                                                            <div ng-repeat="scm in sepet.dynasecim" style="color:#808080;font-size:10px;">{{scm.adi}}</br></div>
+                                                            <strong ng-repeat="scm in sepet.dynasecim" style="color:#808080;font-size:10px;">{{scm.adi}}<br></strong>
                                                         </h4>
                                                        
                                                     </div>
@@ -271,7 +271,7 @@
                                                             <input type="text" class="form-control input-sm" ng-model="sepet.adet" value="{{sepet.adet}}" ng-change="adetdegis(sepet.index,sepet.adet);">
                                                         </div>
                                                         <div class="col-xs-2">
-                                                            <button type="button" class="btn btn-link btn-xs" style="color:#c70e0e" ng-click="deleteItem(sepet,sepet.index)">
+                                                            <button type="button" class="btn btn-link btn-xs" style="color:#c70e0e;float:right;" ng-click="deleteItem(sepet,sepet.index)">
                                                                 <span class="glyphicon glyphicon-trash"> </span>
                                                             </button>
                                                         </div>
@@ -281,16 +281,15 @@
                                             </div>
                                             <div class="panel-footer">
                                                 <div class="row text-center">
-                                                    <div class="col-xs-9">
-                                                        <h4 class="text-right">
+                                                    <div class="col-xs-3">
+                                                        <h4 class="text-left pull-left" style="cursor:default;">
                                                             Toplam
                                                             <strong>{{toplamttr}}</strong>
                                                         </h4>
                                                     </div>
-                                                    <div class="col-xs-3">
-
-                                                        <button type="button" class="btn btn-success btn-block next-step">
-                                                            {{toplamttr}} TAMAM
+                                                    <div class="col-xs-9 "> 
+                                                        <button type="button" class="btn btn-sm green next-step pull-right">
+                                                           <strong class="text-faded">ONAYLA</strong> 
                                                         </button>
                                                     </div>
                                                 </div>
@@ -303,11 +302,6 @@
                         </div>
 
 
-
-
-
-
-
                         <div class="tab-pane" role="tabpanel" id="step2">
 
 
@@ -315,19 +309,19 @@
                                 <div class="row">
                                     <div class="col-xs-3"></div>
                                     <div class="col-xs-6">
-                                        <div class="panel panel-info">
-                                            <div class="panel-heading" style="background-color:rgba(254, 152, 15, 0.85)">
+                                        <div class="panel borderpanel">
+                                            <div class="panel-heading orange">
                                                 <div class="panel-title">
                                                     <div class="row">
-                                                        <div class="col-xs-6">
-                                                            <h5 style="color:#FFF">
-                                                                <span class="glyphicon glyphicon-map-marker"></span> Adresinizi seçin
+                                                        <div class="col-xs-6 pull-left" style="cursor:default;">
+                                                            <h5 class="text-faded">
+                                                                <span class="glyphicon glyphicon-map-marker"></span> <strong>Adresinizi Seçin</strong> 
                                                             </h5>
                                                         </div>
                                                         <div class="col-xs-4"></div>
-                                                        <div class="col-sm-2">
-                                                            <h5 style="color:#FFF;cursor:default;" ng-click="add_address_scope =! add_address_scope; adekbut = true; adgunbut = false;">
-                                                                <span class="glyphicon glyphicon-plus"></span>Ekle
+                                                        <div class="col-sm-2 pull-right">
+                                                            <h5  class="text-faded" style="cursor:pointer;" ng-click="add_address_scope =!add_address_scope; adekbut = true; adgunbut = false;">
+                                                                <span class="glyphicon glyphicon-plus"></span><strong>Ekle</strong>
                                                             </h5>
 
                                                         </div>
@@ -344,29 +338,32 @@
                                                 <div class="col-sm-12">&nbsp;</div>
                                                 <div class="clearfix"></div>
 
-
-                                                <!--Adres ekleme sonu-->
-                                                <fr-address-check></fr-address-check>
-
-
+                                                
+                                                    <!--Adres ekleme sonu-->
+                                                    <fr-address-check></fr-address-check>
+                                                
                                                 <hr>
                                             </div>
                                             <div class="panel-footer">
                                                 <div class="row text-center">
-                                                    <div class="col-xs-9">
-                                                        <h4 class="text-right">
+                                                    <div class="col-xs-3">
+                                                        <h4 class="text-left pull-left" style="cursor:default;">
                                                             Toplam
                                                             <strong>{{toplamttr}}</strong>
                                                         </h4>
                                                     </div>
-                                                    <div class="col-xs-3">
+                                                    <div class="col-xs-9">
 
-                                                        <button type="button" class="btn btn-success btn-block next-step" ng-show="adresler">
-                                                            {{toplamttr}} TAMAM
+                                                        <button type="button" class="btn green btn-sm next-step pull-right" ng-show="adresler">
+                                                            <strong class="text-faded">ONAYLA</strong>
                                                         </button>
                                                     </div>
                                                 </div>
                                             </div>
+
+
+
+
                                         </div>
                                     </div>
                                     <div class="col-xs-3"></div>
@@ -388,13 +385,13 @@
                                 <div class="row">
                                     <div class="col-xs-3"></div>
                                     <div class="col-xs-6">
-                                        <div class="panel panel-info">
-                                            <div class="panel-heading" style="background-color:rgba(254, 152, 15, 0.85)">
+                                        <div class="panel borderpanel">
+                                            <div class="panel-heading orange">
                                                 <div class="panel-title">
                                                     <div class="row">
                                                         <div class="col-xs-6">
-                                                            <h5 style="color:#FFF">
-                                                                <span class="glyphicon glyphicon-credit-card"></span> Ödeme yönteminizi seçin
+                                                            <h5  class="text-faded" style="cursor:default;">
+                                                                <span class="glyphicon glyphicon-credit-card"></span> <strong>Ödeme Yönteminizi Seçin</strong>
                                                             </h5>
                                                         </div>
                                                         <div class="col-xs-6">
@@ -404,26 +401,26 @@
                                             </div>
                                             <div class="panel-body">
 
-                                                <label class="btn btn-success active" ng-repeat="odemetipi in odemetipleri" style="margin:10px 10px 10px 10px;">
+                                                <label class="btn green active" ng-repeat="odemetipi in odemetipleri" style="margin:10px 10px 10px 10px;">
                                                     <input type="radio"name="odemeradio" ng-model="odemeradio.id" value="{{odemetipi.id}}">
-                                                    <span class="{{odemetipi.odmicon}}" style="font-size:100px;"></span><br>
-                                                    <strong>{{odemetipi.odmname}}</strong>
+                                                    <span class="{{odemetipi.odmicon}} text-faded" style="font-size:100px;"></span><br>
+                                                    <strong class="text-faded">{{odemetipi.odmname}}</strong>
                                                 </label>
 
                                                 <hr>
                                             </div>
                                             <div class="panel-footer">
                                                 <div class="row text-center">
-                                                    <div class="col-xs-9">
-                                                        <h4 class="text-right">
+                                                    <div class="col-xs-3">
+                                                        <h4 class="text-right pull-left" style="cursor:default;">
                                                             Toplam
                                                             <strong>{{toplamttr}}</strong>
                                                         </h4>
                                                     </div>
-                                                    <div class="col-xs-3">
+                                                    <div class="col-xs-9">
 
-                                                        <button type="button" class="btn btn-success btn-block next-step" ng-click="sonok();">
-                                                            {{toplamttr}} TAMAM
+                                                        <button type="button" class="btn green btn-sm next-step pull-right" ng-click="sonok();">
+                                                            <strong class="text-faded">ONAYLA</strong>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -435,15 +432,11 @@
                             </div>
 
                         </div>
-
-
-
-
-
-
                         <div class="tab-pane" role="tabpanel" id="complete">
                             <div class="col-sm-2"></div>
-                            <div class="col-sm-8"><fr-invoice></fr-invoice></div>
+                            <div class="col-sm-8">
+                            <fr-invoice></fr-invoice>
+                            </div>
                             <div class="col-sm-2"></div>
                         </div>
                         <div class="clearfix"></div>

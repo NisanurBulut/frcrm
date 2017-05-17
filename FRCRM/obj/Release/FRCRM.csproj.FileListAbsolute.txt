@@ -86,3 +86,16 @@ C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\Microsoft.Extensions.WebEncoders
 C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\Microsoft.Net.Http.Headers.xml
 C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\System.Text.Encodings.Web.xml
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\EntityFramework.xml
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\EntityFramework.SqlServer.xml
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\EntityFramework6.Npgsql.xml
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\Microsoft.AI.Web.xml
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\Microsoft.ApplicationInsights.xml
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\Npgsql.xml
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\System.Net.Http.Formatting.xml
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\System.Web.Http.xml
+C:\Users\macbook\Source\Repos\FRORDER\FRCRM\bin\System.Web.Http.WebHost.xml

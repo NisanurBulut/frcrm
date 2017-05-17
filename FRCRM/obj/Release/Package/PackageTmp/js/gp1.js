@@ -34,7 +34,9 @@
                 var adt = cart[i].adet;
                 ttr += parseFloat(sep * adt);
                 //alert(cart[i]);
-                $scope.$apply();
+                if (!$scope.$$phase) {
+                    $scope.$apply();
+                }
                 if (cart[i].seviye == 0) { adet++ }
             }
         }
@@ -77,7 +79,7 @@
 
     $rootScope.$emit('GetAdr');
     $rootScope.$emit('GetOldOrders');
-
+    $rootScope.$emit('GetSlider');
 
 
 

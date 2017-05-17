@@ -1,12 +1,17 @@
 ﻿
-<link href="../../../css/homes-css/home-color.css" rel="stylesheet" />
-<script type="text/ng-template" id="dynamicmodal">
+<link href="../css/homes-css/home-color.css" rel="stylesheet" />
+<style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
+</style>
+<script type="text/ng-template" id="dynamicmodal" ng-cloak>
     <form id="dynamicForm" class="form-horizontal">
-        
+
         <div class="col-sm-12">
             <div class="col-sm-3">
-                <img src="https://i.ytimg.com/vi/EqXiTCXc6Ag/maxresdefault.jpg" style="width:100px;"/></br>
-                {{dynamic.pname}}</br>
+                <img src="https://i.ytimg.com/vi/EqXiTCXc6Ag/maxresdefault.jpg" style="width:100px;" /></br>
+                {{dynamic.pname}}<br>
                 {{dynamicfiyat}}
             </div>
             <div class="col-sm-9">
@@ -26,9 +31,9 @@
                     </ng-form>
                 </div>
             </div>
-            
-        </div>    
-        
+
+        </div>
+
         <div class="form-group">
             <div class="col-xs-5 col-xs-offset-7">
                 <button type="button" class="btn btn-lg btn-block green" ng-click="sepeteAtDynax();">
@@ -38,3 +43,13 @@
         </div>
     </form>
 </script>
+
+
+
+<!--bu sayfanbın yolu belirtildiği için alert te bu kısımda-->
+<script type="text/ng-template" id="alertMessage">
+    <div class="ngdialog-message" role="alert">
+        <strong>{{alertMessageInfo}}</strong>
+    </div>
+</script>
+

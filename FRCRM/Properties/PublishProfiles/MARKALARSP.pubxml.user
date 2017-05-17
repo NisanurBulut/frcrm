@@ -29,10 +29,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/08/2017 17:43:59</publishTime>
     </File>
     <File Include="bin/EntityFramework6.Npgsql.dll">
-      <publishTime>03/08/2017 17:44:00</publishTime>
+      <publishTime>08/03/2017 17:44:00</publishTime>
     </File>
     <File Include="bin/FRCRM.dll">
-      <publishTime>04/21/2017 12:17:29</publishTime>
+      <publishTime>05/17/2017 10:46:51</publishTime>
+    </File>
+    <File Include="bin/FRCRM.dll.config">
+      <publishTime>04/21/2017 14:01:19</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>03/08/2017 17:44:00</publishTime>
@@ -55,8 +58,104 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Microsoft.ApplicationInsights.dll">
       <publishTime>03/08/2017 17:44:00</publishTime>
     </File>
+    <File Include="bin/Microsoft.AspNetCore.Authorization.dll">
+      <publishTime>06/22/2016 09:14:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Hosting.Abstractions.dll">
+      <publishTime>06/22/2016 09:14:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll">
+      <publishTime>06/22/2016 09:14:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Http.Abstractions.dll">
+      <publishTime>06/22/2016 09:14:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Http.dll">
+      <publishTime>06/22/2016 09:14:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Http.Extensions.dll">
+      <publishTime>06/22/2016 09:14:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Http.Features.dll">
+      <publishTime>06/22/2016 09:14:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.JsonPatch.dll">
+      <publishTime>06/22/2016 09:14:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Mvc.Abstractions.dll">
+      <publishTime>06/22/2016 09:14:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Mvc.ApiExplorer.dll">
+      <publishTime>06/22/2016 09:14:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Mvc.Core.dll">
+      <publishTime>06/22/2016 09:14:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Mvc.DataAnnotations.dll">
+      <publishTime>06/22/2016 09:14:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Mvc.Formatters.Json.dll">
+      <publishTime>06/22/2016 09:14:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Routing.Abstractions.dll">
+      <publishTime>06/22/2016 09:14:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Routing.dll">
+      <publishTime>06/22/2016 09:14:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.StaticFiles.dll">
+      <publishTime>06/22/2016 09:14:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.WebUtilities.dll">
+      <publishTime>06/22/2016 09:14:54</publishTime>
+    </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>03/08/2017 17:44:01</publishTime>
+    </File>
+    <File Include="bin/Microsoft.DotNet.InternalAbstractions.dll">
+      <publishTime>06/21/2016 21:04:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Configuration.Abstractions.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.DependencyModel.dll">
+      <publishTime>06/21/2016 21:04:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.FileProviders.Abstractions.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.FileProviders.Embedded.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Localization.Abstractions.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Localization.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Logging.Abstractions.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.ObjectPool.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Options.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.PlatformAbstractions.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Primitives.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.WebEncoders.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Net.Http.Headers.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>07/25/2012 11:48:56</publishTime>
@@ -106,8 +205,23 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Swashbuckle.Core.dll">
       <publishTime>11/01/2016 22:04:36</publishTime>
     </File>
+    <File Include="bin/System.Buffers.dll">
+      <publishTime>06/11/2016 23:13:14</publishTime>
+    </File>
+    <File Include="bin/System.ComponentModel.Primitives.dll">
+      <publishTime>06/11/2016 23:13:22</publishTime>
+    </File>
+    <File Include="bin/System.ComponentModel.TypeConverter.dll">
+      <publishTime>06/11/2016 23:13:28</publishTime>
+    </File>
+    <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>06/11/2016 23:13:28</publishTime>
+    </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>03/08/2017 17:44:01</publishTime>
+    </File>
+    <File Include="bin/System.Text.Encodings.Web.dll">
+      <publishTime>06/11/2016 23:14:48</publishTime>
     </File>
     <File Include="bin/System.Web.Http.dll">
       <publishTime>03/08/2017 17:44:01</publishTime>
@@ -143,10 +257,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/13/2017 22:52:51</publishTime>
     </File>
     <File Include="css/homes-css/home-liste.css">
-      <publishTime>03/23/2017 12:43:17</publishTime>
+      <publishTime>04/25/2017 14:18:47</publishTime>
     </File>
     <File Include="css/homes-css/home-picture.css">
-      <publishTime>04/14/2017 15:53:46</publishTime>
+      <publishTime>04/21/2017 13:28:50</publishTime>
+    </File>
+    <File Include="css/homes-css/spinner.css">
+      <publishTime>05/05/2017 17:58:07</publishTime>
     </File>
     <File Include="css/ngdialog/myth/ngDialog-theme-default.css">
       <publishTime>03/20/2017 10:40:05</publishTime>
@@ -230,7 +347,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/20/2017 10:40:05</publishTime>
     </File>
     <File Include="css/sepet-css/sepet.css">
-      <publishTime>04/13/2017 22:52:51</publishTime>
+      <publishTime>04/25/2017 14:18:47</publishTime>
     </File>
     <File Include="css/tabbar.css">
       <publishTime>03/20/2017 10:40:05</publishTime>
@@ -263,10 +380,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/20/2017 10:40:05</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>04/11/2017 12:39:24</publishTime>
+      <publishTime>05/05/2017 17:59:28</publishTime>
     </File>
     <File Include="duzen.html">
-      <publishTime>04/14/2017 12:07:13</publishTime>
+      <publishTime>04/22/2017 14:48:08</publishTime>
     </File>
     <File Include="fonts/fontawesome-webfont.svg">
       <publishTime>03/20/2017 10:40:05</publishTime>
@@ -308,10 +425,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/23/2017 13:17:44</publishTime>
     </File>
     <File Include="html/home-liste.html">
-      <publishTime>04/14/2017 15:53:46</publishTime>
+      <publishTime>05/05/2017 17:58:07</publishTime>
     </File>
     <File Include="html/home-picture.html">
-      <publishTime>04/14/2017 15:53:46</publishTime>
+      <publishTime>05/05/2017 17:58:07</publishTime>
     </File>
     <File Include="html/login_.html">
       <publishTime>03/20/2017 10:40:05</publishTime>
@@ -515,10 +632,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/06/2017 11:30:58</publishTime>
     </File>
     <File Include="js/app.js">
-      <publishTime>03/21/2017 13:18:54</publishTime>
+      <publishTime>05/05/2017 17:58:07</publishTime>
     </File>
     <File Include="js/cart.js">
-      <publishTime>04/14/2017 17:21:03</publishTime>
+      <publishTime>05/05/2017 17:58:08</publishTime>
     </File>
     <File Include="js/datepicker.js">
       <publishTime>03/20/2017 10:40:06</publishTime>
@@ -526,23 +643,26 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="js/dynamic.js">
       <publishTime>04/12/2017 15:49:25</publishTime>
     </File>
+    <File Include="js/fastrest/addressAdding.js">
+      <publishTime>05/05/2017 17:58:08</publishTime>
+    </File>
     <File Include="js/fastrest/cart/cart.html">
-      <publishTime>04/13/2017 22:52:06</publishTime>
+      <publishTime>04/25/2017 14:18:47</publishTime>
     </File>
     <File Include="js/fastrest/footer/bottom.html">
       <publishTime>03/24/2017 11:24:39</publishTime>
     </File>
     <File Include="js/fastrest/frcontrol.js">
-      <publishTime>04/14/2017 22:02:47</publishTime>
+      <publishTime>05/05/2017 17:58:08</publishTime>
     </File>
     <File Include="js/fastrest/frheader.js">
-      <publishTime>04/12/2017 15:49:25</publishTime>
+      <publishTime>05/05/2017 18:04:04</publishTime>
     </File>
     <File Include="js/fastrest/header/alt.html">
       <publishTime>03/20/2017 10:40:06</publishTime>
     </File>
     <File Include="js/fastrest/header/orta.html">
-      <publishTime>04/13/2017 11:14:29</publishTime>
+      <publishTime>04/25/2017 14:18:47</publishTime>
     </File>
     <File Include="js/fastrest/header/ust.html">
       <publishTime>03/20/2017 10:40:06</publishTime>
@@ -551,10 +671,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/20/2017 10:40:06</publishTime>
     </File>
     <File Include="js/fastrest/ng-fastrest.js">
-      <publishTime>04/13/2017 22:52:51</publishTime>
+      <publishTime>05/05/2017 17:58:08</publishTime>
     </File>
     <File Include="js/fastrest/slider/slider.html">
-      <publishTime>04/14/2017 15:53:46</publishTime>
+      <publishTime>04/25/2017 14:18:47</publishTime>
     </File>
     <File Include="js/fastrest/solmenu/solmenu.html">
       <publishTime>03/20/2017 10:40:06</publishTime>
@@ -563,40 +683,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/20/2017 10:40:06</publishTime>
     </File>
     <File Include="js/fastrest/template/accountinfo.html">
-      <publishTime>04/14/2017 15:53:46</publishTime>
+      <publishTime>05/05/2017 17:58:08</publishTime>
+    </File>
+    <File Include="js/fastrest/template/addressAdding.html">
+      <publishTime>05/05/2017 17:58:08</publishTime>
     </File>
     <File Include="js/fastrest/template/addresscard.html">
-      <publishTime>04/12/2017 15:54:55</publishTime>
+      <publishTime>05/05/2017 17:58:08</publishTime>
     </File>
     <File Include="js/fastrest/template/adresscheck.html">
-      <publishTime>04/14/2017 22:01:54</publishTime>
+      <publishTime>05/05/2017 17:58:08</publishTime>
+    </File>
+    <File Include="js/fastrest/template/alertSepet.html">
+      <publishTime>05/05/2017 17:58:08</publishTime>
     </File>
     <File Include="js/fastrest/template/carttemplate.html">
-      <publishTime>04/12/2017 15:54:55</publishTime>
+      <publishTime>05/05/2017 17:58:08</publishTime>
     </File>
     <File Include="js/fastrest/template/dynamicmodal.html">
-      <publishTime>04/12/2017 15:54:55</publishTime>
+      <publishTime>05/05/2017 17:58:08</publishTime>
     </File>
     <File Include="js/fastrest/template/invoice.html">
-      <publishTime>03/24/2017 12:19:10</publishTime>
+      <publishTime>05/05/2017 17:58:08</publishTime>
     </File>
     <File Include="js/fastrest/template/oldOrders.html">
-      <publishTime>04/14/2017 17:12:32</publishTime>
+      <publishTime>05/05/2017 17:58:08</publishTime>
     </File>
     <File Include="js/fastrest/template/paywizard.html">
       <publishTime>03/20/2017 10:40:07</publishTime>
     </File>
     <File Include="js/fastrest/template/sepet.html">
-      <publishTime>04/14/2017 17:15:21</publishTime>
+      <publishTime>04/28/2017 11:00:28</publishTime>
     </File>
     <File Include="js/fastrest/template/trmap.html">
-      <publishTime>03/20/2017 10:40:07</publishTime>
+      <publishTime>05/05/2017 17:58:08</publishTime>
     </File>
     <File Include="js/gp1.js">
-      <publishTime>04/14/2017 17:08:58</publishTime>
+      <publishTime>05/05/2017 17:58:08</publishTime>
     </File>
     <File Include="js/gp2.js">
-      <publishTime>04/14/2017 17:09:14</publishTime>
+      <publishTime>05/05/2017 17:58:08</publishTime>
     </File>
     <File Include="js/kayit.js">
       <publishTime>03/20/2017 10:40:07</publishTime>
@@ -1484,13 +1610,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/20/2017 10:40:11</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>04/18/2017 11:28:37</publishTime>
+      <publishTime>04/21/2017 14:01:19</publishTime>
     </File>
     <File Include="shopper.html">
       <publishTime>03/08/2017 17:43:59</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/21/2017 12:18:02</publishTime>
+      <publishTime>05/05/2017 18:15:22</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -84,3 +84,26 @@
         text-align: left;
     }
 
+       .pic-fontSize{
+         font-size:1.3vw 1.3vh;
+     }
+  .img-thumbnail{
+        /*border-style:none;  şimdiik förmek amaclı border rengi var ama normalde kaldırıcam*/
+        border-color:#e74c3c;
+     }
+   div.show-image {
+    position: relative;
+    float:left;
+    margin:5px;}
+
+div.show-image:hover a
+  {
+  display: block;
+  }
+
+div.show-image a {
+   
+    top:0;
+    left:0;
+    display:none;
+}

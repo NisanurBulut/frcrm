@@ -14,9 +14,12 @@
 .table > tbody > tr > .thick-line {
     border-top: 2px solid;
 }
+ [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
 </style>
 
-    <div class="row">
+    <div class="row" ng-cloak>
         <div class="col-xs-12">
             <div class="row" ng-repeat="adres in teslimatadres">
                 <div class="col-xs-6 text-left">
@@ -50,11 +53,11 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-info">
-                <div class="panel-heading" style="background-color:rgba(254, 152, 15, 0.85)">
-                    <h3 class="panel-title"><strong style="color:#fff">Sipariş özeti</strong></h3>
+            <div class="panel borderpanel">
+                <div class="panel-heading orange">
+                    <h3 class="panel-title"><strong class="text-faded">Sipariş özeti</strong></h3>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body" style="cursor:default;">
                     <div class="table-responsive">
                         <table class="table table-condensed">
                             <thead>
@@ -87,8 +90,8 @@
                             </tbody>
                         </table>
                     </div>
-                    <button type="button" class="btn btn-success btn-block" ng-click="onayla();">
-                        {{toplamttr}} ONAYLA
+                    <button type="button" class="btn green btn-block" ng-click="onayla();">
+                       <strong class="text-faded">{{toplamttr}} ONAYLA</strong> 
                     </button>
                 </div>
             </div>

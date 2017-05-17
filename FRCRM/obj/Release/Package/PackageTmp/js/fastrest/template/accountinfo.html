@@ -1,7 +1,12 @@
 ﻿<link href="../css/homes-css/home-color.css" rel="stylesheet" />
 <link href="../../../css/homes-css/accountInfo.css" rel="stylesheet" />
-
-<div class="row">
+<style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+</style>
+ 
+<div class="row" ng-cloak>
    
     <div class="col-lg-3 col-md-3 col-sm-6">
         <div class="panel red">
@@ -21,8 +26,8 @@
 
                 <select class="select text-red" ng-model="adres_sehir" name="adres_sehir"
                         ng-options="Atanim as Atanim.tanim for Atanim in adresler track by Atanim.id"
-                        ng-change="change_address(adres_sehir.id)"></select>
-
+                        ng-change="change_address(adres_sehir.id)"  ng-if="statusAddr"></select>
+                <a class="btn btn-block btn-danger" ng-if="!statusAddr" ng-click="AddressInfoModal();"></a>
             </div>
 
         </div>

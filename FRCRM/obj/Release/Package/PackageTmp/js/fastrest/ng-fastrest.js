@@ -10,7 +10,7 @@ frOrder.directive('frOldOlders', function () {
     return {
         restrict: "EA",
         templateUrl: 'js/fastrest/template/oldOrders.html',
-        controller: ''
+        controller: ""
     }
 });
 
@@ -24,12 +24,12 @@ frOrder.directive('frSepet', function () {
     }
 });
 
+
+
+
 frOrder.controller('frSepetController', ['$scope', function ($scope) {
 
 }]);
-
-
-
 frOrder.directive("sosyalButon", [function(){
         return {
             restrict: "EA", 
@@ -152,9 +152,6 @@ frOrder.directive("frFooterBottom", [function(){
 
 frOrder.controller('frFooterBottomController',['$scope','$attrs',function($scope,$attrs){
 
-	    
-	    
-
 }]); 
 
 frOrder.directive("frCart", [function(){
@@ -232,6 +229,12 @@ frOrder.directive("frDynamicModal", [function () {
     }
 }]);
 
+frOrder.directive("frAddressAdding", [function () {
+    return {
+        restrict: "EA",
+        templateUrl: "js/fastrest/template/addressAdding.html"
+    }
+}]);
 frOrder.directive("frTrSvgMap", [function () {
     return {
         restrict: "EA",

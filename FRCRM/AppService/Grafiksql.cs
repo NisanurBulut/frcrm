@@ -18,7 +18,7 @@ namespace FRCRM.AppService
 
             return group_query;
         }
-        
+
 
         public string run_dynamic_menu_query(string menu_id, string account_id)
         {
