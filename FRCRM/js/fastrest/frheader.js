@@ -28,7 +28,11 @@ frOrder.controller('frHeaderOrtaController', ['$scope', '$attrs', 'localStorageS
     $scope.cikis = function () {
         localStorageService.set('giris', 0);
         $scope.headerlogin = false;
+    
         $location.path('/login');
+        localStorageService.set('mustid', -1);
+        $rootScope.$emit('GetAdr');
+        $rootScope.$emit('GetOldOrders');
     }
     $scope.girisyapx = function () {
        
@@ -64,7 +68,8 @@ frOrder.controller('frHeaderOrtaController', ['$scope', '$attrs', 'localStorageS
                 $scope.kmail = localStorageService.get('kmail');
 
                 var cartx = localStorageService.get('restaurant-cart');
-
+                $rootScope.$emit('GetAdr');
+                $rootScope.$emit('GetOldOrders');
 
                 if (cartx.length > 0) { $location.path('/cart'); } else { $location.path('/home-liste'); }
 
