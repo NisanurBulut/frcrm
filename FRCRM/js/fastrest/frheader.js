@@ -6,7 +6,7 @@
     }
 }]);
 
-frOrder.controller('frHeaderOrtaController', ['$scope', '$attrs', 'localStorageService', '$location', '$http', function ($scope, $attrs, localStorageService, $location, $http) {
+frOrder.controller('frHeaderOrtaController', ['$scope', '$attrs', 'localStorageService', '$location', '$http','$rootScope', function ($scope, $attrs, localStorageService, $location, $http,$rootScope) {
     $scope.logo = $attrs.bilgiLogo;
     $scope.hesabim = $attrs.sayfaHesabim;
     $scope.favorilerim = $attrs.sayfaFavorilerim;
@@ -47,12 +47,25 @@ frOrder.controller('frHeaderOrtaController', ['$scope', '$attrs', 'localStorageS
             if (durum == '0') {
                 $scope.hatamesaji = 'Giriş Başarılı';
                 var giris = localStorageService.set('giris', 1);
+                var oldMail=localStorageService.get('kmail') || 0;
+                if (oldMail == email) {
+                    $location.path('/home-liste');
+                }
+                else
+                {
+                    localStorageService.set('restaurant-cart', []);
+                    $rootScope.$emit('cartGncl');
+                }
+                console.log();
                 localStorageService.set('kmail', email);
                 $scope.kmail = localStorageService.get('kmail');
                 var giris_zamani = localStorageService.set('giris_zamani', zaman);
                 $scope.headerlogin = true;
                 $scope.kmail = localStorageService.get('kmail');
+
                 var cartx = localStorageService.get('restaurant-cart');
+
+
                 if (cartx.length > 0) { $location.path('/cart'); } else { $location.path('/home-liste'); }
 
 

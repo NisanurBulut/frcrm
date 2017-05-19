@@ -59,6 +59,10 @@
     <!------------------------------------------------------------------------------->
 <link rel="stylesheet" href="https://cdn.rawgit.com/codekraft-studio/angular-page-loader/master/dist/angular-page-loader.css"/>
 <script type="text/javascript" src="https://cdn.rawgit.com/codekraft-studio/angular-page-loader/master/dist/angular-page-loader.min.js"></script>  
+
+
+
+
     <script src="js/gp1.js"></script>
     <script src="js/gp2.js"></script>
     <script src="js/login.js"></script>

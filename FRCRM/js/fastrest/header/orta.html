@@ -11,19 +11,27 @@
             </button>
             <a ng-click="logox();"><img src="{{logo}}" alt="Fast Rest Akıllı Restoran" style="height:30px;margin:10px 10px 10px 10px" /></a>
         </div>
-        <div class="collapse navbar-collapse"  id="myNavbar">
+        <div class="collapse navbar-collapse form-group"  id="myNavbar">
           
             <ul class="nav navbar-nav navbar-right" ng-hide="headerlogin">
                 <li class="li-loginItem-Margin">
-                    <input type="email" class="form-control nav-margin"  id="exampleInputEmail2" placeholder="Email address" ng-model="email" required>
-                </li>
+                    <input type="email" class="form-control nav-margin input-sm"  id="exampleInputEmail2" placeholder="Email address" ng-model="email" required>
+                   
+                 </li>
                 <li class="li-loginItem-Margin">
-                    <input type="password" class="form-control" ng-keyup="$event.keyCode == 13 && girisyapx()" id="exampleInputPassword2" placeholder="Password" ng-model="sifre" required>
-                </li>
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon" id="basic-addon1"><i id="showPass" class="glyphicon glyphicon-eye-close"></i></span>
+                        <input type="password" class="form-control input-sm" ng-keyup="$event.keyCode == 13 && girisyapx()" id="InputPassword" placeholder="Password" ng-model="sifre" data-toggle="password" required>
+                       
+                    </div>
+                 </li>
+             
+                   
+               
                 <li class="li-loginItem-Margin">
 
                     <button class="form-control btn plan-buttonn" type="button" ng-click="girisyapx();">Giriş</button>
-
+                   
                  </li>
                 <li class="li-loginItem-Margin">
 
@@ -51,7 +59,33 @@
     //$('li').click(function () {
     //    $('#myNavbar').collapse('toggle');
     //});
-
+    $("#showPass")
+      .mouseup(function () {
+          $("#InputPassword").attr('type', 'password');
+      })
+      .mousedown(function () {
+          $("#InputPassword").attr('type', 'text');
+      });
 
 
 </script>
+<style>
+    .inner-addon {
+  position: relative;
+}
+
+/* style glyph */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align glyph */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+</style>
