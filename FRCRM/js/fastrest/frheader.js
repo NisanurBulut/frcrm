@@ -31,6 +31,8 @@ frOrder.controller('frHeaderOrtaController', ['$scope', '$attrs', 'localStorageS
         $location.path('/login');
     }
     $scope.girisyapx = function () {
+       
+       
         var email = $scope.email;
         var sifre = $scope.sifre;
         var jsdt = '{"mail":"' + email + '","sifre":"' + sifre + '"}';
@@ -56,11 +58,14 @@ frOrder.controller('frHeaderOrtaController', ['$scope', '$attrs', 'localStorageS
 
         }
             if (durum == '1') { $location.path('/login'); $scope.hatamesaji = 'Hatalı kullanıcı adı yada şifre '; }
+
             if (durum == '2') { $location.path('/login'); $scope.hatamesaji = 'Tekrar deneyin'; }
-        }).error(function (err) { });
+             }).error(function (err) { });
         }
 
     }
+
+
     $scope.$on('cartLogin', function (event) { $scope.headerlogin = true; $scope.kmail = localStorageService.get('kmail'); });
     $scope.$on('cartCount', function (event, cnt, ttr) { $scope.spetadet = cnt; $scope.tutar = ttr; });
 

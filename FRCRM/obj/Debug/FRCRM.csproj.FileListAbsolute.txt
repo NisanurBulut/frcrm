@@ -219,7 +219,6 @@ C:\Users\nisanur\Source\Repos\frcrm\FRCRM\bin\Microsoft.AI.Web.xml
 C:\Users\nisanur\Source\Repos\frcrm\FRCRM\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\nisanur\Source\Repos\frcrm\FRCRM\bin\Microsoft.ApplicationInsights.xml
 C:\Users\nisanur\Source\Repos\frcrm\FRCRM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\nisanur\Source\Repos\frcrm\FRCRM\bin\Newtonsoft.Json.xml
 C:\Users\nisanur\Source\Repos\frcrm\FRCRM\bin\Npgsql.xml
 C:\Users\nisanur\Source\Repos\frcrm\FRCRM\bin\System.Net.Http.Formatting.xml
 C:\Users\nisanur\Source\Repos\frcrm\FRCRM\bin\System.Web.Http.xml

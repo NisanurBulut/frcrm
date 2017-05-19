@@ -11,14 +11,14 @@
             </button>
             <a ng-click="logox();"><img src="{{logo}}" alt="Fast Rest Akıllı Restoran" style="height:30px;margin:10px 10px 10px 10px" /></a>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="collapse navbar-collapse"  id="myNavbar">
           
             <ul class="nav navbar-nav navbar-right" ng-hide="headerlogin">
                 <li class="li-loginItem-Margin">
                     <input type="email" class="form-control nav-margin"  id="exampleInputEmail2" placeholder="Email address" ng-model="email" required>
                 </li>
                 <li class="li-loginItem-Margin">
-                    <input type="password" class="form-control"  id="exampleInputPassword2" placeholder="Password" ng-model="sifre" required>
+                    <input type="password" class="form-control" ng-keyup="$event.keyCode == 13 && girisyapx()" id="exampleInputPassword2" placeholder="Password" ng-model="sifre" required>
                 </li>
                 <li class="li-loginItem-Margin">
 
@@ -51,5 +51,7 @@
     //$('li').click(function () {
     //    $('#myNavbar').collapse('toggle');
     //});
+
+
 
 </script>
