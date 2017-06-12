@@ -62,18 +62,18 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
             $http.post('Default.aspx/GetDynamicGroup', mdjson).success(function (data) {
                 var jsn = data.d;
                 jsn = JSON.parse(jsn);
-                //alert(JSON.stringify(jsn))
+               
                 dynamicMenuJsn = jsn;
-                //alert(JSON.stringify($scope.dynamicMenu))
+               
                 ngDialog.open({ template: 'dynamicmodal', controller: 'dynamicmodalDiaCtrl', width: '90%' });
-                //$scope.$apply();
+               
             }).error(function (data) { });
 
 
         }
 
         $scope.AddressInfoModal = function () {
-            //alert(2);
+           
             ngDialog.open({ template: 'addressInfoModal', controller: 'addressInfoCtrl', width: '70%' });
             //ngDialog.open({ template: 'dynamicmodal', controller: 'dynamicmodalDiaCtrl', width: '90%' });
         }
@@ -107,7 +107,7 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
                     return;
                 }
             } else if (resid != ac_id) {
-                alert('Sepetinizde farklı bir Restaurant a ait ürün var ekleme yapamazsınız')
+                $scope.$emit('createDialog','Sepetinizde farklı bir Restaurant a ait ürün var ekleme yapamazsınız')
             }
 
         }
@@ -127,7 +127,7 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
             var dynactr = 0;
             for (var i = cart.length - 1; i >= 0; i--) {
                 if (index == cart[i].index) {
-                    //alert(JSON.stringify(cart[i]))
+                    
                     cart.splice(i, 1);
                 }
 
