@@ -25,33 +25,30 @@
         var d = new Date();
         var n = d.toLocaleDateString();
         $scope.simdi = n;
-        //$scope.completecard
+      
 
     }
 
     $scope.onayla = function () {
         var jcart = {};
         jcart.cart = cart;
-        //alert(JSON.stringify(jcart));
+      
         var adsnot = $scope.adsnot;
         $http.post('Default.aspx/AdsAcik', "{'json':'" + JSON.stringify(jcart) + "','k_id':'" + mustid + "','adres_id':'" + adres_id + "','odeme_id':'" + odeme_id + "','account_id':'" + ac_id + "','adsnot':'"+adsnot+"'}")
             .success(function (data) {
                 var g = data.d;
-                //g = JSON.parse(g);
-                //alert(JSON.stringify(g))
+               
                 if (g == 0) {
                     cart = [];
                     localStorageService.set('restaurant-cart', cart);
                     $location.path('/home-liste');
                 } else if( g == 1) {
-                    //alert(JSON.stringify(g))
-                    
+                   
                     $scope.$emit('createDialog', "Tutarsız fiyat tespit edildi. Lütfen sepetinizdeki ürünleri silip tekrar ekleyin.");
                 }
                 else
                 {
-                    //alert(JSON.stringify(g))
-                    alert("İstenmeyen bir hata oluştu.");
+                    $scope.$emit('createDialog',"İstenmeyen bir hata oluştu.");
                 }
             }).error();
     }
@@ -66,7 +63,7 @@
 
         var json = '{"name":"' + adres_adi + '","city_id":"' + adres_sehir + '","district_id":"' + adres_ilce + '","address":"' + adres_detay + '","lastuserid":"' + mustid + '","phone":"' + adres_telefon + '"}';
         if (adres_adi == null || adres_detay == null || adres_sehir == null || adres_ilce == null || adres_telefon == null) {
-            alert('EKSİK ALANLARI DOLDURUNUZ ');
+            $scope.$emit('createDialog','EKSİK ALANLARI DOLDURUNUZ ');
         } else {
             $http.post('Default.aspx/Add_Address', json).success(function (data) {
 
@@ -79,7 +76,7 @@
                     $scope.adres_ilce = null;
                     $scope.adres_telefon = null;
                     GetAddress();
-                } else { alert('Bir sorun oluştu'); }
+                } else { $scope.$emit('createDialog','Bir sorun oluştu'); }
             }).error();
         }
     }
@@ -106,7 +103,7 @@
 
         var json = '{"id":"' + adid + '","name":"' + adres_adi + '","city_id":"' + adres_sehir + '","district_id":"' + adres_ilce + '","address":"' + adres_detay + '","phone":"' + adres_telefon + '"}';
         if (adres_adi == null || adres_detay == null || adres_sehir == null || adres_ilce == null || adres_telefon == null) {
-            alert('EKSİK ALANLARI DOLDURUNUZ ');
+            $scope.$emit('createDialog','EKSİK ALANLARI DOLDURUNUZ ');
         } else {
             $http.post('Default.aspx/Update_Address', json).success(function (data) {
 
@@ -119,7 +116,7 @@
                     $scope.adres_ilce = null;
                     $scope.adres_telefon = null;
                     GetAddress();
-                } else { alert('Bir sorun oluştu'); }
+                } else { $scope.$emit('createDialog','Bir sorun oluştu'); }
             }).error();
         }
     }
@@ -176,7 +173,7 @@
                 var sep = parseLocalNum(cart[i].fiyat);
                 var adt = cart[i].adet;
                 ttr += parseFloat(sep * adt);
-                //alert(cart[i]);
+              
                 $scope.$apply();
                 if (cart[i].seviye == 0) { adet++ }
             }
@@ -188,7 +185,7 @@
 
     $rootScope.$on('cartGncl', function (event) {
         cart = localStorageService.get('restaurant-cart');
-        //alert(JSON.stringify(cart))
+       
         $scope.sepetim = localStorageService.get('restaurant-cart');
         tt();
     });
