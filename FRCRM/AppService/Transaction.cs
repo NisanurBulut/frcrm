@@ -11,6 +11,7 @@ using System.Collections.ObjectModel;
 using System.Dynamic;
 using System.Globalization;
 using System.Data;
+using System.Diagnostics;
 
 namespace FRCRM.AppService
 {
@@ -18,6 +19,7 @@ namespace FRCRM.AppService
     {
 
         string islem;
+        public ArrayList cartAL = new ArrayList();
         public string RunNpgsqlTransaction(string json, string k_id, string adres_id, string odeme_id, string account_id ,string adsnot)
         {
             string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
@@ -27,22 +29,25 @@ namespace FRCRM.AppService
                 // Start a local transaction
                 NpgsqlTransaction myTrans = pgConnection.BeginTransaction(System.Data.IsolationLevel.ReadCommitted);
                 NpgsqlCommand pgCommand = pgConnection.CreateCommand();
+                string h_msg = "Bir Sorun Oluştu";
                 try
                 { 
 
                     JavaScriptSerializer ser = new JavaScriptSerializer();
-                    cartList cart = ser.Deserialize<cartList>(json);
+                    cartList cart = ser.Deserialize<cartList>(json); //attributeleri dolduracagımız liste tanımını yaparız
                     Grafikjson gj = new Grafikjson();
                     DataTable dt = new DataTable();
                     dt = gj.JsonDataAl("SELECT adsnoartir(1,1)");
                     string adsno = dt.Rows[0]["adsnoartir"].ToString();
                     float ttoplam = 0;
-
-                    for (int i = 0; i <= cart.cart.Count-1; i++) {
+                    
+                    for (int i = 0; i <= cart.cart.Count-1; i++) { //veri doldurması yapılılır
                         string id = cart.cart[i].id;
                         string adi = cart.cart[i].adi;
                         string adet = cart.cart[i].adet;
                         string fiyat = cart.cart[i].fiyat;
+                        
+                       
                         float tutarx = Convert.ToSingle(adet, CultureInfo.InvariantCulture) * Convert.ToSingle(fiyat, CultureInfo.InvariantCulture);
                         ttoplam += tutarx;
                         string tutar = tutarx.ToString().Replace(",",".");
@@ -60,8 +65,23 @@ namespace FRCRM.AppService
                         pgCommand.CommandText = sqlx;
                         pgCommand.ExecuteNonQuery();
 
+
+                        // butun elemanların sira no ları bulunmalı
+                     //   NpgsqlCommand command = new NpgsqlCommand("Select sirano from product_fiyat where p_id = " + cart.cart[i].id + " and account_id = " + account_id, pgConnection);
+
+                        // Execute the query and obtain the value of the first column of the first row
+                       // Int32 _sirano = (Int32)command.ExecuteScalar();
+                       // cart.cart[i].sirano = _sirano.ToString();
+
+                      //  Debug.Write("{0}\n", _sirano.ToString());
+
+
+                        cartAL.Add(cart.cart[i]);
+
                     }
-                    myTrans.Commit();
+                   if (ControlCartTrans(cart, account_id))
+                    {
+                    myTrans.Commit(); //burada veri tabanına yazılır //burada fonksıyon cagırmalı if lemeli
                     string ttoplamx = ttoplam.ToString().Replace(",", ".");
                     islem = "0";
                     dt = gj.JsonDataAl("insert into ads_notlar (adsno,adsnot) values ("+adsno+",'"+adsnot+"')");
@@ -69,16 +89,22 @@ namespace FRCRM.AppService
                         " "+adsno+" , "+k_id+","+account_id+",0,"+adres_id+","+odeme_id+","+ttoplamx+") ";
                     pgCommand.ExecuteNonQuery();
                     Console.WriteLine("işlem tamam");
-                    
+                    }
+                   else
+                    {
+                        islem = "1";
+                        Debug.WriteLine("HATA VAR");
+                        return islem;
+                    }
 
-                    
+
                 }
                 catch (Exception e)
                 {
                     myTrans.Rollback();
                     Console.WriteLine(e.ToString());
                     Console.WriteLine("Hata oluştu işlem geri alındı");
-                    islem = e.ToString();
+                    islem =e.ToString();
                 }
                 finally
                 {
@@ -89,8 +115,83 @@ namespace FRCRM.AppService
             return islem;
         }
 
-        
+        public Boolean ControlCartTrans(cartList _cartList, string account_id)
+        {
+           
+            Boolean flagControl= false;
+            string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+            using (NpgsqlConnection pgConnection = new NpgsqlConnection(constr))
+            {
+                pgConnection.Open();
+             
+                // Start a local transaction
+               
+                NpgsqlCommand pgCommand = pgConnection.CreateCommand();
+   
+                try
+                {
+                    pgCommand.Connection = pgConnection;
+                 
+                    pgCommand.CommandType = CommandType.Text;
+                    foreach (cart eleman in cartAL)
+                    {
+                    
+                        pgCommand.CommandText = "Select p_id , fiyat from product_fiyat where p_id=" + eleman.id + " and account_id=" + account_id+"and(bastar <= current_date) and((bittar is null) or bittar >= current_date)";
+                        pgCommand.ExecuteNonQuery();
+                    }
+
+                    // Execute the query and obtain a result set
+                    NpgsqlDataReader dr = pgCommand.ExecuteReader();
+                    // Output rows
+                 
+                  
+                      while (dr.Read())  {      
+                        foreach (cart eleman in cartAL)
+                        {
+                            //  float tutarx = Convert.ToSingle(1, CultureInfo.InvariantCulture) * Convert.ToSingle(dr[1].ToString(), CultureInfo.InvariantCulture);
+
+                               string tutar = eleman.fiyat.ToString().Replace(".", ",");
+
+                            if (float.Parse(dr[1].ToString()) ==float.Parse(tutar))
+                            {
+                                Debug.WriteLine("fiyatlar aynı " + dr[1].ToString() + " -> " + tutar);
+                                flagControl = true;
+                            }
+                                
+                            else
+                            {
+                                Debug.WriteLine("fiyatlar farklı " + dr[1].ToString() + " -> " + tutar);
+                                flagControl = false;
+                                return false; //bir kez false olması yeterli olmalı listede uc tane sıparıs olsun brıının dahı fıyatı degısse false olmaalı
+                            }
+                                
+                            
+                        }
+
+                    }
+
+
+                    Debug.WriteLine("işlem tamam");
+                    pgCommand.Dispose();
+                    pgConnection.Close();
+                    dr.Close();
+
+                }
+                catch (Exception e)
+                {
+                    Console.Write(e.Data.ToString());
+                }
+                finally
+                {
+                    
+                }
+            }
+
+            return flagControl;
+        }
     }
+
+  
 
     public class cart
     {
@@ -100,6 +201,8 @@ namespace FRCRM.AppService
         public string adet { get; set; }
         public string dynamic { get; set; }
         public string seviye { get; set; }
+        public string sirano { get; set; }
+     
     }
 
     public class cartList

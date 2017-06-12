@@ -146,7 +146,7 @@ namespace FRCRM.AppService
             " from(select * from ads_order_state where customer_id = "+id+" and account_id = "+account_id+") as a "+
             " left outer join addresss adr on (adr.addressid = a.address_id) "+
             " left outer join order_state_table ost on (ost.state_number = a.order_state)"+
-            " order by tarih desc";
+            " order by tarih desc limit 3";
             return oldsip_query;
         }
 

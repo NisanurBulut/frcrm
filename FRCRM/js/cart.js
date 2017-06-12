@@ -1,4 +1,4 @@
-﻿app.controller('cartCtrl', function ($scope, $http, localStorageService, $location, $rootScope, ngDialog, $timeout) {
+﻿app.controller('cartCtrl', function ($scope, $http, localStorageService, $location, $rootScope, ngDialog, $timeout,ngDialog) {
     var mustid = localStorageService.get('mustid');
     var ac_id = localStorageService.get('accountid');
     var chsad = localStorageService.get('chosedadid');
@@ -43,9 +43,15 @@
                     cart = [];
                     localStorageService.set('restaurant-cart', cart);
                     $location.path('/home-liste');
-                } else {
+                } else if( g == 1) {
                     //alert(JSON.stringify(g))
-                    alert('Birşeyler yanlış gitti tekrar deneyin');
+                    
+                    $scope.$emit('createDialog', "Tutarsız fiyat tespit edildi. Lütfen sepetinizdeki ürünleri silip tekrar ekleyin.");
+                }
+                else
+                {
+                    //alert(JSON.stringify(g))
+                    alert("İstenmeyen bir hata oluştu.");
                 }
             }).error();
     }

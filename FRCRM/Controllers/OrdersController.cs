@@ -71,7 +71,7 @@ namespace FRCRM.Controllers
                 json.Rows.Add( adsno,nt,total,orderdate, cs, ps, os );
                 //AllOrders.Columns.Add(adsno, typeof(DataTable));
                 AllOrders.Rows.Add(json);
-                string asd = "asd";
+             
                 //AllOrders[i].Rows[i].SetAdded();
             }
             
