@@ -12,8 +12,10 @@ namespace FRCRM.Controllers
 {
     public class CheckController : ApiController
     {
+        [ScriptMethod(UseHttpGet = true)]
         public DataTable Get(string account_id,string adsno,string state)
         {
+
             DataTable response = new DataTable("response");
             UpdateTransaction updt = new UpdateTransaction();
             string trans = updt.RunNpgsqlTransaction("update ads_order_state set order_state = "+state+" where adsno = "+adsno+" and account_id ="+account_id);

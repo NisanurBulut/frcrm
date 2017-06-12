@@ -34,7 +34,8 @@ namespace FRCRM.Controllers
             for (int i = 0; i<= dt.Rows.Count -1; i++) {
                 Grafikjson grafikcs = new Grafikjson();
                 Grafikjson grafikps = new Grafikjson();
-                Grafikjson grafikos = new Grafikjson();                
+                Grafikjson grafikos = new Grafikjson();
+                Grafikjson grafiknt = new Grafikjson();            
                 string adsno = dt.Rows[i]["adsno"].ToString();
                 string customer = dt.Rows[i]["customer_id"].ToString();
                 string address = dt.Rows[i]["address_id"].ToString();
@@ -49,22 +50,28 @@ namespace FRCRM.Controllers
                     " left outer join ads_musteri m on(m.mustid = a.lastuserid) " +
                     " where a.addressid = " + address;
                 string PaytypeSql = "select odmno as paytype_id , odmname as paytype_name from ads_odmsekli where odmno = " + paytype;
-                string OrdersSql = "select a.*,p.product_name,dm.adi as d_name from " +
-                        " (select sirano, pluid, miktar, bfiyat, tutar, d_menu, seviye from ads_acik where account_id = " + id + " and adsno = " + adsno + ") as a " +
+                string OrdersSql = "select a.*,p.product_name,dm.adi as d_name , p.ms_id as pms_id , dm.ms_id as dms_id from " +
+                        " (select sirano, pluid , miktar, bfiyat, tutar, d_menu, seviye from ads_acik where account_id = " + id + " and adsno = " + adsno + ") as a " +
                         " left outer join product p on (p.id = a.pluid) " +
                         " left outer join dyna_menu dm on(a.pluid = dm.id and a.d_menu = true) " +
                         " order by sirano";
+                string AdsNot =  "select adsnot from ads_notlar where adsno = "+adsno;
                 DataTable json = new DataTable("Orders");// = grafikjson.JsonDataAl(sql);
                 DataTable cs = grafikcs.JsonDataAl(CustomerSql);
                 DataTable ps = grafikps.JsonDataAl(PaytypeSql);
                 DataTable os = grafikos.JsonDataAl(OrdersSql);
+                DataTable nt = grafiknt.JsonDataAl(AdsNot);
                 json.Columns.Add("adsno");
+                json.Columns.Add("adsnot", typeof(DataTable));
+                json.Columns.Add("total");
+                json.Columns.Add("date");
                 json.Columns.Add("customer", typeof(DataTable));
                 json.Columns.Add("paytype", typeof(DataTable));
                 json.Columns.Add("products", typeof(DataTable));
-                json.Rows.Add( adsno, cs, ps, os );
+                json.Rows.Add( adsno,nt,total,orderdate, cs, ps, os );
                 //AllOrders.Columns.Add(adsno, typeof(DataTable));
                 AllOrders.Rows.Add(json);
+                string asd = "asd";
                 //AllOrders[i].Rows[i].SetAdded();
             }
             
