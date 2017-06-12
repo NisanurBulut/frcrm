@@ -29,7 +29,7 @@ namespace FRCRM.AppService
                 // Start a local transaction
                 NpgsqlTransaction myTrans = pgConnection.BeginTransaction(System.Data.IsolationLevel.ReadCommitted);
                 NpgsqlCommand pgCommand = pgConnection.CreateCommand();
-                string h_msg = "Bir Sorun Oluştu";
+               
                 try
                 { 
 
@@ -64,17 +64,6 @@ namespace FRCRM.AppService
                                  " 1, NOW(),NOW(), '0', '0', '0', '0',8,1,-1,0,"+dmenu+","+seviye+ "," + k_id + "," + adres_id + "," + odeme_id + "," + account_id + ")";
                         pgCommand.CommandText = sqlx;
                         pgCommand.ExecuteNonQuery();
-
-
-                        // butun elemanların sira no ları bulunmalı
-                     //   NpgsqlCommand command = new NpgsqlCommand("Select sirano from product_fiyat where p_id = " + cart.cart[i].id + " and account_id = " + account_id, pgConnection);
-
-                        // Execute the query and obtain the value of the first column of the first row
-                       // Int32 _sirano = (Int32)command.ExecuteScalar();
-                       // cart.cart[i].sirano = _sirano.ToString();
-
-                      //  Debug.Write("{0}\n", _sirano.ToString());
-
 
                         cartAL.Add(cart.cart[i]);
 
@@ -148,7 +137,7 @@ namespace FRCRM.AppService
                       while (dr.Read())  {      
                         foreach (cart eleman in cartAL)
                         {
-                            //  float tutarx = Convert.ToSingle(1, CultureInfo.InvariantCulture) * Convert.ToSingle(dr[1].ToString(), CultureInfo.InvariantCulture);
+                           
 
                                string tutar = eleman.fiyat.ToString().Replace(".", ",");
 
