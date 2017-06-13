@@ -25,8 +25,6 @@
         var d = new Date();
         var n = d.toLocaleDateString();
         $scope.simdi = n;
-      
-
     }
 
     $scope.onayla = function () {
@@ -34,8 +32,7 @@
         jcart.cart = cart;
       
         var adsnot = $scope.adsnot;
-        if (adsnot == undefined)
-            adsnot = "";
+      
         $http.post('Default.aspx/AdsAcik', "{'json':'" + JSON.stringify(jcart) + "','k_id':'" + mustid + "','adres_id':'" + adres_id + "','odeme_id':'" + odeme_id + "','account_id':'" + ac_id + "','adsnot':'"+adsnot+"'}")
             .success(function (data) {
                 var g = data.d;

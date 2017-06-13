@@ -70,14 +70,7 @@ namespace FRCRM.AppService
                     }
                    if (ControlCartTrans(cart, account_id))
                     {
-                    myTrans.Commit(); //burada veri tabanına yazılır //burada fonksıyon cagırmalı if lemeli
-                    string ttoplamx = ttoplam.ToString().Replace(",", ".");
-                    islem = "0";
-                    dt = gj.JsonDataAl("insert into ads_notlar (adsno,adsnot) values ("+adsno+",'"+adsnot+"')");
-                    pgCommand.CommandText = "insert into ads_order_state (adsno,customer_id,account_id,order_state,address_id,pay_type_id,total) values (" +
-                        " "+adsno+" , "+k_id+","+account_id+",0,"+adres_id+","+odeme_id+","+ttoplamx+") ";
-                    pgCommand.ExecuteNonQuery();
-                    Console.WriteLine("işlem tamam");
+                        myTrans.Commit(); //burada veri tabanına yazılır //burada fonksıyon cagırmalı if lemeli         
                     }
                    else
                     {
@@ -86,7 +79,23 @@ namespace FRCRM.AppService
                         return islem;
                     }
 
+                   
+                        string ttoplamx = ttoplam.ToString().Replace(",", ".");
+                        islem = "0";
+                    pgCommand.CommandText = "insert into ads_order_state (adsno,customer_id,account_id,order_state,address_id,pay_type_id,total) values (" +
+                            " " + adsno + " , " + k_id + "," + account_id + ",0," + adres_id + "," + odeme_id + "," + ttoplamx + ") ";
+                    pgCommand.ExecuteNonQuery();
+                    Console.WriteLine("işlem tamam");
+                 
+                    if (adsnot != "undefined")
+                    {
 
+                        dt = gj.JsonDataAl("insert into ads_notlar (adsno,adsnot) values (" + adsno + ",'" + adsnot + "')");
+                    }
+                    else
+                    {
+                        Debug.WriteLine("Not boş geldi");
+                    }
                 }
                 catch (Exception e)
                 {
@@ -103,7 +112,7 @@ namespace FRCRM.AppService
             }
             return islem;
         }
-
+       
         public Boolean ControlCartTrans(cartList _cartList, string account_id)
         {
            
@@ -173,7 +182,7 @@ namespace FRCRM.AppService
                 finally
                 {
                     
-                }
+               }
             }
 
             return flagControl;
