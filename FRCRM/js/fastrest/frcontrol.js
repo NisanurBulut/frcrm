@@ -16,10 +16,20 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
         var simdikizaman = new Date();
         localStorageService.set('restaurant-cart', cart);
         var ac_id = localStorageService.get('accountid');
+        var resid = localStorageService.get('resid') || 0;
         var account_name = localStorageService.get('account_name');
         $scope.statusAddr = false;
         $scope.account_name = account_name;
-       
+      
+           
+          
+
+
+
+
+
+
+
         function getNextIndexCart() {
             var zmn = new Date();
             zmn = zmn.getTime();
@@ -214,7 +224,7 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
             $http.post('Default.aspx/GetAccountInfo', '{"account_id":"' + ac_id + '"}').success(function (data) {
                  
                 adr = JSON.parse(data.d);
-                console.log("adr:",adr);
+             
                 //adres olmaması durumunda açılış kapanış saatı ve mınumum tutarın gelmesı saglanıyor
                 var minpaktut = adr[0].min_pak_tutar;
                 
@@ -302,10 +312,17 @@ function ($scope, $rootScope, $attrs, localStorageService, $location, $http, ngD
       
         $scope.toCart = function () {
             tt();
-
+            var resid = localStorageService.get('resid') || 0;
+            var ac_id = localStorageService.get('accountid');
+            console.log("resid", resid);
+            console.log("ac_id", ac_id);
             if (parseFloat(sepettoplam) < parseFloat(minpaktutar)) {
                 createDialog('SEPETİNİZDEKİ ÜRÜNLER MİNİMUM SİPARİŞ TUTARININ ALTINDADIR');
                 $scope.modalShown = !$scope.modalShown;
+            }
+            else if (resid != ac_id) {
+                createDialog('SEPETİNİZDEKİ ÜRÜNLER FARKLI BİR RESTORANA AİTTİR');
+                $location.path('/home-liste');
             }
             else if (simdikizaman < 1) {
                 createDialog('HİZMET SAATLERİ DIŞINDAYIZ');

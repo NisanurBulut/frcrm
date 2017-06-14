@@ -166,9 +166,7 @@ var app = angular.module('app', ['ngRoute', 'ngCookies', 'LocalStorageModule', '
   app.config(['$httpProvider', function ($httpProvider) {
         delete $httpProvider.defaults.headers.common["X-Requested-With"]
   }]);
-
-
-
+ 
   app.directive('datePicker', function () {
       return {
           link: function postLink(scope, element, attrs) {
@@ -242,5 +240,38 @@ app.config(function($routeProvider) {
         templateUrl : "login.html"
     });
 });
+
+    //-------------------------------------------------------------------------------------------
+    //cart sayfasına doğrudan erişimi engeller
+app.run(['$rootScope', '$location', 'PermissionsService', function($rootScope, $location, PermissionsService) {
+    $rootScope.edit = function() {
+        PermissionsService.setPermission('cart', true);
+        $location.path('/cart');
+    };
+    $rootScope.$on("$routeChangeStart", function(event, next, current) {
+        if (next.templateUrl === "cart.html") {
+            if(!PermissionsService.getPermission('cart')) {
+                $location.path('/');
+            }
+            PermissionsService.setPermission('cart', false);
+        }
+    });
+}]).
+service('PermissionsService', [function() {
+    var permissions = {
+        cart: false
+    };
+    this.setPermission = function(permission, value) {
+        permissions[permission] = value;
+    }
+    this.getPermission = function(permission) {
+        return permissions[permission] || false;
+    }
+}])
+//------------------------------------------------------------------------------------------------------
+
+
+
+
 
 })();
